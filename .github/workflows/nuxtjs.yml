@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./techxtrasol.tech/techxtrasol.tech  # adjust to your Nuxt folder
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
