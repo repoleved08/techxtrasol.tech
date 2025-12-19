@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./techxtrasol.tech
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,10 +24,10 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
-          if [ -f "yarn.lock" ]; then
+          if [ -f "techxtrasol.tech/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
-          elif [ -f "package.json" ]; then
+          elif [ -f "techxtrasol.tech/package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
             echo "command=ci" >> $GITHUB_OUTPUT
           else
@@ -53,22 +50,24 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            dist
-            .nuxt
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('**/package-lock.json','**/yarn.lock') }}
+            techxtrasol.tech/dist
+            techxtrasol.tech/.nuxt
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('techxtrasol.tech/package-lock.json','techxtrasol.tech/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
 
       - name: Install dependencies
+        working-directory: ./techxtrasol.tech
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
       - name: Generate static site
+        working-directory: ./techxtrasol.tech
         run: ${{ steps.detect-package-manager.outputs.manager }} run generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./techxtrasol.tech/dist
 
   deploy:
     runs-on: ubuntu-latest
