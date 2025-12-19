@@ -17,29 +17,18 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./techxtrasol.tech/techxtrasol.tech  # adjust to your Nuxt folder
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Detect package manager
-        id: detect-package-manager
-        run: |
-          if [ -f "techxtrasol.tech/yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_OUTPUT
-            echo "command=install" >> $GITHUB_OUTPUT
-          elif [ -f "techxtrasol.tech/package.json" ]; then
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache: "npm"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -50,24 +39,22 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            techxtrasol.tech/dist
-            techxtrasol.tech/.nuxt
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('techxtrasol.tech/package-lock.json','techxtrasol.tech/yarn.lock') }}
+            .nuxt
+            dist
+          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-nuxt-build-
 
       - name: Install dependencies
-        working-directory: ./techxtrasol.tech
-        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+        run: npm ci
 
       - name: Generate static site
-        working-directory: ./techxtrasol.tech
-        run: ${{ steps.detect-package-manager.outputs.manager }} run generate
+        run: npm run generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./techxtrasol.tech/dist
+          path: ./dist
 
   deploy:
     runs-on: ubuntu-latest
