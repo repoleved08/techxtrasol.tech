@@ -12,7 +12,8 @@ useHead({
 })
 
 const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
+const description =
+  'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications.'
 
 useSeoMeta({
   title,
@@ -23,6 +24,9 @@ useSeoMeta({
   twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
   twitterCard: 'summary_large_image'
 })
+
+// deterministic value to avoid hydration mismatch
+const year = new Date().getFullYear()
 </script>
 
 <template>
@@ -37,7 +41,9 @@ useSeoMeta({
       </template>
 
       <template #right>
-        <UColorModeButton />
+        <ClientOnly>
+          <UColorModeButton />
+        </ClientOnly>
 
         <UButton
           to="https://github.com/nuxt-ui-templates/starter"
@@ -59,7 +65,7 @@ useSeoMeta({
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          Built with Nuxt UI • © {{ year }}
         </p>
       </template>
 
@@ -76,3 +82,4 @@ useSeoMeta({
     </UFooter>
   </UApp>
 </template>
+

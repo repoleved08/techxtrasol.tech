@@ -1,18 +1,28 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui'
   ],
 
-  devtools: {
-    enabled: true
+  nitro: {
+    preset: 'github-pages'
+  },
+
+  experimental: {
+    payloadExtraction: false
   },
 
   css: ['~/assets/css/main.css'],
 
   routeRules: {
     '/': { prerender: true }
+  },
+
+  devtools: {
+    enabled: false
   },
 
   compatibilityDate: '2025-01-15',
@@ -26,3 +36,4 @@ export default defineNuxtConfig({
     }
   }
 })
+
