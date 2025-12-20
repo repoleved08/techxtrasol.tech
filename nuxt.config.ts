@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: true,
 
   modules: [
     '@nuxt/eslint',
@@ -14,6 +13,15 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false
   },
+
+  app: {
+    head: {
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1'
+    }
+  },
+
+  ssr: true,
 
   css: ['~/assets/css/main.css'],
 

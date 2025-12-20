@@ -25,8 +25,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 
-// deterministic value to avoid hydration mismatch
-const year = new Date().getFullYear()
+// Fixed year to prevent hydration mismatch
+const year = 2024
 </script>
 
 <template>
