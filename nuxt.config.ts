@@ -6,12 +6,19 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
-  nitro: {
-    preset: 'github-pages'
-  },
+
 
   experimental: {
     payloadExtraction: false
+  },
+
+  nitro: {
+    preset: 'github-pages',
+    storage: {
+      redis: {
+        driver: 'memory'
+      }
+    }
   },
 
   app: {
@@ -22,6 +29,11 @@ export default defineNuxtConfig({
   },
 
   ssr: true,
+
+  components: {
+    global: true,
+    dirs: ['~/components']
+  },
 
   css: ['~/assets/css/main.css'],
 

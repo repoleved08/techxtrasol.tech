@@ -42,7 +42,12 @@ const year = 2024
 
       <template #right>
         <ClientOnly>
-          <UColorModeButton />
+          <template #default>
+            <UColorModeButton />
+          </template>
+          <template #fallback>
+            <div class="w-8 h-8"></div>
+          </template>
         </ClientOnly>
 
         <UButton
