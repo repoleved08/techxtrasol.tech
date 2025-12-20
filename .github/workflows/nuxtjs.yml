@@ -25,28 +25,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
+
+      - name: Enable Corepack (pnpm)
+        run: |
+          corepack enable
+          corepack prepare pnpm@9 --activate
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           static_site_generator: nuxt
 
-      - name: Restore build cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            .nuxt
-            dist
-          key: ${{ runner.os }}-nuxt-build-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nuxt-build-
-
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Generate static site
-        run: npm run generate
+        run: pnpm run generate
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
