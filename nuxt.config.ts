@@ -1,58 +1,32 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/image',
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@vueuse/nuxt',
+    'nuxt-og-image'
   ],
 
-  experimental: {
-    payloadExtraction: false,
-    viewTransition: false
-  },
-
-  nitro: {
-    preset: 'github-pages',
-    storage: {
-      redis: {
-        driver: 'memory'
-      }
-    },
-    compressPublicAssets: true
-  },
-
-  app: {
-    head: {
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1'
-    }
-  },
-
-  ssr: true,
-
-  components: {
-    global: true,
-    dirs: ['~/components']
+  devtools: {
+    enabled: true
   },
 
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/': { prerender: true }
+    '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
 
-  // Suppress hydration mismatches in development
-  debug: false,
+  compatibilityDate: '2024-07-11',
 
-  devtools: {
-    enabled: false
-  },
-
-  compatibilityDate: '2025-01-15',
-
-  vue: {
-    compilerOptions: {
-      isCustomElement: () => false
+  nitro: {
+    prerender: {
+      routes: [
+        '/'
+      ],
+      crawlLinks: true
     }
   },
 
@@ -65,4 +39,3 @@ export default defineNuxtConfig({
     }
   }
 })
-
