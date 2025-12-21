@@ -25,8 +25,8 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 
-// Fixed year to prevent hydration mismatch
-const year = ref(2025)
+// Use useState for SSR-friendly state that stays consistent
+const currentYear = useState('footer-year', () => new Date().getFullYear())
 </script>
 
 <template>
@@ -64,7 +64,7 @@ const year = ref(2025)
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ year }}
+          Built with Nuxt UI • © {{ currentYear }}
         </p>
       </template>
 

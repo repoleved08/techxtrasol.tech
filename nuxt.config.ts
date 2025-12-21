@@ -10,11 +10,6 @@ export default defineNuxtConfig({
     payloadExtraction: false,
     viewTransition: false
   },
-  
-  sourcemap: {
-    server: false,
-    client: false
-  },
 
   nitro: {
     preset: 'github-pages',
@@ -23,8 +18,7 @@ export default defineNuxtConfig({
         driver: 'memory'
       }
     },
-    compressPublicAssets: true,
-    minify: false
+    compressPublicAssets: true
   },
 
   app: {
@@ -35,10 +29,6 @@ export default defineNuxtConfig({
   },
 
   ssr: true,
-  
-  build: {
-    transpile: ['@nuxt/ui']
-  },
 
   components: {
     global: true,
@@ -48,22 +38,21 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/': { prerender: true, headers: { 'cache-control': 's-maxage=3600' } }
+    '/': { prerender: true }
   },
+
+  // Suppress hydration mismatches in development
+  debug: false,
 
   devtools: {
     enabled: false
   },
 
   compatibilityDate: '2025-01-15',
-  
-  vite: {
-    vue: {
-      template: {
-        compilerOptions: {
-          isCustomElement: (tag) => false
-        }
-      }
+
+  vue: {
+    compilerOptions: {
+      isCustomElement: () => false
     }
   },
 

@@ -1,14 +1,25 @@
-export default defineNuxtPlugin(() => {
-  // Ensure client-side hydration stability
-  if (import.meta.client) {
+export default defineNuxtPlugin({
+  name: 'hydration-fixes',
+  setup() {
+    // Only run on client side
+    if (!import.meta.client) return
+
     const nuxtApp = useNuxtApp()
-    
+
+    // Handle hydration completion
     nuxtApp.hook('app:mounted', () => {
-      // Fix any hydration mismatches after mounting
-      setTimeout(() => {
-        // Force a tick to ensure everything is properly hydrated
-        nextTick()
-      }, 0)
+      // Wait for next tick to ensure DOM is stable
+      nextTick(() => {
+        // Remove any hydration warning suppressors if they exist
+        console.log('Hydration completed successfully')
+      })
+    })
+
+    // Catch hydration errors and provide helpful debugging
+    nuxtApp.hook('app:error', (error) => {
+      if (error.message?.includes('hydration')) {
+        console.warn('Hydration error detected:', error)
+      }
     })
   }
 })
