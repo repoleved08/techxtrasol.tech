@@ -6,10 +6,14 @@ export default defineNuxtConfig({
     '@nuxt/ui'
   ],
 
-
-
   experimental: {
-    payloadExtraction: false
+    payloadExtraction: false,
+    viewTransition: false
+  },
+  
+  sourcemap: {
+    server: false,
+    client: false
   },
 
   nitro: {
@@ -18,7 +22,9 @@ export default defineNuxtConfig({
       redis: {
         driver: 'memory'
       }
-    }
+    },
+    compressPublicAssets: true,
+    minify: false
   },
 
   app: {
@@ -29,6 +35,10 @@ export default defineNuxtConfig({
   },
 
   ssr: true,
+  
+  build: {
+    transpile: ['@nuxt/ui']
+  },
 
   components: {
     global: true,
@@ -38,7 +48,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/': { prerender: true }
+    '/': { prerender: true, headers: { 'cache-control': 's-maxage=3600' } }
   },
 
   devtools: {
@@ -46,6 +56,16 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-01-15',
+  
+  vite: {
+    vue: {
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => false
+        }
+      }
+    }
+  },
 
   eslint: {
     config: {
