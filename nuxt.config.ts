@@ -2,8 +2,7 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui',
-    '@nuxtjs/mdc'
+    '@nuxt/ui'
   ],
 
   devtools: {
@@ -11,27 +10,6 @@ export default defineNuxtConfig({
   },
 
   css: ['~/assets/css/main.css'],
-
-  mdc: {
-    highlight: {
-      langs: ['diff', 'ts', 'vue', 'css']
-    },
-    remarkPlugins: {
-      'remark-github': {
-        options: {
-          repository: 'nuxt-ui-templates/changelog'
-        }
-      }
-    }
-  },
-
-  ui: {
-    theme: {
-      defaultVariants: {
-        color: 'neutral'
-      }
-    }
-  },
 
   routeRules: {
     '/': { prerender: true }
