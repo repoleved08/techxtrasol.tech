@@ -1,87 +1,86 @@
 <script setup lang="ts">
-const route = useRoute()
+const route = useRoute();
 
-const items = computed(() => [{
-  label: 'Docs',
-  to: '/docs',
-  active: route.path.startsWith('/docs')
-}, {
-  label: 'Pricing',
-  to: '/pricing'
-}, {
-  label: 'Blog',
-  to: '/blog'
-}, {
-  label: 'Changelog',
-  to: '/changelog'
-}])
+const items = computed(() => [
+  {
+    label: "Docs",
+    to: "/docs",
+    active: route.path.startsWith("/docs"),
+  },
+  {
+    label: "Pricing",
+    to: "/pricing",
+  },
+  {
+    label: "Blog",
+    to: "/blog",
+  },
+  {
+    label: "Changelog",
+    to: "/changelog",
+  },
+]);
 </script>
 
 <template>
   <UHeader>
+    <!-- LEFT -->
     <template #left>
-      <NuxtLink to="/">
+      <NuxtLink to="/" class="flex items-center gap-3">
         <AppLogo class="w-auto h-6 shrink-0" />
       </NuxtLink>
       <TemplateMenu />
     </template>
 
-    <UNavigationMenu
-      :items="items"
-      variant="link"
-    />
+    <!-- CENTER -->
+    <UNavigationMenu :items="items" variant="link" />
 
+    <!-- RIGHT -->
     <template #right>
       <UColorModeButton />
 
-      <UButton
-        icon="i-lucide-log-in"
-        color="neutral"
-        variant="ghost"
-        to="/login"
-        class="lg:hidden"
-      />
+      <ClientOnly>
+        <SignedOut>
+          <SignInButton mode="modal">
+            <UButton
+              label="Sign in"
+              color="neutral"
+              variant="outline"
+              class="hidden lg:inline-flex"
+            />
+          </SignInButton>
+        </SignedOut>
 
-      <UButton
-        label="Sign in"
-        color="neutral"
-        variant="outline"
-        to="/login"
-        class="hidden lg:inline-flex"
-      />
-
-      <UButton
-        label="Sign up"
-        color="neutral"
-        trailing-icon="i-lucide-arrow-right"
-        class="hidden lg:inline-flex"
-        to="/signup"
-      />
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </ClientOnly>
     </template>
 
+    <!-- MOBILE DRAWER -->
     <template #body>
-      <UNavigationMenu
-        :items="items"
-        orientation="vertical"
-        class="-mx-2.5"
-      />
-
+      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
       <USeparator class="my-6" />
 
-      <UButton
-        label="Sign in"
-        color="neutral"
-        variant="subtle"
-        to="/login"
-        block
-        class="mb-3"
-      />
-      <UButton
-        label="Sign up"
-        color="neutral"
-        to="/signup"
-        block
-      />
+      <ClientOnly>
+        <SignedOut>
+          <SignInButton mode="modal">
+            <UButton
+              label="Sign in"
+              color="neutral"
+              variant="outline"
+              block
+              class="mb-3 lg:hidden"
+            />
+          </SignInButton>
+        </SignedOut>
+
+        <SignedIn>
+          <div class="flex justify-center">
+            <UserButton />
+          </div>
+        </SignedIn>
+      </ClientOnly>
     </template>
   </UHeader>
 </template>

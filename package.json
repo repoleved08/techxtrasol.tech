@@ -11,6 +11,8 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
+    "@clerk/nuxt": "^1.13.10",
+    "@clerk/themes": "^2.4.46",
     "@iconify-json/lucide": "^1.2.75",
     "@iconify-json/simple-icons": "^1.2.60",
     "@nuxt/content": "^3.8.2",
