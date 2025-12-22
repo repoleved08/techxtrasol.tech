@@ -14,6 +14,13 @@ export default defineNuxtConfig({
     appearance: {
       theme: dark,
     },
+    middleware: {
+      exclude: [
+        '/__nuxt_content/**',
+        '/__nuxt_error',
+        '/api/**',
+      ]
+    }
   },
 
   devtools: {
@@ -24,6 +31,10 @@ export default defineNuxtConfig({
 
   routeRules: {
     "/docs": { redirect: "/docs/getting-started", prerender: false },
+    "/login": { prerender: false },
+    "/signup": { prerender: false },
+    "/__nuxt_content/**": { prerender: false },
+    "/__nuxt_error": { prerender: false },
   },
 
   compatibilityDate: "2024-07-11",
@@ -31,7 +42,7 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ["/"],
-      crawlLinks: true,
+      crawlLinks: false,
     },
   },
 
