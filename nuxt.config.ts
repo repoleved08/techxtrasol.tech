@@ -3,24 +3,20 @@ import { dark } from "@clerk/themes";
 export default defineNuxtConfig({
   modules: [
     "@nuxt/eslint",
-    "@nuxt/image",
+    "@nuxt/image", 
     "@nuxt/ui",
     "@nuxt/content",
     "@vueuse/nuxt",
     "nuxt-og-image",
     "@clerk/nuxt",
   ],
+  
+  ssr: false,
+  
   clerk: {
     appearance: {
       theme: dark,
     },
-    middleware: {
-      exclude: [
-        '/__nuxt_content/**',
-        '/__nuxt_error',
-        '/api/**',
-      ]
-    }
   },
 
   devtools: {
@@ -30,21 +26,10 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
 
   routeRules: {
-    "/docs": { redirect: "/docs/getting-started", prerender: false },
-    "/login": { prerender: false },
-    "/signup": { prerender: false },
-    "/__nuxt_content/**": { prerender: false },
-    "/__nuxt_error": { prerender: false },
+    "/docs": { redirect: "/docs/getting-started" },
   },
 
   compatibilityDate: "2024-07-11",
-
-  nitro: {
-    prerender: {
-      routes: ["/"],
-      crawlLinks: false,
-    },
-  },
 
   eslint: {
     config: {
