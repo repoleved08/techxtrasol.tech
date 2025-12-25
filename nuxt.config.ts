@@ -3,16 +3,20 @@ import { dark } from "@clerk/themes";
 export default defineNuxtConfig({
   modules: [
     "@nuxt/eslint",
-    "@nuxt/image", 
+    "@nuxt/image",
     "@nuxt/ui",
     "@nuxt/content",
     "@vueuse/nuxt",
     "nuxt-og-image",
-    "@clerk/nuxt", // Re-enabling Clerk
+    "@clerk/nuxt",
+    "nuxt-gtag",
   ],
-  
+
   ssr: true,
-  
+  gtag: {
+    id: 'G-SRF2JEZJBL'
+  },
+
   clerk: {
     appearance: {
       theme: dark,
@@ -43,7 +47,7 @@ export default defineNuxtConfig({
     prerender: {
       failOnError: false,
       // Skip auth routes during prerendering
-      ignore: ['/login', '/signup'],
+      ignore: ["/login", "/signup"],
     },
     experimental: {
       wasm: true,
@@ -52,18 +56,18 @@ export default defineNuxtConfig({
 
   icon: {
     serverBundle: {
-      collections: ['lucide', 'simple-icons']
-    }
+      collections: ["lucide", "simple-icons"],
+    },
   },
 
   runtimeConfig: {
     // Private keys (only available on server-side)
-    clerkSecretKey: process.env.NUXT_CLERK_SECRET_KEY || '',
+    clerkSecretKey: process.env.NUXT_CLERK_SECRET_KEY || "",
     // Public keys (exposed to client-side)
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://techxtrasol.tech',
-      clerkPublishableKey: process.env.NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY || '',
-    }
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://techxtrasol.tech",
+      clerkPublishableKey: process.env.NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY || "",
+    },
   },
 
   compatibilityDate: "2024-07-11",
