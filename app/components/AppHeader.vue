@@ -39,8 +39,8 @@ const items = computed(() => [
     <template #right>
       <UColorModeButton />
 
-      <!-- Temporarily removed Clerk auth components -->
-      <!-- <ClientOnly>
+      <!-- Clerk Authentication Components -->
+      <ClientOnly>
         <SignedOut>
           <SignInButton mode="modal">
             <UButton
@@ -55,7 +55,7 @@ const items = computed(() => [
         <SignedIn>
           <UserButton />
         </SignedIn>
-      </ClientOnly> -->
+      </ClientOnly>
     </template>
 
     <!-- MOBILE DRAWER -->
@@ -63,8 +63,8 @@ const items = computed(() => [
       <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
       <USeparator class="my-6" />
 
-      <!-- Temporarily removed mobile Clerk auth components -->
-      <!-- <ClientOnly>
+      <!-- Mobile Clerk Authentication Components -->
+      <ClientOnly>
         <SignedOut>
           <SignInButton mode="modal">
             <UButton
@@ -82,7 +82,7 @@ const items = computed(() => [
             <UserButton />
           </div>
         </SignedIn>
-      </ClientOnly> -->
+      </ClientOnly>
     </template>
   </UHeader>
 </template>
