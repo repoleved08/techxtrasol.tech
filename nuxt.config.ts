@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     "@clerk/nuxt",
   ],
   
-  ssr: false,
+  ssr: true,
   
   clerk: {
     appearance: {
@@ -27,6 +27,30 @@ export default defineNuxtConfig({
 
   routeRules: {
     "/docs": { redirect: "/docs/getting-started" },
+    // Prerender static pages for SEO
+    "/": { prerender: true },
+    "/pricing": { prerender: true },
+    "/blog": { prerender: true },
+    "/changelog": { prerender: true },
+    // Docs pages should be prerendered for SEO
+    "/docs/**": { prerender: true },
+    // Blog posts should be prerendered
+    "/blog/**": { prerender: true },
+    // Auth pages need client-side rendering
+    "/login": { ssr: false },
+    "/signup": { ssr: false },
+  },
+
+  nitro: {
+    prerender: {
+      failOnError: false,
+    },
+  },
+
+  icon: {
+    serverBundle: {
+      collections: ['lucide', 'simple-icons']
+    }
   },
 
   compatibilityDate: "2024-07-11",
