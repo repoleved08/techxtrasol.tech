@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     "/docs": { redirect: "/docs/getting-started" },
-    // Prerender static pages for SEO
+    // Prerender static pages for SEO - these won't need Clerk on server
     "/": { prerender: true },
     "/pricing": { prerender: true },
     "/blog": { prerender: true },
@@ -45,11 +45,24 @@ export default defineNuxtConfig({
     prerender: {
       failOnError: false,
     },
+    experimental: {
+      wasm: true,
+    },
   },
 
   icon: {
     serverBundle: {
       collections: ['lucide', 'simple-icons']
+    }
+  },
+
+  runtimeConfig: {
+    // Private keys (only available on server-side)
+    clerkSecretKey: process.env.NUXT_CLERK_SECRET_KEY || '',
+    // Public keys (exposed to client-side)
+    public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://techxtrasol.tech',
+      clerkPublishableKey: process.env.NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY || '',
     }
   },
 
