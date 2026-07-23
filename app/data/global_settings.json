@@ -23,6 +23,10 @@
       "link": "/#process"
     },
     {
+      "title": "Portfolio",
+      "link": "https://techxtrasol-portfolio.vercel.app/"
+    },
+    {
       "title": "Blog",
       "link": "/#blog"
     },
