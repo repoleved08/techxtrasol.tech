@@ -1,5 +1,15 @@
 [
   {
+    "title": "VT Ads Flow.<br>Visa & Travel Simplified.",
+    "sector": "Web Design & Development",
+    "content": "<strong>We designed and developed the VT Ads Flow platform</strong> — a modern visa and travel agency website that streamlines the entire travel experience. From visa application tracking to flight bookings and travel packages, the site delivers a seamless, user-friendly journey for travelers across Africa and beyond.",
+    "case_study_link": "https://vtadsflow.com",
+    "cta": "Visit Live Site",
+    "image": "/content-images/spike.news.avif",
+    "image_alt": "VT Ads Flow visa and travel platform",
+    "bg": "bg-gradient-to-r from-sky-500 to-blue-600"
+  },
+  {
     "title": "Janda Haven.<br>A Premium Stay.",
     "sector": "Web Design & Development",
     "content": "<strong>We designed and built the Janda Haven booking platform from scratch</strong> — a premium bed and breakfast website that captures the warmth and elegance of the property while making it effortless for guests to explore rooms, view amenities, and book their stay. The site is fully responsive, SEO-optimized, and built for performance.",
