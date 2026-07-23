@@ -1,30 +1,148 @@
-[
-  {
-    "title": "Basic plan",
-    "tag": "Most popular",
-    "content": "One designer, 5 days a month",
-    "cta": "Start free trial",
-    "price": 999,
-    "services": [
-      { "item": "Access to basic services" },
-      { "item": "Basic assets and logos" },
-      { "item": "Up to 10 individual assets" },
-      { "item": "Teams/slack chat" },
-      { "item": "Cancel Anytime" }
+{
+  "title": "Simple, Transparent Pricing",
+  "subtitle": "No hidden fees. Choose the plan that fits your business.",
+  "plans": [
+    {
+      "name": "Starter",
+      "description": "Perfect for small businesses getting online",
+      "price": "KES 45,000",
+      "period": "one-time",
+      "features": [
+        "Custom responsive website (up to 5 pages)",
+        "Mobile-friendly design",
+        "Contact form integration",
+        "Basic SEO setup",
+        "SSL certificate",
+        "1 month free support"
+      ],
+      "cta": "Get Started",
+      "highlighted": false
+    },
+    {
+      "name": "Professional",
+      "description": "For businesses that need more power",
+      "price": "KES 120,000",
+      "period": "one-time",
+      "features": [
+        "Custom web application (up to 15 pages)",
+        "Admin dashboard",
+        "Database integration",
+        "Payment gateway (M-Pesa, cards)",
+        "Advanced SEO & analytics",
+        "3 months free support",
+        "Priority email & phone support"
+      ],
+      "cta": "Get Started",
+      "highlighted": true
+    },
+    {
+      "name": "Enterprise",
+      "description": "Full-scale solutions for growing companies",
+      "price": "Custom",
+      "period": "project-based",
+      "features": [
+        "Unlimited pages & features",
+        "Custom API integrations",
+        "Multi-user roles & permissions",
+        "Performance optimization",
+        "Security audit & hardening",
+        "6 months free support",
+        "Dedicated project manager",
+        "24/7 priority support"
+      ],
+      "cta": "Contact Us",
+      "highlighted": false
+    }
+  ],
+  "maintenance": {
+    "title": "Website Maintenance & Support",
+    "subtitle": "Keep your site running smoothly after launch",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "KES 5,000",
+        "period": "per month",
+        "features": [
+          "Monthly updates & patches",
+          "Security monitoring",
+          "Daily backups",
+          "Uptime monitoring",
+          "Email support"
+        ]
+      },
+      {
+        "name": "Standard",
+        "price": "KES 12,000",
+        "period": "per month",
+        "features": [
+          "Everything in Basic",
+          "Content updates (up to 4/month)",
+          "Performance optimization",
+          "Monthly analytics reports",
+          "Priority support"
+        ]
+      },
+      {
+        "name": "Premium",
+        "price": "KES 25,000",
+        "period": "per month",
+        "features": [
+          "Everything in Standard",
+          "Unlimited content updates",
+          "Feature enhancements",
+          "A/B testing",
+          "Dedicated account manager",
+          "24/7 support"
+        ]
+      }
     ]
   },
-  {
-    "title": "Enterprise plan",
-    "tag": "Best value",
-    "content": "One team, 5 days a month",
-    "cta": "Enquire now",
-    "price": 2999,
-    "services": [
-      { "item": "All basic plan services" },
-      { "item": "100 assets" },
-      { "item": "Advanced reporting and analytics" },
-      { "item": "Up to 30 individual renders" },
-      { "item": "120GB storage allowance" }
+  "social_media": {
+    "title": "Social Media Management",
+    "subtitle": "Build your brand and engage your audience",
+    "plans": [
+      {
+        "name": "Growth",
+        "price": "KES 25,000",
+        "period": "per month",
+        "features": [
+          "2 platforms (Instagram, Facebook)",
+          "12 posts per month",
+          "Content calendar",
+          "Basic graphic design",
+          "Community management",
+          "Monthly analytics report"
+        ]
+      },
+      {
+        "name": "Engage",
+        "price": "KES 50,000",
+        "period": "per month",
+        "features": [
+          "3 platforms (IG, FB, LinkedIn/X)",
+          "20 posts per month",
+          "Content strategy",
+          "Custom graphics & reels",
+          "Community management",
+          "Hashtag research",
+          "Bi-weekly analytics reports"
+        ]
+      },
+      {
+        "name": "Dominate",
+        "price": "KES 85,000",
+        "period": "per month",
+        "features": [
+          "4+ platforms",
+          "30 posts per month",
+          "Full content strategy",
+          "Video production (2/month)",
+          "Paid ads management",
+          "Influencer outreach",
+          "Weekly analytics & optimization",
+          "Dedicated account manager"
+        ]
+      }
     ]
   }
-]
+}

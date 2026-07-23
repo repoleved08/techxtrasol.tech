@@ -11,10 +11,6 @@ const props = defineProps(['title', 'caseStudies'])
     <!-- Header -->
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
       <h2 v-if="title" class="bs-h2 text-center md:text-left">{{ title }}</h2>
-      <a href="https://techxtrasol-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer"
-        class="bs-btn !bg-transparent self-center sm:self-auto whitespace-nowrap">
-        View Full Portfolio
-      </a>
     </div>
 
     <!-- Featured case study (first) -->
