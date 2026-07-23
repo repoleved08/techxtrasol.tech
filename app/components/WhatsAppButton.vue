@@ -1,5 +1,5 @@
 <script setup>
-const phone = '+254714000481'
+const phone = '+254794312108'
 const url = `https://wa.me/${phone.replace(/[^0-9]/g, '')}`
 </script>
 
