@@ -1,11 +1,4 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<defs>
-  <linearGradient id="logo-gradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-    <stop stop-color="#6366f1"/>
-    <stop offset="1" stop-color="#a855f7"/>
-  </linearGradient>
-</defs>
-<circle cx="24" cy="24" r="24" fill="url(#logo-gradient)"/>
-<path d="M12 14H21V16H17V33H15V16H12V14Z" fill="white"/>
-<path d="M23 14H25.1L28.5 19.2L31.9 14H34L29.9 20.2L34.5 33H32.2L28.1 21.4L24 33H21.9L26.4 20.2L23 14Z" fill="white"/>
+<circle cx="24" cy="24" r="24" fill="#2F2F31"/>
+<text x="24" y="30" text-anchor="middle" font-family="InterDisplay, Inter, ui-sans-serif, system-ui, sans-serif" font-size="20" font-weight="600" fill="#eeeeee">TX</text>
 </svg>
