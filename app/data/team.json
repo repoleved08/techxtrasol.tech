@@ -3,18 +3,36 @@
     "name": "Norman",
     "role": "Lead Developer",
     "bio": "Full-stack developer with deep expertise in Laravel, Vue.js, and cloud architecture. Leads all technical decisions and ensures every project meets the highest engineering standards.",
-    "image": "/content-images/quote-man.avif"
+    "image": "https://avatars.githubusercontent.com/u/88892542?v=4"
   },
   {
     "name": "Patrick",
     "role": "Project Manager",
     "bio": "Keeps every project on track, on budget, and on scope. Patrick bridges the gap between technical teams and business stakeholders, ensuring clear communication from kickoff to delivery.",
-    "image": "/content-images/brighton.dog.avif"
+    "image": "/team/patrick.jpg"
   },
   {
     "name": "Emmanuela",
     "role": "Marketing Strategist",
     "bio": "Turns software into marketable products. Emmanuela handles brand strategy, digital marketing, and growth campaigns that help our clients reach the right audiences and convert visitors into users.",
-    "image": "/content-images/pixelate.pictures.avif"
+    "image": "/team/emmanuela.jpg"
+  },
+  {
+    "name": "Brian",
+    "role": "Senior Backend Developer",
+    "bio": "Specializes in building robust APIs, microservices, and database architecture. Brian writes code that scales — from payment integrations to high-throughput data pipelines.",
+    "image": "/team/brian.jpg"
+  },
+  {
+    "name": "Amina",
+    "role": "UI/UX Designer",
+    "bio": "Designs interfaces that feel intuitive and look premium. Amina combines user research with visual craft to create experiences that convert and delight.",
+    "image": "/team/amina.jpg"
+  },
+  {
+    "name": "Kevin",
+    "role": "DevOps Engineer",
+    "bio": "Manages cloud infrastructure, CI/CD pipelines, and deployment automation. Kevin ensures every product runs fast, stays secure, and scales effortlessly.",
+    "image": "/team/kevin.jpg"
   }
 ]

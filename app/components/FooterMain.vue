@@ -21,17 +21,16 @@ const sortedSocialLinks = computed(() =>
     <!-- Wrapper -->
     <div class="relative bs-container overflow-hidden rounded-2xl">
 
-      <!-- Background image -->
-      <NuxtImg
-        src="/content-images/blackspike-wallpaper-03.avif"
+      <!-- Background image — Nairobi -->
+      <img
+        src="/wallpapers/nairobi_wh10.jpg"
         alt=""
-        format="avif"
-        class="absolute inset-0 w-full h-full object-cover opacity-35"
+        class="absolute inset-0 w-full h-full object-cover opacity-25"
         loading="lazy"
       />
 
       <!-- Overlay -->
-      <div class="absolute inset-0 bg-bs-surface-1/65 backdrop-blur-[2px]"></div>
+      <div class="absolute inset-0 bg-bs-surface-1/70 backdrop-blur-[2px]"></div>
 
       <!-- Content -->
       <div class="relative z-10 p-6 md:p-16 grid md:grid-cols-2 gap-8">
