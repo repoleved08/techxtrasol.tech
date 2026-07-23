@@ -27,9 +27,7 @@ const sortedSocialLinks = computed(() =>
         <!-- Logo -->
         <a class="flex group" href="#top" aria-label="Back to top">
 
-          <Icon name="bs-icon:logo"
-            class="group-hover:-rotate-180 group-hover:scale-80 transition-transform ease-bs-spring duration-1000"
-            size="48" />
+          <img src="/icons/logo.svg" alt="Techxtrasol" class="h-8 w-auto" />
 
         </a>
 

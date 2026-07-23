@@ -29,13 +29,9 @@ onMounted(() => {
     <div class="bs-container py-6 flex justify-between items-center">
 
       <!-- Logo -->
-      <a class="flex xl:min-w-32 group" href="/" :aria-label="settings.title + ' - Home'">
+      <a class="flex shrink-0 group" href="/" :aria-label="settings.title + ' - Home'">
 
-        <Icon
-          name="bs-icon:logo"
-          class="group-hover:-rotate-180 group-hover:scale-80 transition-transform ease-bs-spring duration-1000"
-          size="48"
-        />
+        <img src="/icons/logo.svg" alt="Techxtrasol" class="h-8 w-auto" />
       </a>
 
       <!-- Nav (desktop) -->
