@@ -13,7 +13,6 @@ import process from '../data/process.json'
 import why_choose from '../data/why_choose.json'
 import blog from '../data/blog.json'
 import stats from '../data/stats.json'
-import pricing from '../data/pricing.json'
 </script>
 
 <template>
@@ -43,8 +42,6 @@ import pricing from '../data/pricing.json'
     :caseStudies="caseStudies"
     :title="home.case_studies_title"
   />
-
-  <PricingSection :data="pricing" />
 
   <ProcessSection
     :steps="process"
