@@ -7,11 +7,23 @@ import global_settings from '../data/global_settings.json'
 useSeoMeta({
   title: props.title ?? global_settings.title,
   ogTitle: props.title ?? global_settings.title,
-  description: props.description ?? global_settings.description ,
-  ogDescription: props.description ?? global_settings.description ,
+  description: props.description ?? global_settings.description,
+  ogDescription: props.description ?? global_settings.description,
   ogImage: global_settings.base_url + global_settings.social_image,
   twitterCard: 'summary_large_image',
   themeColor: global_settings.theme_color,
+  ogSiteName: 'Techxtrasol',
+  ogType: 'website',
+  twitterSite: '@techxtrasol',
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en',
+  },
+  link: [
+    { rel: 'canonical', href: global_settings.base_url },
+  ],
 })
 
 </script>

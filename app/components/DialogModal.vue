@@ -55,6 +55,13 @@ const props = defineProps(['demo'])
           class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
           placeholder="Your email" />
 
+        <!-- Project details -->
+        <label class="sr-only" for="project">Tell us about your project</label>
+
+        <textarea id="project" rows="3"
+          class="border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 resize-none"
+          placeholder="Tell us about your project"></textarea>
+
         <!-- Submit -->
         <button class="bs-btn form-input px-4 py-3">{{ demo.cta }}</button>
 

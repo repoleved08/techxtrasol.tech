@@ -1,0 +1,17 @@
+[
+  { "name": "Laravel", "category": "Backend" },
+  { "name": "Nuxt", "category": "Frontend" },
+  { "name": "Vue.js", "category": "Frontend" },
+  { "name": "React", "category": "Frontend" },
+  { "name": "Go", "category": "Backend" },
+  { "name": "Node.js", "category": "Backend" },
+  { "name": "Flutter", "category": "Mobile" },
+  { "name": "MySQL", "category": "Database" },
+  { "name": "PostgreSQL", "category": "Database" },
+  { "name": "Redis", "category": "Database" },
+  { "name": "Docker", "category": "DevOps" },
+  { "name": "AWS", "category": "Cloud" },
+  { "name": "Linux", "category": "DevOps" },
+  { "name": "GitHub", "category": "Tools" },
+  { "name": "Figma", "category": "Design" }
+]

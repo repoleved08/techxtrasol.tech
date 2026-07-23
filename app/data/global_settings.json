@@ -1,12 +1,12 @@
 {
-  "title": "blackspike nuxt landing page",
-  "description": "A free Nuxt landing theme made with Tailwind",
+  "title": "Techxtrasol — Custom Software Development Company",
+  "description": "Techxtrasol builds custom software, web applications, mobile apps, and enterprise systems that help businesses in Kenya and beyond digitize, automate, and grow.",
   "social_image": "/1200x630.jpg",
-  "base_url": "https://nuxt-theme.blackspike.com",
+  "base_url": "https://techxtrasol.tech",
   "demo": {
-    "title": "Need design?",
-    "content": "<strong>Get a guided tour through our services</strong>, and find out how you and your team can change the way you work, forever.",
-    "cta": "Book a call"
+    "title": "Let's Build Something",
+    "content": "<strong>Tell us about your project</strong> and our team will get back to you within 24 hours with a detailed proposal and timeline.",
+    "cta": "Book a Consultation"
   },
   "theme_color": "#18181b",
   "nav": [
@@ -15,43 +15,35 @@
       "link": "/#services"
     },
     {
-      "title": "Case studies",
+      "title": "Work",
       "link": "/#case-studies"
     },
     {
-      "title": "Pricing",
-      "link": "/#pricing"
+      "title": "Process",
+      "link": "/#process"
+    },
+    {
+      "title": "Blog",
+      "link": "/#blog"
     },
     {
       "title": "FAQ",
       "link": "/#faq"
-    },
-    {
-      "title": "Newsletter",
-      "link": "/#newsletter"
     }
   ],
 
   "social_links": [
     {
-      "title": "Twitter / X",
-      "link": "https://x.com/blackspikeltd/"
-    },
-    {
-      "title": "Mastodon",
-      "link": "https://mastodon.cloud/@blackspike"
+      "title": "LinkedIn",
+      "link": "https://www.linkedin.com/company/techxtrasol"
     },
     {
       "title": "GitHub",
-      "link": "https://github.com/blackspike/"
+      "link": "https://github.com/techxtrasol"
     },
     {
-      "title": "LinkedIn",
-      "link": "https://www.linkedin.com/company/blackspike"
-    },
-    {
-      "title": "Bluesky",
-      "link": "https://bsky.app/profile/blackspike.com/"
+      "title": "Twitter / X",
+      "link": "https://x.com/techxtrasol"
     }
   ]
 }

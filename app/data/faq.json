@@ -1,22 +1,34 @@
 [
   {
-    "question": "How secure is my design data?",
-    "answer": "We use industry-standard encryption and secure storage practices to protect your creative assets. All files are encrypted with AES-256, and our servers are regularly monitored and updated to prevent vulnerabilities."
+    "question": "What types of software does Techxtrasol build?",
+    "answer": "We build custom websites, web applications, mobile apps, enterprise software, SaaS platforms, APIs, system integrations, HR systems, POS systems, finance and accounting systems, document management systems, custom dashboards, and cloud solutions. If it involves software, we can build it."
   },
   {
-    "question": "Is there a free trial for design services?",
-    "answer": "Yes, we offer a 14-day free trial for our design platform with access to core features for logo design, 3D modelling, or website prototyping—no credit card required."
+    "question": "How long does a typical project take?",
+    "answer": "Project timelines vary depending on complexity. A standard business website takes 3 to 6 weeks. A web application or mobile app typically takes 8 to 16 weeks. Enterprise systems and SaaS platforms can take 3 to 6 months. We provide a detailed timeline during the discovery phase so you know exactly what to expect."
   },
   {
-    "question": "Can I integrate your tools with other platforms?",
-    "answer": "Absolutely. Our design tools integrate with popular platforms like Figma, Adobe Creative Cloud, Sketch, Blender, and CMS systems like WordPress and Webflow."
+    "question": "Do you work with startups or only established businesses?",
+    "answer": "We work with both. Startups benefit from our lean development approach and MVP-focused strategy. Established businesses trust us to modernize their systems and build scalable solutions that grow with them. Our clients range from NGOs and schools to fintech companies and e-commerce platforms."
   },
   {
-    "question": "What kind of support do you provide for design projects?",
-    "answer": "We provide 24/7 support via chat and email, along with a detailed help center full of tutorials, design best practices, and walkthroughs for each service."
+    "question": "What technologies does Techxtrasol use?",
+    "answer": "We use modern, proven technologies including Laravel, Nuxt.js, Vue.js, Go, Node.js, React, Flutter, PostgreSQL, MySQL, Redis, Docker, and major cloud platforms. We choose the right stack for each project based on performance requirements, scalability needs, and long-term maintainability."
   },
   {
-    "question": "Do you offer offline or on-premise design tools?",
-    "answer": "Our platform is fully cloud-based for convenience and collaboration. However, you can export your designs for offline use in standard formats like SVG, OBJ, and HTML/CSS."
+    "question": "Do you provide ongoing support after launch?",
+    "answer": "Yes. We offer maintenance and support plans that include bug fixes, security updates, performance monitoring, and feature enhancements. We believe in long-term partnerships, not one-off projects. Many of our clients have been with us for years."
+  },
+  {
+    "question": "How do you ensure the security of the software you build?",
+    "answer": "Security is built into every stage of our development process. We follow OWASP best practices, implement encryption at rest and in transit, conduct regular security audits, and perform penetration testing before deployment. We also set up monitoring and alerting to catch issues early."
+  },
+  {
+    "question": "Can you work with our existing systems?",
+    "answer": "Absolutely. We specialize in system integrations and can connect your new software with existing tools, databases, and third-party services. Whether you need API integrations, data migration, or a layer that unifies multiple systems, we have the experience to make it seamless."
+  },
+  {
+    "question": "How much does a custom software project cost?",
+    "answer": "Every project is unique, so we provide custom quotes after an initial discovery session. Factors that influence cost include project complexity, number of features, integrations required, and timeline. We always provide transparent pricing with no hidden fees, and we can work within most budgets to deliver maximum value."
   }
 ]

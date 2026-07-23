@@ -1,29 +1,29 @@
 [
   {
-    "title": "We create timeless visual identities for modern brands.",
-    "content": "<strong>Great companies are built on their ability to adapt and grow.</strong> We create brands that will adapt and flourish no matter where the market takes you.",
-    "cta": "Call us about branding",
+    "title": "Custom Web Applications",
+    "content": "<strong>We build web applications that solve your unique business challenges.</strong> From client portals to complex dashboards, our solutions are built to scale with your business and deliver measurable results.",
+    "cta": "Discuss Your Project",
     "image": "/content-images/blackspike-wallpaper-01.avif",
     "image_alt": ""
   },
   {
-    "title": "We design websites that drive conversions and delight users.",
-    "content": "<strong>Experts in imagining future interfaces and experiences.</strong> From UX to creative to analytics, we are there every step of the way.",
-    "cta": "Book a website review call",
+    "title": "Mobile Applications",
+    "content": "<strong>Native and cross-platform mobile apps</strong> that your customers will love. We design and develop iOS and Android applications that feel fast, look great, and solve real problems.",
+    "cta": "View Mobile Work",
     "image": "/content-images/blackspike-wallpaper-02.avif",
     "image_alt": ""
   },
   {
-    "title": "Design across all dimensions",
-    "content": "<strong>Outstanding 3D design and concepts.</strong> We provide top-of-the-line 3D modelling services delivered by our skilled team of 3D artists.",
-    "cta": "Our 3D Services",
+    "title": "Enterprise & Business Systems",
+    "content": "<strong>Streamline your operations with custom business systems.</strong> HR platforms, finance systems, inventory management, and document workflows — all built around how your team actually works.",
+    "cta": "Explore Solutions",
     "image": "/content-images/blackspike-wallpaper-03.avif",
     "image_alt": ""
   },
   {
-    "title": "Apps for all devices and seasons",
-    "content": "<strong>We help companies supercharge their apps by providing world-class, effective design.</strong> Best practice design processes for your products",
-    "cta": "Arrange an app demo",
+    "title": "SaaS & Cloud Platforms",
+    "content": "<strong>Launch your SaaS product with confidence.</strong> We handle architecture, development, and deployment so you can focus on your customers and growing your business.",
+    "cta": "Start Building",
     "image": "/content-images/blackspike-wallpaper-04.avif",
     "image_alt": ""
   }

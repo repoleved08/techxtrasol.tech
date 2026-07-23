@@ -1,25 +1,21 @@
 {
   "title": "Credits",
-  "content": "This is a little theme made with <a href='https://nuxt.com/'>Nuxt</a> and <a href='https://tailwindcss.com/'>Tailwind</a> by <a href='https://www.blackspike.com'>blackspike design</a>. <a href='https://github.com/blackspike/blackspike-nuxt-landing-page'>View the code on GitHub</a>.",
+  "content": "This website is built with <a href='https://nuxt.com/'>Nuxt</a> and <a href='https://tailwindcss.com/'>Tailwind CSS</a> by <a href='https://techxtrasol.tech'>Techxtrasol</a>. Originally based on the <a href='https://github.com/blackspike/blackspike-nuxt-landing-page'>Blackspike Nuxt landing page theme</a>.",
   "list": [
     {
-      "item": "Fake logos by <a href='https://uicontent.co/svg-dummy-logo/'>uicontent.co</a>"
+      "item": "Powered by <a href='https://nuxt.com/'>Nuxt.js</a> with SSR for performance and SEO"
     },
     {
-      "item": "Quote avatar person by <a href='https://thispersondoesnotexist.com/'>thispersondoesnotexist.com</a>"
+      "item": "Styled with <a href='https://tailwindcss.com/'>Tailwind CSS</a>"
     },
     {
-      "item": "Misc icons and logo from <a href='https://icones.js.org/'>icones.js.org</a> by <a href='https://github.com/antfu'>@antfu</a>"
-    },
-    {
-      "item": "Carousel powered by <a href='https://swiperjs.com/'>swiperjs.com</a>"
+      "item": "Carousel powered by <a href='https://swiperjs.com/'>Swiper.js</a>"
     },
     {
       "item": "Inter font by <a href='https://rsms.me/inter/'>rsms.me</a>"
     },
     {
-      "item": "Theme and 3D images by <a href='https://www.blackspike.com'>blackspike ltd</a> are licensed under <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>"
-
+      "item": "Original theme by <a href='https://www.blackspike.com'>Blackspike Ltd</a>, licensed under <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY 4.0</a>"
     }
   ]
 }

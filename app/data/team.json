@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Norman",
+    "role": "Lead Developer",
+    "bio": "Full-stack developer with deep expertise in Laravel, Vue.js, and cloud architecture. Leads all technical decisions and ensures every project meets the highest engineering standards.",
+    "image": "/content-images/quote-man.avif"
+  },
+  {
+    "name": "Patrick",
+    "role": "Project Manager",
+    "bio": "Keeps every project on track, on budget, and on scope. Patrick bridges the gap between technical teams and business stakeholders, ensuring clear communication from kickoff to delivery.",
+    "image": "/content-images/brighton.dog.avif"
+  },
+  {
+    "name": "Emmanuela",
+    "role": "Marketing Strategist",
+    "bio": "Turns software into marketable products. Emmanuela handles brand strategy, digital marketing, and growth campaigns that help our clients reach the right audiences and convert visitors into users.",
+    "image": "/content-images/pixelate.pictures.avif"
+  }
+]

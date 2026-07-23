@@ -9,7 +9,7 @@ const props = defineProps(['settings', 'title', 'content'])
   <section class="bs-container py-6 flex flex-col lg:flex-row items-center">
 
     <!-- Content -->
-    <div class="flex flex-col gap-6 lg:max-w-lg w-full py-16">
+    <div class="flex flex-col gap-6 lg:max-w-xl w-full py-16">
 
       <!-- Title -->
       <h1 class="bs-h1" v-html="title" />
@@ -20,16 +20,38 @@ const props = defineProps(['settings', 'title', 'content'])
         v-html="content"
       />
 
-      <!-- CTA -->
-      <button
-        type="button"
-        class="bs-btn self-start bs-mt-sm"
-        @click="useDialogOpen"
-      >
+      <!-- CTAs -->
+      <div class="flex flex-wrap gap-4 mt-2">
 
-        {{ settings.demo.cta }}
+        <button
+          type="button"
+          class="bs-btn self-start"
+          @click="useDialogOpen"
+        >
+          {{ settings.demo.cta }}
+        </button>
 
-      </button>
+        <a
+          href="/#services"
+          class="bs-btn !bg-transparent self-start"
+        >
+          Explore Services
+        </a>
+
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="flex flex-wrap gap-6 mt-4 text-sm text-bs-foreground-dark font-medium">
+        <span class="flex items-center gap-2">
+          <Icon name="bs-icon:check" size="16" /> Free consultation
+        </span>
+        <span class="flex items-center gap-2">
+          <Icon name="bs-icon:check" size="16" /> On-time delivery
+        </span>
+        <span class="flex items-center gap-2">
+          <Icon name="bs-icon:check" size="16" /> Full source code ownership
+        </span>
+      </div>
 
     </div>
 
@@ -43,7 +65,7 @@ const props = defineProps(['settings', 'title', 'content'])
         height="1000"
         quality="90"
         src="/hero-screens.png"
-        alt="Screens showing phone, tablet and desktop views of our website"
+        alt="Screens showing phone, tablet and desktop views of software built by Techxtrasol"
         loading="eager"
       />
 
@@ -52,4 +74,3 @@ const props = defineProps(['settings', 'title', 'content'])
   </section>
 
 </template>
-

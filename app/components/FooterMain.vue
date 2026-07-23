@@ -60,7 +60,7 @@ const sortedSocialLinks = computed(() =>
         <!-- Social links -->
         <nav class="flex flex-col">
 
-          <a v-for="item in sortedSocialLinks" :key="item.title" :href="item.link">
+          <a v-for="item in sortedSocialLinks" :key="item.title" :href="item.link" target="_blank" rel="noopener noreferrer">
             {{ item.title }}
           </a>
 
@@ -75,10 +75,8 @@ const sortedSocialLinks = computed(() =>
 
       <nav class="flex gap-4 justify-center pt-16 md:pt-24 text-xs">
 
-        <!-- Copyright/Date -->
-        <a href="https://blackspike.com/">by blackspike.com</a>
+        <span>&copy; {{ new Date().getFullYear() }} Techxtrasol. All rights reserved.</span>
 
-        <!-- Credits -->
         <nuxt-link to="/credits">about / credits</nuxt-link>
 
       </nav>
@@ -88,5 +86,3 @@ const sortedSocialLinks = computed(() =>
   </footer>
 
 </template>
-
-

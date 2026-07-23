@@ -1,0 +1,44 @@
+[
+  {
+    "step": "01",
+    "title": "Discovery",
+    "description": "We start by understanding your business, your users, and the problem you're solving. Every great product begins with deep listening.",
+    "details": "Stakeholder interviews, user research, competitive analysis, requirements documentation."
+  },
+  {
+    "step": "02",
+    "title": "Planning",
+    "description": "We define the architecture, timelines, and milestones. You'll know exactly what we're building, when, and why.",
+    "details": "Technical architecture, project roadmap, sprint planning, resource allocation."
+  },
+  {
+    "step": "03",
+    "title": "Design",
+    "description": "We design interfaces that are intuitive, accessible, and beautiful. Every pixel serves a purpose.",
+    "details": "Wireframes, UI/UX design, prototyping, design system creation, user testing."
+  },
+  {
+    "step": "04",
+    "title": "Development",
+    "description": "Our engineers build your product using modern, proven technologies. We write clean, maintainable code that scales.",
+    "details": "Frontend development, backend development, API integration, database design."
+  },
+  {
+    "step": "05",
+    "title": "Testing",
+    "description": "We test rigorously before anything goes live. Quality isn't an afterthought — it's built into every step.",
+    "details": "Unit testing, integration testing, performance testing, security auditing, UAT."
+  },
+  {
+    "step": "06",
+    "title": "Deployment",
+    "description": "We deploy to production with zero downtime and full monitoring. Your product is live and ready for users.",
+    "details": "Cloud deployment, CI/CD setup, monitoring configuration, performance optimization."
+  },
+  {
+    "step": "07",
+    "title": "Support",
+    "description": "We don't disappear after launch. We provide ongoing maintenance, updates, and enhancements to keep your product running at its best.",
+    "details": "Bug fixes, security patches, feature enhancements, performance monitoring, 24/7 support."
+  }
+]

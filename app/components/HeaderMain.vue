@@ -47,4 +47,3 @@ const props = defineProps(['settings'])
   </header>
 
 </template>
-

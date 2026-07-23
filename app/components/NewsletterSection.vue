@@ -29,26 +29,12 @@ const props = defineProps(['newsletter'])
         <!-- Intro -->
         <div class="bs-body-text flex-grow" v-html="newsletter.content" />
 
-        <!-- Form -->
-        <form class="flex gap-4 flex-col" action="">
+        <!-- CTA -->
+        <button type="button" class="bs-btn form-input px-4 py-3" @click="useDialogOpen">
 
-          <!-- Name -->
-          <label class="sr-only" for="nl-name">Name</label>
+          {{ newsletter.cta }}
 
-          <input id="nl-name"
-            class="border-2 rounded-lg text-center bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-            placeholder="Your name">
-
-          <!-- Email -->
-          <label class="sr-only" for="nl-email">Email</label>
-
-          <input id="nl-email" type="email"
-            class="border-2 rounded-lg text-center bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3"
-            placeholder="Your email">
-
-          <input type="submit" :value="newsletter.cta " class="bs-btn form-input px-4 py-3">
-
-        </form>
+        </button>
 
       </div>
 
@@ -57,4 +43,3 @@ const props = defineProps(['newsletter'])
   </aside>
 
 </template>
-

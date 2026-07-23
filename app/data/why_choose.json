@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Business-Oriented Approach",
+    "description": "We don't just write code — we solve business problems. Every technical decision is guided by your business goals and measurable outcomes."
+  },
+  {
+    "title": "Experienced Team",
+    "description": "Our developers have shipped production software across industries — from fintech to hospitality, education to e-commerce. We've seen what works and what doesn't."
+  },
+  {
+    "title": "Scalable Solutions",
+    "description": "We build software that grows with you. Our architecture decisions today ensure your system can handle ten times the users tomorrow without a rewrite."
+  },
+  {
+    "title": "Modern Technologies",
+    "description": "We use proven, modern tech stacks — Laravel, Nuxt, Vue, Go, Node.js, PostgreSQL — chosen for performance, maintainability, and long-term viability."
+  },
+  {
+    "title": "Fast Delivery",
+    "description": "We ship in sprints, not seasons. You'll see working software early and often, with clear milestones and transparent progress throughout."
+  },
+  {
+    "title": "Long-Term Support",
+    "description": "We build relationships, not just software. Our clients get ongoing maintenance, security updates, and feature enhancements long after launch."
+  }
+]
