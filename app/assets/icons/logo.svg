@@ -1,8 +1,10 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Circle background -->
+<circle cx="24" cy="24" r="24" fill="currentColor"/>
 <!-- T -->
-<path d="M8 12H20V14.8H15.2V36H12.8V14.8H8V12Z" fill="currentColor"/>
+<path d="M12 13H21V15.2H17V34H15V15.2H12V13Z" fill="#18181b"/>
 <!-- X -->
-<path d="M22 12H24.4L28.4 18.4L32.4 12H34.8L29.6 20L35 36H32.4L27.4 22L22.4 36H20L25.6 20L22 12Z" fill="currentColor"/>
+<path d="M23 13H25.1L28.5 18.6L31.9 13H34L29.9 19.8L34.5 34H32.2L28.1 21.4L24 34H21.9L26.4 19.8L23 13Z" fill="#18181b"/>
 <!-- Accent dot -->
-<circle cx="36" cy="12" r="3" fill="#6366f1"/>
+<circle cx="35.5" cy="12.5" r="2.5" fill="#6366f1"/>
 </svg>
