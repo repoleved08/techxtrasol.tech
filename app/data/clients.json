@@ -1,42 +1,42 @@
 [
   {
     "title": "Hospitality & Tourism",
-    "icon": "bs-icon:cube",
+    "icon": "bs-icon:hospitality",
     "description": "Booking platforms, property management systems, and guest experience solutions."
   },
   {
     "title": "Education",
-    "icon": "bs-icon:cube",
+    "icon": "bs-icon:education",
     "description": "School management systems, e-learning platforms, and student information systems."
   },
   {
     "title": "Healthcare",
-    "icon": "bs-icon:cube",
+    "icon": "bs-icon:healthcare",
     "description": "Patient management, appointment scheduling, and electronic health records."
   },
   {
     "title": "Finance & Banking",
-    "icon": "bs-icon:cube",
+    "icon": "bs-icon:finance",
     "description": "Mobile banking apps, payment systems, and financial dashboards."
   },
   {
     "title": "Retail & E-Commerce",
-    "icon": "bs-icon:cube",
+    "icon": "bs-icon:retail",
     "description": "Online stores, inventory management, and point of sale systems."
   },
   {
     "title": "NGOs & Nonprofits",
-    "icon": "bs-icon:cube",
+    "icon": "bs-icon:ngo",
     "description": "Donor management, reporting tools, and beneficiary tracking systems."
   },
   {
     "title": "Government",
-    "icon": "bs-icon:cube",
+    "icon": "bs-icon:government",
     "description": "Citizen portals, document management, and public service delivery platforms."
   },
   {
     "title": "Startups",
-    "icon": "bs-icon:cube",
+    "icon": "bs-icon:startup",
     "description": "MVP development, SaaS platforms, and scalable cloud-native applications."
   }
 ]
