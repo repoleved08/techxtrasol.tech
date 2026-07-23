@@ -26,12 +26,12 @@ const sortedSocialLinks = computed(() =>
         src="/content-images/blackspike-wallpaper-03.avif"
         alt=""
         format="avif"
-        class="absolute inset-0 w-full h-full object-cover opacity-20"
+        class="absolute inset-0 w-full h-full object-cover opacity-35"
         loading="lazy"
       />
 
       <!-- Overlay -->
-      <div class="absolute inset-0 bg-gradient-to-br from-bs-surface-1/95 via-bs-surface-1/85 to-bs-surface-1/95"></div>
+      <div class="absolute inset-0 bg-bs-surface-1/65 backdrop-blur-[2px]"></div>
 
       <!-- Content -->
       <div class="relative z-10 p-6 md:p-16 grid md:grid-cols-2 gap-8">

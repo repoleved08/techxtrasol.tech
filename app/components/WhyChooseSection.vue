@@ -13,12 +13,12 @@ const props = defineProps(['title', 'items'])
       src="/content-images/blackspike-wallpaper-01.avif"
       alt=""
       format="avif"
-      class="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-15"
+      class="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-40"
       loading="lazy"
     />
 
     <!-- Overlay -->
-    <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-bs-surface-1/95 via-bs-surface-1/80 to-bs-surface-1/95"></div>
+    <div class="absolute inset-0 rounded-2xl bg-bs-surface-1/60 backdrop-blur-[2px]"></div>
 
     <!-- Content -->
     <div class="relative z-10 p-6 md:p-12">
