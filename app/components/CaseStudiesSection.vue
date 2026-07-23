@@ -11,23 +11,24 @@ const props = defineProps(['title', 'caseStudies'])
     <!-- Header -->
     <h2 v-if="title" class="bs-h2 text-center md:text-left">{{ title }}</h2>
 
-    <!-- Case Study 1 -->
+    <!-- Featured case study (first) -->
     <div class="bs-mt-md">
 
-      <CardCaseStudy :caseStudy="caseStudies[0]" />
+      <CardCaseStudy v-if="caseStudies[0]" :caseStudy="caseStudies[0]" />
 
     </div>
 
-    <!-- Case studies -->
+    <!-- Case studies grid -->
     <div class="mt-8 grid lg:grid-cols-2 gap-8">
 
-      <CardCaseStudy v-if="caseStudies[1]" :caseStudy="caseStudies[1]" />
-
-      <CardCaseStudy v-if="caseStudies[2]" :caseStudy="caseStudies[2]" />
+      <CardCaseStudy
+        v-for="(cs, idx) in caseStudies.slice(1)"
+        :key="idx"
+        :caseStudy="cs"
+      />
 
     </div>
 
   </section>
 
 </template>
-

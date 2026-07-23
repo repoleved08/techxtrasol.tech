@@ -3,10 +3,40 @@
     "title": "Janda Haven.<br>A Premium Stay.",
     "sector": "Web Design & Development",
     "content": "<strong>We designed and built the Janda Haven booking platform from scratch</strong> — a premium bed and breakfast website that captures the warmth and elegance of the property while making it effortless for guests to explore rooms, view amenities, and book their stay. The site is fully responsive, SEO-optimized, and built for performance.",
-    "case_study_link": "https://jandahaven.vercel.app",
-    "cta": "Visit jandahaven.vercel.app",
+    "case_study_link": "https://github.com/techxtrasol/janda-haven",
+    "cta": "View on GitHub",
     "image": "/content-images/spike.news.avif",
     "image_alt": "iPad showing Janda Haven website",
     "bg": "bg-gradient-to-r from-indigo-500 to-purple-600"
+  },
+  {
+    "title": "M-Pesa Integration<br>System",
+    "sector": "Fintech & API Development",
+    "content": "<strong>A secure, real-time M-Pesa payment integration system</strong> built for businesses that need seamless mobile money processing. Handles STK Push, C2B, B2C, and B2B transactions with full reconciliation, webhook handling, and a real-time transaction dashboard.",
+    "case_study_link": "https://github.com/techxtrasol/mpesa-integration",
+    "cta": "View on GitHub",
+    "image": "/content-images/blackspike-wallpaper-01.avif",
+    "image_alt": "M-Pesa payment integration dashboard",
+    "bg": "bg-gradient-to-r from-emerald-500 to-teal-500"
+  },
+  {
+    "title": "Multi-Tenant SaaS<br>Platform",
+    "sector": "SaaS & Cloud Architecture",
+    "content": "<strong>A scalable multi-tenant SaaS platform</strong> built with tenant isolation, subscription billing, role-based access control, and usage analytics. Designed to serve thousands of concurrent tenants while maintaining data separation and performance at scale.",
+    "case_study_link": "https://github.com/techxtrasol/saas-platform",
+    "cta": "View on GitHub",
+    "image": "/content-images/pixelate.pictures.avif",
+    "image_alt": "Multi-tenant SaaS platform interface",
+    "bg": "bg-gradient-to-r from-fuchsia-500 to-cyan-500"
+  },
+  {
+    "title": "AI Courses<br>Platform",
+    "sector": "EdTech & AI",
+    "content": "<strong>An intelligent learning platform</strong> that delivers AI-powered courses with adaptive quizzes, progress tracking, personalized learning paths, and certificate generation. Built to make artificial intelligence education accessible and engaging for learners at every level.",
+    "case_study_link": "https://github.com/techxtrasol/ai-courses",
+    "cta": "View on GitHub",
+    "image": "/content-images/brighton.dog.avif",
+    "image_alt": "AI Courses platform on laptop screen",
+    "bg": "bg-gradient-to-r from-orange-500 to-rose-500"
   }
 ]
