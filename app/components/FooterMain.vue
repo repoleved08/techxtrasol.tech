@@ -15,54 +15,71 @@ const sortedSocialLinks = computed(() =>
 <template>
 
   <footer
-    class="@container bs-container my-24 font-semibold text-bs-foreground-dark [&_a]:hover:text-bs-foreground-light [&_a]:transition-color [&_a]:duration-150"
+    class="@container my-24 font-semibold text-bs-foreground-dark [&_a]:hover:text-bs-foreground-light [&_a]:transition-color [&_a]:duration-150"
     id="contact">
 
     <!-- Wrapper -->
-    <div class="bg-bs-surface-2 p-6 md:p-16 rounded-xl grid md:grid-cols-2 gap-8">
+    <div class="relative bs-container overflow-hidden rounded-2xl">
 
-      <!-- Left col -->
-      <div class="w-max flex flex-col gap-8 md:gap-0 justify-between text-bs-foreground-light">
+      <!-- Background image -->
+      <NuxtImg
+        src="/content-images/blackspike-wallpaper-03.avif"
+        alt=""
+        format="avif"
+        class="absolute inset-0 w-full h-full object-cover opacity-20"
+        loading="lazy"
+      />
 
-        <!-- Logo -->
-        <a class="flex group" href="#top" aria-label="Back to top">
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-br from-bs-surface-1/95 via-bs-surface-1/85 to-bs-surface-1/95"></div>
 
-          <img src="/icons/logo.svg" alt="Techxtrasol" class="h-8 w-auto" />
+      <!-- Content -->
+      <div class="relative z-10 p-6 md:p-16 grid md:grid-cols-2 gap-8">
 
-        </a>
+        <!-- Left col -->
+        <div class="w-max flex flex-col gap-8 md:gap-0 justify-between text-bs-foreground-light">
 
-        <!-- CTA title -->
-        <h2 class="bs-h3">{{ settings.demo.title }}</h2>
+          <!-- Logo -->
+          <a class="flex group" href="#top" aria-label="Back to top">
 
-        <!-- CTA Button -->
-        <button type="button" class="min-w-32 bs-btn block bg-bs-surface-3" @click="useDialogOpen">
+            <img src="/icons/logo.svg" alt="Techxtrasol" class="h-8 w-auto" />
 
-          {{ settings.demo.cta }}
-
-        </button>
-
-      </div>
-
-      <!-- Right col -->
-      <div class="flex gap-10 md:gap-2 lg:gap-20 md:justify-end [&_a]:block md:[&_a]:px-5 [&_a]:py-2">
-
-        <!-- Nav -->
-        <nav class="flex flex-col">
-
-          <a v-for="item in sortedNav" :key="item.title" :href="item.link">
-            {{ item.title }}
           </a>
 
-        </nav>
+          <!-- CTA title -->
+          <h2 class="bs-h3">{{ settings.demo.title }}</h2>
 
-        <!-- Social links -->
-        <nav class="flex flex-col">
+          <!-- CTA Button -->
+          <button type="button" class="min-w-32 bs-btn block bg-bs-surface-3" @click="useDialogOpen">
 
-          <a v-for="item in sortedSocialLinks" :key="item.title" :href="item.link" target="_blank" rel="noopener noreferrer">
-            {{ item.title }}
-          </a>
+            {{ settings.demo.cta }}
 
-        </nav>
+          </button>
+
+        </div>
+
+        <!-- Right col -->
+        <div class="flex gap-10 md:gap-2 lg:gap-20 md:justify-end [&_a]:block md:[&_a]:px-5 [&_a]:py-2">
+
+          <!-- Nav -->
+          <nav class="flex flex-col">
+
+            <a v-for="item in sortedNav" :key="item.title" :href="item.link">
+              {{ item.title }}
+            </a>
+
+          </nav>
+
+          <!-- Social links -->
+          <nav class="flex flex-col">
+
+            <a v-for="item in sortedSocialLinks" :key="item.title" :href="item.link" target="_blank" rel="noopener noreferrer">
+              {{ item.title }}
+            </a>
+
+          </nav>
+
+        </div>
 
       </div>
 
