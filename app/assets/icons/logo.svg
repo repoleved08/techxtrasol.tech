@@ -1,10 +1,11 @@
 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<!-- Circle background -->
-<circle cx="24" cy="24" r="24" fill="currentColor"/>
-<!-- T -->
-<path d="M12 13H21V15.2H17V34H15V15.2H12V13Z" fill="#18181b"/>
-<!-- X -->
-<path d="M23 13H25.1L28.5 18.6L31.9 13H34L29.9 19.8L34.5 34H32.2L28.1 21.4L24 34H21.9L26.4 19.8L23 13Z" fill="#18181b"/>
-<!-- Accent dot -->
-<circle cx="35.5" cy="12.5" r="2.5" fill="#6366f1"/>
+<defs>
+  <linearGradient id="logo-gradient" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#6366f1"/>
+    <stop offset="1" stop-color="#a855f7"/>
+  </linearGradient>
+</defs>
+<circle cx="24" cy="24" r="24" fill="url(#logo-gradient)"/>
+<path d="M12 14H21V16H17V33H15V16H12V14Z" fill="white"/>
+<path d="M23 14H25.1L28.5 19.2L31.9 14H34L29.9 20.2L34.5 33H32.2L28.1 21.4L24 33H21.9L26.4 20.2L23 14Z" fill="white"/>
 </svg>
