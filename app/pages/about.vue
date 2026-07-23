@@ -1,12 +1,48 @@
 <script setup>
 
 useSeoMeta({
-  title: 'About — Techxtrasol',
-  ogTitle: 'About Techxtrasol',
-  description: 'Learn about Techxtrasol — a software development company based in Nairobi and Mombasa, Kenya. We build custom software for businesses across Africa and beyond.',
-  ogDescription: 'Learn about Techxtrasol — a software development company based in Nairobi and Mombasa, Kenya.',
+  title: 'About Us — TechXtrasol Software Development Company Kenya',
+  ogTitle: 'About TechXtrasol — Software Development Company Kenya',
+  description: 'TechXtrasol is a custom software development company based in Nairobi and Mombasa, Kenya. We build web applications, mobile apps, and enterprise systems for businesses across Africa.',
+  ogDescription: 'TechXtrasol — custom software development company in Nairobi and Mombasa, Kenya.',
+  ogImage: '/1200x630.jpg',
+  twitterCard: 'summary_large_image',
+  keywords: 'about TechXtrasol, software company Kenya, tech company Nairobi, developers Kenya, web development company Mombasa, IT company Kenya',
 })
 
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://techxtrasol.tech/about' },
+  ],
+})
+
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About TechXtrasol',
+  description: 'TechXtrasol is a custom software development company based in Nairobi and Mombasa, Kenya.',
+  url: 'https://techxtrasol.tech/about',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'TechXtrasol',
+    url: 'https://techxtrasol.tech',
+    description: 'Custom software development company building web applications, mobile apps, and enterprise systems.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nairobi',
+      addressCountry: 'KE',
+    },
+  },
+}
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(aboutSchema),
+    },
+  ],
+})
 </script>
 
 <template>

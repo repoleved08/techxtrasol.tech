@@ -1,14 +1,44 @@
 <script setup>
 
 useSeoMeta({
-  title: 'Blog — Techxtrasol',
-  ogTitle: 'Blog — Techxtrasol',
-  description: 'Technology articles, tutorials, and insights from the Techxtrasol team. Learn about software development, architecture, and digital transformation.',
-  ogDescription: 'Technology articles, tutorials, and insights from the Techxtrasol team.',
+  title: 'Blog — Software Development Insights & Tutorials | TechXtrasol',
+  ogTitle: 'TechXtrasol Blog — Software Development Insights',
+  description: 'Technology articles, tutorials, and insights from the TechXtrasol team. Learn about Laravel, Nuxt, React, Go, software architecture, and digital transformation in Kenya.',
+  ogDescription: 'Technology articles, tutorials, and insights from the TechXtrasol development team.',
+  ogImage: '/1200x630.jpg',
+  twitterCard: 'summary_large_image',
+  keywords: 'software development blog, Laravel tutorial, Nuxt tutorial, React tutorial, Go programming, web development Kenya, tech blog Kenya, coding tutorials',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://techxtrasol.tech/blog' },
+  ],
 })
 
 import blog from '../data/blog.json'
 
+const blogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: 'TechXtrasol Blog',
+  description: 'Technology articles, tutorials, and insights from the TechXtrasol development team.',
+  url: 'https://techxtrasol.tech/blog',
+  publisher: {
+    '@type': 'Organization',
+    name: 'TechXtrasol',
+    url: 'https://techxtrasol.tech',
+  },
+}
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(blogSchema),
+    },
+  ],
+})
 </script>
 
 <template>

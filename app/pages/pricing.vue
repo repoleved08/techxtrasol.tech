@@ -2,10 +2,41 @@
 import pricing from '../data/pricing.json'
 
 useSeoMeta({
-  title: 'Pricing — TechXtrasol',
-  ogTitle: 'TechXtrasol Pricing',
-  description: 'Transparent pricing for web development, website maintenance, and social media management. Choose the plan that fits your business.',
-  ogDescription: 'Transparent pricing for web development, website maintenance, and social media management.',
+  title: 'Pricing — Web Development, Maintenance & Social Media | TechXtrasol',
+  ogTitle: 'TechXtrasol Pricing — Web Development & Digital Services',
+  description: 'Transparent pricing for custom web development (from KES 45,000), website maintenance (from KES 5,000/mo), and social media management (from KES 25,000/mo). Choose the plan that fits your business in Kenya.',
+  ogDescription: 'Transparent pricing for web development, website maintenance, and social media management in Kenya.',
+  ogImage: '/1200x630.jpg',
+  twitterCard: 'summary_large_image',
+  keywords: 'web development pricing Kenya, website cost Kenya, software development prices, maintenance plan Kenya, social media management pricing, Laravel development cost, website packages Kenya',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://techxtrasol.tech/pricing' },
+  ],
+})
+
+const pricingSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'TechXtrasol Pricing',
+  description: 'Transparent pricing for web development, website maintenance, and social media management.',
+  url: 'https://techxtrasol.tech/pricing',
+  provider: {
+    '@type': 'Organization',
+    name: 'TechXtrasol',
+    url: 'https://techxtrasol.tech',
+  },
+}
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(pricingSchema),
+    },
+  ],
 })
 </script>
 

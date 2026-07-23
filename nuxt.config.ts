@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 
   //  Nuxt modules
 
-  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon'],
+  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots'],
 
   // Nuxt icons
 
@@ -78,6 +78,23 @@ export default defineNuxtConfig({
   // SEO
   site: {
     url: 'https://techxtrasol.tech',
+  },
+
+  // Sitemap configuration
+  sitemap: {
+    hostname: 'https://techxtrasol.tech',
+    exclude: [
+      '/credits',
+    ],
+    sources: [
+      '/api/__sitemap__/urls',
+    ],
+  },
+
+  // Robots.txt
+  robots: {
+    allow: '/',
+    sitemap: 'https://techxtrasol.tech/sitemap.xml',
   },
 
 })
