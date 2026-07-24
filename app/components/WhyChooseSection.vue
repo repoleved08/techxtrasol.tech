@@ -45,7 +45,7 @@ const props = defineProps(['title', 'items'])
 
           <!-- Description -->
           <p class="text-bs-foreground-dark leading-relaxed">
-            {{ item.description }}
+            {{ item.content || item.description }}
           </p>
 
         </article>

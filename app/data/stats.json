@@ -1,22 +1,22 @@
 [
   {
-    "number": "50",
-    "suffix": "+",
-    "label": "Projects Delivered"
+    "value": "50+",
+    "label": "Projects Delivered",
+    "description": "Custom software solutions built and deployed"
   },
   {
-    "number": "30",
-    "suffix": "+",
-    "label": "Happy Clients"
+    "value": "99.9%",
+    "label": "Uptime Guaranteed",
+    "description": "Reliable systems that keep businesses running"
   },
   {
-    "number": "6",
-    "suffix": "",
-    "label": "Years of Experience"
+    "value": "5+",
+    "label": "Years Experience",
+    "description": "Building enterprise-grade software"
   },
   {
-    "number": "99",
-    "suffix": "%",
-    "label": "Client Retention"
+    "value": "24h",
+    "label": "Response Time",
+    "description": "Dedicated support when you need it"
   }
 ]

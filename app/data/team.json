@@ -1,38 +1,56 @@
 [
   {
     "name": "Norman",
-    "role": "Lead Developer",
-    "bio": "Full-stack developer with deep expertise in Laravel, Vue.js, and cloud architecture. Leads all technical decisions and ensures every project meets the highest engineering standards.",
-    "image": "https://avatars.githubusercontent.com/u/88892542?v=4"
+    "role": "Founder & Lead Software Engineer",
+    "bio": "Full-stack software engineer with deep expertise in Laravel, Vue.js, Go, and cloud architecture. Leads all technical decisions and ensures every system meets the highest engineering standards.",
+    "skills": ["Laravel", "Vue.js", "Go", "AWS", "System Architecture"],
+    "image": "https://avatars.githubusercontent.com/u/88892542?v=4",
+    "linkedin": "https://linkedin.com/in/",
+    "github": "https://github.com/"
   },
   {
     "name": "Patrick",
     "role": "Project Manager",
-    "bio": "Keeps every project on track, on budget, and on scope. Patrick bridges the gap between technical teams and business stakeholders, ensuring clear communication from kickoff to delivery.",
-    "image": "/team/patrick.jpg"
+    "bio": "Keeps every project on track, on budget, and on scope. Bridges the gap between technical teams and business stakeholders, ensuring clear communication from discovery to delivery.",
+    "skills": ["Agile", "Scrum", "Stakeholder Management", "Risk Management"],
+    "image": "/team/patrick.jpg",
+    "linkedin": "https://linkedin.com/in/",
+    "github": ""
   },
   {
     "name": "Emmanuela",
     "role": "Marketing Strategist",
-    "bio": "Turns software into marketable products. Emmanuela handles brand strategy, digital marketing, and growth campaigns that help our clients reach the right audiences and convert visitors into users.",
-    "image": "/team/emmanuela.jpg"
+    "bio": "Turns software into marketable products. Handles brand strategy, digital marketing, and growth campaigns that help clients reach the right audiences and convert visitors into users.",
+    "skills": ["Brand Strategy", "Digital Marketing", "Growth Hacking", "Content Strategy"],
+    "image": "/team/emmanuela.jpg",
+    "linkedin": "https://linkedin.com/in/",
+    "github": ""
   },
   {
     "name": "Brian",
-    "role": "Senior Backend Developer",
-    "bio": "Specializes in building robust APIs, microservices, and database architecture. Brian writes code that scales — from payment integrations to high-throughput data pipelines.",
-    "image": "/team/brian.jpg"
+    "role": "Senior Backend Engineer",
+    "bio": "Specializes in building robust APIs, microservices, and database architecture. Writes code that scales — from payment integrations to high-throughput data pipelines.",
+    "skills": ["Laravel", "Node.js", "PostgreSQL", "Redis", "API Design"],
+    "image": "/team/brian.jpg",
+    "linkedin": "https://linkedin.com/in/",
+    "github": "https://github.com/"
   },
   {
     "name": "Amina",
     "role": "UI/UX Designer",
-    "bio": "Designs interfaces that feel intuitive and look premium. Amina combines user research with visual craft to create experiences that convert and delight.",
-    "image": "/team/amina.jpg"
+    "bio": "Designs interfaces that feel intuitive and look premium. Combines user research with visual craft to create experiences that convert and delight.",
+    "skills": ["Figma", "User Research", "Design Systems", "Prototyping"],
+    "image": "/team/amina.jpg",
+    "linkedin": "https://linkedin.com/in/",
+    "github": ""
   },
   {
     "name": "Kevin",
     "role": "DevOps Engineer",
-    "bio": "Manages cloud infrastructure, CI/CD pipelines, and deployment automation. Kevin ensures every product runs fast, stays secure, and scales effortlessly.",
-    "image": "/team/kevin.jpg"
+    "bio": "Manages cloud infrastructure, CI/CD pipelines, and deployment automation. Ensures every product runs fast, stays secure, and scales effortlessly.",
+    "skills": ["AWS", "Docker", "Linux", "GitHub Actions", "Monitoring"],
+    "image": "/team/kevin.jpg",
+    "linkedin": "https://linkedin.com/in/",
+    "github": "https://github.com/"
   }
 ]

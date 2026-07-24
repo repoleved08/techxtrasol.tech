@@ -1,15 +1,15 @@
 {
-  "title": "Simple, Transparent Pricing",
-  "subtitle": "No hidden fees. Choose the plan that fits your business.",
+  "title": "Transparent Engineering Pricing",
+  "subtitle": "No hidden fees. Choose the solution that fits your business.",
   "plans": [
     {
       "name": "Starter",
-      "description": "Perfect for small businesses getting online",
+      "description": "Professional websites for small businesses",
       "price": "KES 45,000",
       "period": "one-time",
       "features": [
         "Custom responsive website (up to 5 pages)",
-        "Mobile-friendly design",
+        "Mobile-first design",
         "Contact form integration",
         "Basic SEO setup",
         "SSL certificate",
@@ -20,7 +20,7 @@
     },
     {
       "name": "Professional",
-      "description": "For businesses that need more power",
+      "description": "Full-featured web applications",
       "price": "KES 120,000",
       "period": "one-time",
       "features": [
@@ -37,7 +37,7 @@
     },
     {
       "name": "Enterprise",
-      "description": "Full-scale solutions for growing companies",
+      "description": "Mission-critical business systems",
       "price": "Custom",
       "period": "project-based",
       "features": [
@@ -50,13 +50,13 @@
         "Dedicated project manager",
         "24/7 priority support"
       ],
-      "cta": "Contact Us",
+      "cta": "Talk to an Engineer",
       "highlighted": false
     }
   ],
   "maintenance": {
-    "title": "Website Maintenance & Support",
-    "subtitle": "Keep your site running smoothly after launch",
+    "title": "System Maintenance & Support",
+    "subtitle": "Keep your systems running smoothly after launch",
     "plans": [
       {
         "name": "Basic",
@@ -98,8 +98,8 @@
     ]
   },
   "social_media": {
-    "title": "Social Media Management",
-    "subtitle": "Build your brand and engage your audience",
+    "title": "Digital Marketing & Growth",
+    "subtitle": "Build your brand and grow your audience",
     "plans": [
       {
         "name": "Growth",

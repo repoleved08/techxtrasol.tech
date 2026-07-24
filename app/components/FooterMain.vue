@@ -2,13 +2,25 @@
 
 const props = defineProps(['settings'])
 
-const sortedNav = computed(() =>
-  [...(props.settings?.nav || [])].sort((a, b) => a.title.localeCompare(b.title))
-)
-
 const sortedSocialLinks = computed(() =>
   [...(props.settings?.social_links || [])].sort((a, b) => a.title.localeCompare(b.title))
 )
+
+const services = [
+  'Custom Software',
+  'Web Development',
+  'Mobile Apps',
+  'Enterprise Systems',
+  'Cloud Solutions',
+  'AI Solutions',
+]
+
+const resources = [
+  { title: 'Blog', link: '/blog' },
+  { title: 'Pricing', link: '/pricing' },
+  { title: 'About', link: '/about' },
+  { title: 'FAQ', link: '/#faq' },
+]
 
 </script>
 
@@ -33,50 +45,74 @@ const sortedSocialLinks = computed(() =>
       <div class="absolute inset-0 bg-bs-surface-1/70 backdrop-blur-[2px]"></div>
 
       <!-- Content -->
-      <div class="relative z-10 p-6 md:p-16 grid md:grid-cols-2 gap-8">
+      <div class="relative z-10 p-6 md:p-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-        <!-- Left col -->
-        <div class="w-max flex flex-col gap-8 md:gap-0 justify-between text-bs-foreground-light">
+        <!-- Company -->
+        <div class="flex flex-col gap-6">
 
           <!-- Logo -->
           <a class="flex group" href="#top" aria-label="Back to top">
-
-            <img src="/icons/logo.svg" alt="Techxtrasol" class="h-8 w-auto" />
-
+            <img src="/icons/logo.svg" alt="TechXtrasol" class="h-8 w-auto" />
           </a>
 
-          <!-- CTA title -->
-          <h2 class="bs-h3">{{ settings.demo.title }}</h2>
+          <!-- Description -->
+          <p class="text-sm text-bs-foreground-dark leading-relaxed">
+            Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.
+          </p>
 
-          <!-- CTA Button -->
-          <button type="button" class="min-w-32 bs-btn block bg-bs-surface-3" @click="useDialogOpen">
-
-            {{ settings.demo.cta }}
-
-          </button>
+          <!-- Social links -->
+          <nav class="flex gap-4">
+            <a v-for="item in sortedSocialLinks" :key="item.title" :href="item.link" target="_blank" rel="noopener noreferrer"
+              class="text-bs-foreground-dark/60 hover:text-bs-foreground-light transition-colors duration-300">
+              {{ item.title }}
+            </a>
+          </nav>
 
         </div>
 
-        <!-- Right col -->
-        <div class="flex gap-10 md:gap-2 lg:gap-20 md:justify-end [&_a]:block md:[&_a]:px-5 [&_a]:py-2">
+        <!-- Services -->
+        <div class="flex flex-col gap-4">
 
-          <!-- Nav -->
-          <nav class="flex flex-col">
+          <h3 class="text-sm font-semibold text-bs-foreground-light uppercase tracking-wider">Services</h3>
 
-            <a v-for="item in sortedNav" :key="item.title" :href="item.link">
-              {{ item.title }}
-            </a>
-
+          <nav class="flex flex-col gap-2">
+            <span v-for="service in services" :key="service" class="text-sm text-bs-foreground-dark">
+              {{ service }}
+            </span>
           </nav>
 
-          <!-- Social links -->
-          <nav class="flex flex-col">
+        </div>
 
-            <a v-for="item in sortedSocialLinks" :key="item.title" :href="item.link" target="_blank" rel="noopener noreferrer">
+        <!-- Resources -->
+        <div class="flex flex-col gap-4">
+
+          <h3 class="text-sm font-semibold text-bs-foreground-light uppercase tracking-wider">Resources</h3>
+
+          <nav class="flex flex-col gap-2">
+            <nuxt-link v-for="item in resources" :key="item.title" :to="item.link" class="text-sm">
               {{ item.title }}
-            </a>
-
+            </nuxt-link>
           </nav>
+
+        </div>
+
+        <!-- CTA -->
+        <div class="flex flex-col gap-4">
+
+          <h3 class="text-sm font-semibold text-bs-foreground-light uppercase tracking-wider">Get in Touch</h3>
+
+          <p class="text-sm text-bs-foreground-dark leading-relaxed">
+            {{ settings.demo.title }}
+          </p>
+
+          <button type="button" class="min-w-32 bs-btn block bg-bs-surface-3 text-sm" @click="useDialogOpen">
+            {{ settings.demo.cta }}
+          </button>
+
+          <div class="flex flex-col gap-1 mt-2">
+            <span class="text-xs text-bs-foreground-dark/60">Nairobi, Kenya</span>
+            <span class="text-xs text-bs-foreground-dark/60">Mombasa, Kenya</span>
+          </div>
 
         </div>
 
@@ -89,9 +125,7 @@ const sortedSocialLinks = computed(() =>
 
       <nav class="flex gap-4 justify-center pt-16 md:pt-24 text-xs">
 
-        <span>&copy; {{ new Date().getFullYear() }} Techxtrasol. All rights reserved.</span>
-
-        <nuxt-link to="/credits">about / credits</nuxt-link>
+        <span>&copy; {{ new Date().getFullYear() }} TechXtrasol. All rights reserved.</span>
 
       </nav>
 

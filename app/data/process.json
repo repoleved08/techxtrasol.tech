@@ -2,43 +2,37 @@
   {
     "step": "01",
     "title": "Discovery",
-    "description": "We start by understanding your business, your users, and the problem you're solving. Every great product begins with deep listening.",
-    "details": "Stakeholder interviews, user research, competitive analysis, requirements documentation."
+    "description": "Business understanding, requirements gathering, stakeholder interviews, and strategic planning.",
+    "details": ["Business Analysis", "Requirements", "Planning", "Feasibility"]
   },
   {
     "step": "02",
-    "title": "Planning",
-    "description": "We define the architecture, timelines, and milestones. You'll know exactly what we're building, when, and why.",
-    "details": "Technical architecture, project roadmap, sprint planning, resource allocation."
+    "title": "Design",
+    "description": "User experience, system architecture, wireframes, and interactive prototypes.",
+    "details": ["UX Research", "Architecture", "Wireframes", "Prototypes"]
   },
   {
     "step": "03",
-    "title": "Design",
-    "description": "We design interfaces that are intuitive, accessible, and beautiful. Every pixel serves a purpose.",
-    "details": "Wireframes, UI/UX design, prototyping, design system creation, user testing."
+    "title": "Development",
+    "description": "Agile sprints, weekly updates, code reviews, and continuous integration.",
+    "details": ["Agile Sprints", "Code Reviews", "CI/CD", "Documentation"]
   },
   {
     "step": "04",
-    "title": "Development",
-    "description": "Our engineers build your product using modern, proven technologies. We write clean, maintainable code that scales.",
-    "details": "Frontend development, backend development, API integration, database design."
+    "title": "Testing",
+    "description": "Quality assurance, security auditing, performance optimization, and UAT.",
+    "details": ["QA Testing", "Security Audit", "Performance", "UAT"]
   },
   {
     "step": "05",
-    "title": "Testing",
-    "description": "We test rigorously before anything goes live. Quality isn't an afterthought — it's built into every step.",
-    "details": "Unit testing, integration testing, performance testing, security auditing, UAT."
+    "title": "Deployment",
+    "description": "Cloud deployment, CI/CD pipelines, monitoring setup, and go-live support.",
+    "details": ["Cloud Setup", "CI/CD", "Monitoring", "Go-Live"]
   },
   {
     "step": "06",
-    "title": "Deployment",
-    "description": "We deploy to production with zero downtime and full monitoring. Your product is live and ready for users.",
-    "details": "Cloud deployment, CI/CD setup, monitoring configuration, performance optimization."
-  },
-  {
-    "step": "07",
     "title": "Support",
-    "description": "We don't disappear after launch. We provide ongoing maintenance, updates, and enhancements to keep your product running at its best.",
-    "details": "Bug fixes, security patches, feature enhancements, performance monitoring, 24/7 support."
+    "description": "Ongoing maintenance, feature improvements, monitoring, and long-term partnership.",
+    "details": ["Maintenance", "Updates", "Monitoring", "Partnership"]
   }
 ]

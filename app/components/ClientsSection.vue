@@ -32,7 +32,7 @@ const props = defineProps(['title', 'clients'])
         <span class="font-semibold text-sm relative z-10">{{ item.title }}</span>
 
         <span class="text-xs text-bs-foreground-dark leading-relaxed hidden md:block relative z-10">
-          {{ item.description }}
+          {{ item.content || item.description }}
         </span>
 
       </div>

@@ -15,13 +15,13 @@ import blog from '../data/blog.json'
 import stats from '../data/stats.json'
 
 useSeoMeta({
-  title: 'TechXtrasol — Custom Software Development Company in Kenya',
-  ogTitle: 'TechXtrasol — Custom Software Development Company',
-  description: 'TechXtrasol builds custom software, web applications, mobile apps, and enterprise systems that help businesses in Kenya and beyond digitize, automate, and grow. Expert Laravel, Nuxt, React, and Go developers.',
-  ogDescription: 'Custom software, web applications, mobile apps, and enterprise systems that help businesses digitize, automate, and grow.',
+  title: 'TechXtrasol — Software Engineering Company in Kenya',
+  ogTitle: 'TechXtrasol — Software Engineering Company',
+  description: 'TechXtrasol is a software engineering company that designs, builds, deploys, and supports mission-critical digital systems for businesses in Kenya, Africa, and globally. Custom software, ERP systems, web apps, mobile apps, cloud solutions, and AI.',
+  ogDescription: 'Software engineering company building mission-critical digital systems for businesses in Kenya and globally.',
   ogImage: '/1200x630.jpg',
   twitterCard: 'summary_large_image',
-  keywords: 'software development Kenya, web development Kenya, custom software Kenya, mobile app development Kenya, Laravel developers Kenya, Nuxt developers, React developers, Go developers, business systems Kenya, enterprise software, website developers Nairobi, software company Kenya, tech company Kenya, digital transformation Kenya',
+  keywords: 'software development company Kenya, software development Africa, custom software Kenya, Laravel developers Kenya, Vue.js development, Nuxt development, mobile app development Kenya, enterprise software, ERP development, HR system development, AI software company, cloud consulting Kenya, digital transformation, software engineering Kenya',
 })
 
 useHead({
@@ -37,7 +37,7 @@ const organizationSchema = {
   name: 'TechXtrasol',
   url: 'https://techxtrasol.tech',
   logo: 'https://techxtrasol.tech/icons/logo.svg',
-  description: 'Custom software development company in Kenya building web applications, mobile apps, and enterprise systems.',
+  description: 'Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Nairobi',
@@ -124,6 +124,8 @@ useHead({
     :services="services"
     :title="home.services_title"
   />
+
+  <TrustSection />
 
   <WhyChooseSection
     :items="why_choose"

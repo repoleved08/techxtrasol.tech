@@ -1,12 +1,12 @@
 {
-  "title": "Techxtrasol — Custom Software Development Company",
-  "description": "Techxtrasol builds custom software, web applications, mobile apps, and enterprise systems that help businesses in Kenya and beyond digitize, automate, and grow.",
+  "title": "TechXtrasol — Software Engineering Company",
+  "description": "TechXtrasol is a software engineering company that designs, builds, deploys, and supports mission-critical digital systems for businesses in Kenya, Africa, and globally.",
   "social_image": "/1200x630.jpg",
   "base_url": "https://techxtrasol.tech",
   "demo": {
-    "title": "Let's Build Something",
-    "content": "<strong>Tell us about your project</strong> and our team will get back to you within 24 hours with a detailed proposal and timeline.",
-    "cta": "Book a Consultation"
+    "title": "Let's Engineer Your Solution",
+    "content": "<strong>Tell us about your business challenge</strong> and our engineering team will get back to you within 24 hours with a detailed technical proposal and timeline.",
+    "cta": "Book a Free Consultation"
   },
   "theme_color": "#18181b",
   "nav": [
@@ -31,8 +31,12 @@
       "link": "/#blog"
     },
     {
-      "title": "FAQ",
-      "link": "/#faq"
+      "title": "About",
+      "link": "/about"
+    },
+    {
+      "title": "Contact",
+      "link": "/#contact"
     }
   ],
 

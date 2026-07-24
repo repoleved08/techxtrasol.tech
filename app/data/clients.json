@@ -1,42 +1,62 @@
 [
   {
-    "title": "Hospitality & Tourism",
-    "icon": "bs-icon:hospitality",
-    "description": "Booking platforms, property management systems, and guest experience solutions."
+    "icon": "finance",
+    "title": "Finance & Fintech",
+    "content": "Banking systems, M-Pesa integration, loan management, SACCO platforms, payment gateways, and financial analytics."
   },
   {
-    "title": "Education",
-    "icon": "bs-icon:education",
-    "description": "School management systems, e-learning platforms, and student information systems."
-  },
-  {
+    "icon": "healthcare",
     "title": "Healthcare",
-    "icon": "bs-icon:healthcare",
-    "description": "Patient management, appointment scheduling, and electronic health records."
+    "content": "Patient management, telemedicine, electronic health records, hospital management, and medical billing systems."
   },
   {
-    "title": "Finance & Banking",
-    "icon": "bs-icon:finance",
-    "description": "Mobile banking apps, payment systems, and financial dashboards."
+    "icon": "education",
+    "title": "Education",
+    "content": "School management, LMS platforms, online courses, student portals, examination systems, and e-learning."
   },
   {
+    "icon": "retail",
     "title": "Retail & E-Commerce",
-    "icon": "bs-icon:retail",
-    "description": "Online stores, inventory management, and point of sale systems."
+    "content": "Online stores, POS systems, inventory management, multi-vendor platforms, and customer loyalty programs."
   },
   {
-    "title": "NGOs & Nonprofits",
-    "icon": "bs-icon:ngo",
-    "description": "Donor management, reporting tools, and beneficiary tracking systems."
+    "icon": "hospitality",
+    "title": "Hospitality & Tourism",
+    "content": "Booking platforms, hotel management, travel agency systems, restaurant ordering, and reservation systems."
   },
   {
+    "icon": "agriculture",
+    "title": "Agriculture",
+    "content": "Farm management, supply chain tracking, agricultural marketplace, and IoT integration for modern farming."
+  },
+  {
+    "icon": "government",
     "title": "Government",
-    "icon": "bs-icon:government",
-    "description": "Citizen portals, document management, and public service delivery platforms."
+    "content": "Citizen services, document management, permit systems, revenue collection, and e-government platforms."
   },
   {
+    "icon": "manufacturing",
+    "title": "Manufacturing",
+    "content": "Production planning, quality control, supply chain management, warehouse systems, and ERP integration."
+  },
+  {
+    "icon": "realestate",
+    "title": "Real Estate",
+    "content": "Property management, tenant portals, listing platforms, lease management, and maintenance tracking."
+  },
+  {
+    "icon": "logistics",
+    "title": "Logistics",
+    "content": "Fleet management, delivery tracking, warehouse systems, route optimization, and supply chain visibility."
+  },
+  {
+    "icon": "ngo",
+    "title": "NGOs",
+    "content": "Donation platforms, beneficiary tracking, grant management, impact reporting, and field data collection."
+  },
+  {
+    "icon": "startups",
     "title": "Startups",
-    "icon": "bs-icon:startup",
-    "description": "MVP development, SaaS platforms, and scalable cloud-native applications."
+    "content": "MVP development, rapid prototyping, scalable architecture, and technical co-founder services."
   }
 ]

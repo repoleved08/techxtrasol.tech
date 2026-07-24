@@ -93,23 +93,31 @@ onMounted(() => {
               class="hidden md:block absolute rounded-xl overflow-hidden w-full h-full object-cover object-left inset-0 bg-gradient-to-r from-bs-surface-0/90 via-bs-surface-0/60">
             </div>
 
-            <!-- Content -->
-            <figcaption class="z-10 p-6 sm:p-10 md:p-20 max-w-xl flex flex-col gap-6 h-full">
+              <!-- Content -->
+              <figcaption class="z-10 p-6 sm:p-10 md:p-20 max-w-xl flex flex-col gap-6 h-full">
 
-              <!-- Title -->
-              <h2 class="bs-h2" v-html="item.title" />
+                <!-- Title -->
+                <h2 class="bs-h2" v-html="item.title" />
 
-              <!-- Intro -->
-              <div class="bs-body-text text-pretty flex-1" v-html="item.content" />
+                <!-- Intro -->
+                <div class="bs-body-text text-pretty flex-1" v-html="item.content" />
 
-              <!-- Cta -->
-              <button type="button" class="bs-btn inline-block self-start bs-mt-sm" @click="useDialogOpen">
+                <!-- Features -->
+                <ul v-if="item.features" class="flex flex-wrap gap-2 mt-2">
+                  <li v-for="(feature, fIdx) in item.features" :key="fIdx"
+                    class="text-xs px-3 py-1.5 rounded-full bg-bs-accent/10 text-bs-accent border border-bs-accent/20">
+                    {{ feature }}
+                  </li>
+                </ul>
 
-                {{ item.cta }}
+                <!-- Cta -->
+                <button type="button" class="bs-btn inline-block self-start bs-mt-sm" @click="useDialogOpen">
 
-              </button>
+                  {{ item.cta }}
 
-            </figcaption>
+                </button>
+
+              </figcaption>
 
           </figure>
 

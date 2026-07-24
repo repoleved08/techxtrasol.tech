@@ -1,34 +1,34 @@
 [
   {
-    "question": "What types of software does Techxtrasol build?",
-    "answer": "We build custom websites, web applications, mobile apps, enterprise software, SaaS platforms, APIs, system integrations, HR systems, POS systems, finance and accounting systems, document management systems, custom dashboards, and cloud solutions. If it involves software, we can build it."
+    "question": "What does TechXtrasol do?",
+    "answer": "TechXtrasol is a software engineering company that designs, builds, deploys, and supports custom software systems for businesses. We build ERP systems, HR platforms, web applications, mobile apps, cloud infrastructure, and AI solutions for startups, SMEs, enterprises, and organizations across Kenya and globally."
+  },
+  {
+    "question": "What technologies do you use?",
+    "answer": "We use proven, modern technologies selected for each project's needs. Our core stack includes Laravel, Go, and Node.js for backend; Vue.js, Nuxt, and React for frontend; Flutter for mobile; Docker and AWS for cloud; and MySQL, PostgreSQL, and Redis for databases. We also integrate AI using OpenAI, LangChain, and vector databases."
   },
   {
     "question": "How long does a typical project take?",
-    "answer": "Project timelines vary depending on complexity. A standard business website takes 3 to 6 weeks. A web application or mobile app typically takes 8 to 16 weeks. Enterprise systems and SaaS platforms can take 3 to 6 months. We provide a detailed timeline during the discovery phase so you know exactly what to expect."
+    "answer": "Project timelines vary based on complexity. A corporate website takes 2-4 weeks, a web application takes 6-12 weeks, and enterprise systems take 3-6 months. We use agile methodology with weekly sprints, so you see progress every week and can provide feedback throughout."
   },
   {
-    "question": "Do you work with startups or only established businesses?",
-    "answer": "We work with both. Startups benefit from our lean development approach and MVP-focused strategy. Established businesses trust us to modernize their systems and build scalable solutions that grow with them. Our clients range from NGOs and schools to fintech companies and e-commerce platforms."
+    "question": "Do you work with startups?",
+    "answer": "Yes. We work with startups, SMEs, enterprises, NGOs, and government agencies. For startups, we offer MVP development, rapid prototyping, and scalable architecture that grows with your business. We understand the unique constraints and speed requirements of early-stage companies."
   },
   {
-    "question": "What technologies does Techxtrasol use?",
-    "answer": "We use modern, proven technologies including Laravel, Nuxt.js, Vue.js, Go, Node.js, React, Flutter, PostgreSQL, MySQL, Redis, Docker, and major cloud platforms. We choose the right stack for each project based on performance requirements, scalability needs, and long-term maintainability."
+    "question": "What is your pricing model?",
+    "answer": "We offer transparent pricing for different project sizes. Website projects start at KES 45,000, web applications at KES 120,000, and enterprise systems are quoted based on requirements. We also offer monthly maintenance plans starting at KES 5,000/month. Visit our pricing page for details."
   },
   {
     "question": "Do you provide ongoing support after launch?",
-    "answer": "Yes. We offer maintenance and support plans that include bug fixes, security updates, performance monitoring, and feature enhancements. We believe in long-term partnerships, not one-off projects. Many of our clients have been with us for years."
+    "answer": "Absolutely. We offer maintenance and support plans that include updates, security monitoring, backups, performance optimization, and feature improvements. Our goal is to be your long-term technology partner, not just a vendor."
   },
   {
-    "question": "How do you ensure the security of the software you build?",
-    "answer": "Security is built into every stage of our development process. We follow OWASP best practices, implement encryption at rest and in transit, conduct regular security audits, and perform penetration testing before deployment. We also set up monitoring and alerting to catch issues early."
+    "question": "Can you integrate with existing systems?",
+    "answer": "Yes. We specialize in API development and system integration. We can connect your new software with existing tools like M-Pesa, payment gateways, SMS services, government systems, biometric devices, and third-party APIs."
   },
   {
-    "question": "Can you work with our existing systems?",
-    "answer": "Absolutely. We specialize in system integrations and can connect your new software with existing tools, databases, and third-party services. Whether you need API integrations, data migration, or a layer that unifies multiple systems, we have the experience to make it seamless."
-  },
-  {
-    "question": "How much does a custom software project cost?",
-    "answer": "Every project is unique, so we provide custom quotes after an initial discovery session. Factors that influence cost include project complexity, number of features, integrations required, and timeline. We always provide transparent pricing with no hidden fees, and we can work within most budgets to deliver maximum value."
+    "question": "Where are you located?",
+    "answer": "We are headquartered in Nairobi, Kenya (Westlands Business District) with a regional office in Mombasa, Kenya (Nyali Business Center). We work with clients across Kenya, East Africa, and internationally."
   }
 ]

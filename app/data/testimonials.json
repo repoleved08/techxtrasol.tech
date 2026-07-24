@@ -1,26 +1,20 @@
 [
   {
-    "quote": "Techxtrasol built our booking platform from the ground up. The process was smooth, the communication was clear, and the final product exceeded our expectations. We've seen a real increase in direct bookings since launch.",
-    "handle": "jandahavenbnb"
+    "name": "[Client Name]",
+    "role": "[Position], [Company]",
+    "content": "[Placeholder testimonial about working with TechXtrasol. Replace with real client feedback once available.]",
+    "rating": 5
   },
   {
-    "quote": "We needed a custom inventory system that could handle our growing operations. The team delivered a solution that cut our processing time in half and eliminated the manual errors we'd been dealing with for years.",
-    "handle": "supplychain_ke"
+    "name": "[Client Name]",
+    "role": "[Position], [Company]",
+    "content": "[Placeholder testimonial about TechXtrasol's technical expertise and project delivery. Replace with real client feedback.]",
+    "rating": 5
   },
   {
-    "quote": "From the first consultation to deployment, everything was professional and well-organized. They understood our requirements quickly and built exactly what we needed — on time and within budget.",
-    "handle": "finserv_ltd"
-  },
-  {
-    "quote": "The mobile app they developed for our school has transformed how parents and teachers communicate. Attendance tracking, fee payments, and announcements — all in one place. The adoption rate has been incredible.",
-    "handle": "smart_schools"
-  },
-  {
-    "quote": "Working with Techxtrasol felt like having an in-house development team. They were responsive, thoughtful about architecture decisions, and genuinely invested in making our product the best it could be.",
-    "handle": "saas_startup"
-  },
-  {
-    "quote": "They took our complex requirements and turned them into a clean, intuitive system. Our team picked it up immediately without extensive training. That's the sign of great UX design.",
-    "handle": "ngo_ke"
+    "name": "[Client Name]",
+    "role": "[Position], [Company]",
+    "content": "[Placeholder testimonial about the quality of software and ongoing support. Replace with real client feedback.]",
+    "rating": 5
   }
 ]

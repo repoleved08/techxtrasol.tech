@@ -23,24 +23,50 @@ const props = defineProps(['caseStudy'])
         <!-- Header -->
         <header class="flex flex-col gap-3">
 
-          <!-- Title -->
+          <!-- Sector -->
           <div class="text-xs uppercase tracking-widest font-semibold text-transparent bg-clip-text
             bg-gradient-to-r" :class="caseStudy.bg" v-html="caseStudy.sector" />
 
-          <!-- Tag -->
+          <!-- Title -->
           <h2 class="bs-h2" v-html="caseStudy.title" />
 
         </header>
 
         <!-- Intro -->
-        <div class=" bs-body-text flex-grow text-balance" v-html="caseStudy.content" />
+        <div class="bs-body-text flex-grow text-balance" v-html="caseStudy.content" />
 
-          <!-- CTA -->
-          <a :href="caseStudy.case_study_link" class="bs-btn inline-block self-start @4xl:mt-12">
-          {{ caseStudy.cta }}
-          </a>
-
+        <!-- Technology -->
+        <div v-if="caseStudy.technology" class="flex flex-wrap gap-2">
+          <span v-for="(tech, tIdx) in caseStudy.technology" :key="tIdx"
+            class="text-[10px] px-2 py-1 rounded-full bg-white/10 text-white/80 border border-white/20">
+            {{ tech }}
+          </span>
         </div>
+
+        <!-- Results -->
+        <ul v-if="caseStudy.results" class="space-y-1.5">
+          <li v-for="(result, rIdx) in caseStudy.results" :key="rIdx"
+            class="flex items-center gap-2 text-sm text-white/80">
+            <svg class="w-3 h-3 shrink-0" viewBox="0 0 12 12" fill="none">
+              <path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{ result }}
+          </li>
+        </ul>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-3 @4xl:mt-12">
+          <a v-if="caseStudy.case_study_link" :href="caseStudy.case_study_link" target="_blank" rel="noopener noreferrer"
+            class="bs-btn inline-block">
+            {{ caseStudy.cta }}
+          </a>
+          <a v-if="caseStudy.live_link" :href="caseStudy.live_link" target="_blank" rel="noopener noreferrer"
+            class="bs-btn inline-block !bg-white/10 hover:!bg-white/20">
+            Visit Live Site
+          </a>
+        </div>
+
+      </div>
 
     </article>
 

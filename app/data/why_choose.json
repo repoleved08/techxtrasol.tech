@@ -1,26 +1,46 @@
 [
   {
-    "title": "Business-Oriented Approach",
-    "description": "We don't just write code — we solve business problems. Every technical decision is guided by your business goals and measurable outcomes."
+    "title": "Senior Engineering Mindset",
+    "content": "We think like architects, not just developers. Every system is built with clean architecture, scalability, and maintainability in mind."
   },
   {
-    "title": "Experienced Team",
-    "description": "Our developers have shipped production software across industries — from fintech to hospitality, education to e-commerce. We've seen what works and what doesn't."
+    "title": "Business-First Approach",
+    "content": "Technology serves the business. We start with your goals, understand your processes, and engineer solutions that deliver measurable ROI."
   },
   {
-    "title": "Scalable Solutions",
-    "description": "We build software that grows with you. Our architecture decisions today ensure your system can handle ten times the users tomorrow without a rewrite."
+    "title": "Clean Architecture",
+    "content": "We follow SOLID principles, design patterns, and industry best practices. Our code is maintainable, testable, and built to last."
+  },
+  {
+    "title": "Scalable Systems",
+    "content": "From day one, we engineer for growth. Our systems handle increasing loads without rewrites or performance degradation."
   },
   {
     "title": "Modern Technologies",
-    "description": "We use proven, modern tech stacks — Laravel, Nuxt, Vue, Go, Node.js, PostgreSQL — chosen for performance, maintainability, and long-term viability."
+    "content": "We use proven, modern technologies — Laravel, Vue, Go, Docker, AWS — that are backed by strong communities and long-term support."
   },
   {
-    "title": "Fast Delivery",
-    "description": "We ship in sprints, not seasons. You'll see working software early and often, with clear milestones and transparent progress throughout."
+    "title": "Transparent Communication",
+    "content": "Weekly updates, clear timelines, and honest assessments. You always know where your project stands."
   },
   {
     "title": "Long-Term Support",
-    "description": "We build relationships, not just software. Our clients get ongoing maintenance, security updates, and feature enhancements long after launch."
+    "content": "We don't disappear after launch. Ongoing maintenance, feature improvements, and dedicated support ensure your systems stay current."
+  },
+  {
+    "title": "Fast Turnaround",
+    "content": "Agile methodology and experienced engineers mean we ship faster without cutting corners on quality or security."
+  },
+  {
+    "title": "Security-Focused",
+    "content": "Security is built into every layer — authentication, authorization, data encryption, input validation, and regular security audits."
+  },
+  {
+    "title": "Performance Optimization",
+    "content": "Fast-loading, responsive applications optimized for Core Web Vitals, user experience, and search engine rankings."
+  },
+  {
+    "title": "SEO-Friendly Solutions",
+    "content": "Every web application is built with semantic HTML, structured data, and technical SEO best practices from the ground up."
   }
 ]

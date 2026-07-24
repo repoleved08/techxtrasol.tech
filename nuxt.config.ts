@@ -10,7 +10,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Techxtrasol — Custom Software Development Company',
+      title: 'TechXtrasol — Software Engineering Company',
       htmlAttrs: {
         lang: 'en',
       },
@@ -19,17 +19,17 @@ export default defineNuxtConfig({
         { rel: 'manifest', href: '/manifest.json' }
       ],
       meta: [
-        { name: 'description', content: 'Techxtrasol builds custom software, web applications, mobile apps, and enterprise systems that help businesses in Kenya and beyond digitize, automate, and grow.' },
-        { name: 'keywords', content: 'software development Kenya, web development Kenya, custom software Kenya, mobile app development Kenya, Laravel developers Kenya, Nuxt developers, business systems Kenya, enterprise software, website developers Nairobi, software company Kenya, tech blog Kenya' },
+        { name: 'description', content: 'TechXtrasol is a software engineering company that designs, builds, deploys, and supports mission-critical digital systems for businesses in Kenya, Africa, and globally.' },
+        { name: 'keywords', content: 'software development company Kenya, software development Africa, custom software Kenya, Laravel developers Kenya, Vue.js development, Nuxt development, mobile app development Kenya, enterprise software, ERP development, HR system development, AI software company, cloud consulting Kenya, digital transformation, software engineering Kenya' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:title', content: 'Techxtrasol — Custom Software Development Company' },
-        { property: 'og:description', content: 'Custom software, web applications, mobile apps, and enterprise systems that help businesses digitize, automate, and grow.' },
+        { property: 'og:title', content: 'TechXtrasol — Software Engineering Company' },
+        { property: 'og:description', content: 'Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.' },
         { property: 'og:image', content: '/1200x630.jpg' },
         { property: 'og:url', content: 'https://techxtrasol.tech' },
-        { property: 'og:site_name', content: 'Techxtrasol' },
+        { property: 'og:site_name', content: 'TechXtrasol' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Techxtrasol — Custom Software Development Company' },
-        { name: 'twitter:description', content: 'Custom software, web applications, mobile apps, and enterprise systems that help businesses digitize, automate, and grow.' },
+        { name: 'twitter:title', content: 'TechXtrasol — Software Engineering Company' },
+        { name: 'twitter:description', content: 'Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.' },
         { name: 'twitter:image', content: '/1200x630.jpg' },
         { name: 'theme-color', content: '#18181b' },
       ],

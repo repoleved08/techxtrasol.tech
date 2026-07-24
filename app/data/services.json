@@ -1,30 +1,66 @@
 [
   {
-    "title": "Custom Web Applications",
-    "content": "<strong>We build web applications that solve your unique business challenges.</strong> From client portals to complex dashboards, our solutions are built to scale with your business and deliver measurable results.",
+    "title": "Custom Software Development",
+    "content": "<strong>Scalable software engineered for your unique business processes.</strong> From ERP systems to healthcare platforms, we build complex business solutions that automate operations, reduce costs, and scale with your growth.",
+    "features": ["ERP Systems", "CRM Platforms", "HR Systems", "POS Systems", "School Management", "Healthcare Systems", "SACCO Systems", "Property Management"],
     "cta": "Discuss Your Project",
     "image": "/content-images/blackspike-wallpaper-01.avif",
-    "image_alt": ""
+    "image_alt": "Custom software development dashboard"
   },
   {
-    "title": "Mobile Applications",
-    "content": "<strong>Native and cross-platform mobile apps</strong> that your customers will love. We design and develop iOS and Android applications that feel fast, look great, and solve real problems.",
-    "cta": "View Mobile Work",
-    "image": "/content-images/blackspike-wallpaper-02.avif",
-    "image_alt": ""
-  },
-  {
-    "title": "Enterprise & Business Systems",
-    "content": "<strong>Streamline your operations with custom business systems.</strong> HR platforms, finance systems, inventory management, and document workflows — all built around how your team actually works.",
-    "cta": "Explore Solutions",
-    "image": "/content-images/blackspike-wallpaper-03.avif",
-    "image_alt": ""
-  },
-  {
-    "title": "SaaS & Cloud Platforms",
-    "content": "<strong>Launch your SaaS product with confidence.</strong> We handle architecture, development, and deployment so you can focus on your customers and growing your business.",
+    "title": "Web Development",
+    "content": "<strong>Modern, responsive web applications built for performance and conversion.</strong> Corporate websites, customer portals, admin dashboards, Progressive Web Apps, and headless CMS solutions engineered with clean architecture.",
+    "features": ["Corporate Websites", "Customer Portals", "Admin Dashboards", "PWAs", "Headless CMS", "Landing Pages"],
     "cta": "Start Building",
+    "image": "/content-images/blackspike-wallpaper-02.avif",
+    "image_alt": "Modern web application interface"
+  },
+  {
+    "title": "Mobile App Development",
+    "content": "<strong>Native and cross-platform mobile applications</strong> that deliver premium experiences on iOS and Android. Business apps, customer-facing apps, and internal tools built with Flutter and native technologies.",
+    "features": ["iOS & Android", "Flutter", "Cross-Platform", "Business Apps", "Customer Apps", "Internal Tools"],
+    "cta": "View Mobile Work",
+    "image": "/content-images/blackspike-wallpaper-03.avif",
+    "image_alt": "Mobile application development"
+  },
+  {
+    "title": "Enterprise Systems",
+    "content": "<strong>Large-scale internal systems that power complex organizations.</strong> Workflow automation, approval systems, multi-branch platforms, role-based access, reporting, and analytics — built for reliability at scale.",
+    "features": ["Workflow Automation", "Approval Systems", "Multi-Branch", "RBAC", "Reporting", "Analytics"],
+    "cta": "Explore Solutions",
     "image": "/content-images/blackspike-wallpaper-04.avif",
-    "image_alt": ""
+    "image_alt": "Enterprise system architecture"
+  },
+  {
+    "title": "Cloud Solutions",
+    "content": "<strong>Cloud infrastructure engineered for performance, security, and reliability.</strong> AWS, Azure, and DigitalOcean deployments with CI/CD pipelines, Docker containers, monitoring, backups, and high availability.",
+    "features": ["AWS & Azure", "Docker", "CI/CD", "Linux Servers", "Monitoring", "High Availability"],
+    "cta": "Talk to Our Cloud Team",
+    "image": "/content-images/blackspike-wallpaper-01.avif",
+    "image_alt": "Cloud infrastructure diagram"
+  },
+  {
+    "title": "AI Solutions",
+    "content": "<strong>Intelligent systems that transform how businesses operate.</strong> AI chatbots, knowledge bases, document intelligence, internal AI assistants, RAG applications, and LLM integrations built for real business value.",
+    "features": ["AI Chatbots", "Document Intelligence", "RAG Applications", "LLM Integrations", "OCR", "Workflow AI"],
+    "cta": "Explore AI Solutions",
+    "image": "/content-images/blackspike-wallpaper-02.avif",
+    "image_alt": "AI-powered business solutions"
+  },
+  {
+    "title": "API Development",
+    "content": "<strong>Robust APIs that connect your systems and enable integrations.</strong> REST and GraphQL APIs, payment gateways, SMS integrations, government systems, biometric devices, SSO, OAuth, and JWT authentication.",
+    "features": ["REST & GraphQL", "Payment Gateways", "SMS Integration", "Government APIs", "SSO/OAuth", "Biometric"],
+    "cta": "Build Your API",
+    "image": "/content-images/blackspike-wallpaper-03.avif",
+    "image_alt": "API integration architecture"
+  },
+  {
+    "title": "UI/UX Design",
+    "content": "<strong>Research-driven design that converts and delights.</strong> Wireframes, prototypes, design systems, and accessibility-focused interfaces crafted in Figma. We design experiences that users love and businesses trust.",
+    "features": ["Wireframes & Prototypes", "Design Systems", "Figma", "Accessibility", "User Research", "Conversion Design"],
+    "cta": "See Our Design Work",
+    "image": "/content-images/blackspike-wallpaper-04.avif",
+    "image_alt": "UI/UX design process"
   }
 ]

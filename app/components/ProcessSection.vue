@@ -53,9 +53,12 @@ const props = defineProps(['title', 'steps'])
           </p>
 
           <!-- Details -->
-          <p class="text-xs text-bs-foreground-dark/60 font-medium uppercase tracking-wide pt-2 border-t border-bs-surface-3">
-            {{ step.details }}
-          </p>
+          <div v-if="step.details" class="flex flex-wrap gap-2 pt-2 border-t border-bs-surface-3">
+            <span v-for="(detail, dIdx) in step.details" :key="dIdx"
+              class="text-xs px-2 py-1 rounded bg-bs-surface-3/50 text-bs-foreground-dark/70">
+              {{ detail }}
+            </span>
+          </div>
 
         </article>
 

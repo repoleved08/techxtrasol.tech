@@ -1,48 +1,56 @@
 # TechXtrasol
 
-> TechXtrasol is a custom software development company based in Nairobi and Mombasa, Kenya. We build web applications, mobile apps, enterprise systems, and SaaS platforms for startups, SMEs, NGOs, and enterprises across Africa and beyond.
+> TechXtrasol is a software engineering company that designs, builds, deploys, and supports mission-critical digital systems for businesses in Kenya, Africa, and globally. We solve business problems using technology.
 
 ## Main Pages
 
 - [Homepage](https://techxtrasol.tech): Company overview, services, and featured work
-- [About](https://techxtrasol.tech/about): Our mission, team, and locations in Nairobi and Mombasa
-- [Pricing](https://techxtrasol.tech/pricing): Web development, maintenance, and social media management pricing
-- [Blog](https://techxtrasol.tech/blog): Technical articles and software development insights
+- [About](https://techxtrasol.tech/about): Our mission, vision, values, team, and locations
+- [Pricing](https://techxtrasol.tech/pricing): Web development, maintenance, and digital marketing pricing
+- [Blog](https://techxtrasol.tech/blog): Software engineering articles and tutorials
 
 ## Services
 
-- Custom Web Applications — Laravel, Nuxt, React, Vue.js web apps and dashboards
-- Mobile Applications — iOS and Android apps using Flutter and native technologies
-- Enterprise & Business Systems — HR, finance, inventory, and document workflow systems
-- SaaS & Cloud Platforms — Multi-tenant SaaS products with subscription billing
+- Custom Software Development — ERP, HR, CRM, POS, healthcare, school management, SACCO systems
+- Web Development — Corporate websites, portals, dashboards, PWAs, headless CMS
+- Mobile App Development — iOS, Android, Flutter, cross-platform apps
+- Enterprise Systems — Workflow automation, approval systems, multi-branch, RBAC, analytics
+- Cloud Solutions — AWS, Azure, Docker, CI/CD, Linux, monitoring, high availability
+- AI Solutions — Chatbots, document intelligence, RAG applications, LLM integrations
+- API Development — REST, GraphQL, payment gateways, SSO, OAuth, biometric integration
+- UI/UX Design — Wireframes, prototypes, design systems, Figma, accessibility
 
 ## Industries
 
-- Hospitality & Tourism — Booking platforms, travel agency websites
-- Education & E-Learning — LMS platforms, online course systems
-- Healthcare — Patient management, telemedicine platforms
-- Finance & Fintech — Payment integrations (M-Pesa), banking systems
-- Retail & E-Commerce — Online stores, inventory management
-- NGOs & Nonprofits — Donation platforms, impact tracking
-- Government — Citizen services, document management
-- Startups — MVP development, rapid prototyping
+- Finance & Fintech — Banking, M-Pesa, loans, SACCOs, payments
+- Healthcare — Patient management, telemedicine, EHR, hospital systems
+- Education — School management, LMS, online courses, student portals
+- Retail & E-Commerce — Online stores, POS, inventory, multi-vendor
+- Hospitality & Tourism — Booking platforms, hotel management, travel agencies
+- Agriculture — Farm management, supply chain, IoT integration
+- Government — Citizen services, document management, e-government
+- Manufacturing — Production planning, quality control, supply chain
+- Real Estate — Property management, tenant portals, lease management
+- Logistics — Fleet management, delivery tracking, route optimization
+- NGOs — Donation platforms, beneficiary tracking, grant management
+- Startups — MVP development, rapid prototyping, scalable architecture
 
 ## Technology Stack
 
 - Backend: Laravel, Go, Node.js
-- Frontend: Nuxt, Vue.js, React
-- Mobile: Flutter
-- Databases: MySQL, PostgreSQL, Redis
-- DevOps: Docker, AWS, Linux, GitHub
+- Frontend: Vue.js, Nuxt, React, Next.js, TypeScript, Tailwind CSS
+- Mobile: Flutter, Android
+- Databases: MySQL, PostgreSQL, Redis, MongoDB
+- Cloud: Docker, Linux, Nginx, Cloudflare, GitHub Actions
+- AI: OpenAI, Ollama, Vector Databases, LangChain
 - Design: Figma
 
 ## Featured Work
 
+- Janda Haven — Premium hospitality booking platform
+- Enterprise DMS — Document management system with versioning and collaboration
+- HR Platform — Biometric attendance and workforce management
 - VT Ads Flow — Visa and travel agency platform: https://vtadsflow.com
-- Janda Haven — Premium bed and breakfast booking website
-- M-Pesa Integration — Real-time mobile money payment system
-- Multi-Tenant SaaS Platform — Scalable cloud architecture
-- AI Courses Platform — Adaptive learning with AI-powered quizzes
 
 ## Contact
 

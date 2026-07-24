@@ -1,13 +1,13 @@
 <script setup>
 
 useSeoMeta({
-  title: 'About Us — TechXtrasol Software Development Company Kenya',
-  ogTitle: 'About TechXtrasol — Software Development Company Kenya',
-  description: 'TechXtrasol is a custom software development company based in Nairobi and Mombasa, Kenya. We build web applications, mobile apps, and enterprise systems for businesses across Africa.',
-  ogDescription: 'TechXtrasol — custom software development company in Nairobi and Mombasa, Kenya.',
+  title: 'About Us — TechXtrasol Software Engineering Company Kenya',
+  ogTitle: 'About TechXtrasol — Software Engineering Company Kenya',
+  description: 'TechXtrasol is a software engineering company based in Nairobi and Mombasa, Kenya. We design, build, deploy, and support mission-critical digital systems for businesses across Africa and globally.',
+  ogDescription: 'TechXtrasol — software engineering company in Nairobi and Mombasa, Kenya.',
   ogImage: '/1200x630.jpg',
   twitterCard: 'summary_large_image',
-  keywords: 'about TechXtrasol, software company Kenya, tech company Nairobi, developers Kenya, web development company Mombasa, IT company Kenya',
+  keywords: 'about TechXtrasol, software company Kenya, tech company Nairobi, developers Kenya, software engineering Mombasa, IT company Kenya',
 })
 
 useHead({
@@ -20,13 +20,13 @@ const aboutSchema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
   name: 'About TechXtrasol',
-  description: 'TechXtrasol is a custom software development company based in Nairobi and Mombasa, Kenya.',
+  description: 'TechXtrasol is a software engineering company based in Nairobi and Mombasa, Kenya.',
   url: 'https://techxtrasol.tech/about',
   mainEntity: {
     '@type': 'Organization',
     name: 'TechXtrasol',
     url: 'https://techxtrasol.tech',
-    description: 'Custom software development company building web applications, mobile apps, and enterprise systems.',
+    description: 'Software engineering company building mission-critical digital systems.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Nairobi',
@@ -51,9 +51,9 @@ useHead({
 
     <!-- Title -->
     <div class="flex flex-col gap-4">
-      <h1 class="bs-h1">About Techxtrasol</h1>
+      <h1 class="bs-h1">About TechXtrasol</h1>
       <p class="text-lg text-bs-foreground-dark leading-relaxed">
-        Techxtrasol is a modern software development company headquartered in <strong class="text-bs-foreground-light">Nairobi</strong> with operations in <strong class="text-bs-foreground-light">Mombasa</strong>, Kenya. We build custom software that helps businesses digitize their operations, automate workflows, and scale with confidence.
+        TechXtrasol is a <strong class="text-bs-foreground-light">software engineering company</strong> headquartered in <strong class="text-bs-foreground-light">Nairobi</strong> with operations in <strong class="text-bs-foreground-light">Mombasa</strong>, Kenya. We design, build, deploy, and support mission-critical digital systems that help businesses digitize operations, automate workflows, and scale with confidence.
       </p>
     </div>
 
@@ -61,15 +61,36 @@ useHead({
     <div class="flex flex-col gap-4">
       <h2 class="bs-h3">Our Mission</h2>
       <p class="text-bs-foreground-dark leading-relaxed">
-        We believe every business deserves access to world-class technology. From startups in Nairobi's tech hub to enterprises across East Africa, we deliver software solutions that compete on a global scale — built with modern tools, thoughtful design, and a deep understanding of local markets.
+        We help startups, SMEs, enterprises, and organizations transform their operations through world-class software engineering, automation, cloud solutions, and intelligent digital products. We believe every business deserves access to technology that competes on a global scale.
       </p>
+    </div>
+
+    <!-- Vision -->
+    <div class="flex flex-col gap-4">
+      <h2 class="bs-h3">Our Vision</h2>
+      <p class="text-bs-foreground-dark leading-relaxed">
+        To become one of Africa's leading software engineering companies delivering innovative digital solutions trusted globally.
+      </p>
+    </div>
+
+    <!-- Core Values -->
+    <div class="flex flex-col gap-4">
+      <h2 class="bs-h3">Core Values</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div v-for="value in ['Innovation', 'Excellence', 'Transparency', 'Long-term Partnerships', 'Security', 'Reliability', 'Continuous Learning']"
+          :key="value"
+          class="flex items-center gap-3 p-4 rounded-xl bg-bs-surface-1 border border-bs-surface-3">
+          <span class="w-2 h-2 rounded-full bg-bs-accent shrink-0"></span>
+          <span class="text-sm font-medium text-bs-foreground-light">{{ value }}</span>
+        </div>
+      </div>
     </div>
 
     <!-- What we do -->
     <div class="flex flex-col gap-4">
       <h2 class="bs-h3">What We Do</h2>
       <p class="text-bs-foreground-dark leading-relaxed">
-        From custom websites and mobile apps to enterprise systems, SaaS platforms, and cloud infrastructure, we design, build, and deploy software that solves real business problems. We work with startups, SMEs, NGOs, schools, financial institutions, healthcare providers, and government agencies across Kenya and internationally.
+        We are not simply a website development company. We are a software engineering company that builds business solutions from idea to deployment. From custom ERP systems and enterprise platforms to AI-powered solutions and cloud infrastructure, we solve business problems using technology.
       </p>
     </div>
 
@@ -94,7 +115,7 @@ useHead({
     <div class="flex flex-col gap-4">
       <h2 class="bs-h3">Our Team</h2>
       <p class="text-bs-foreground-dark leading-relaxed">
-        A focused team of developers, designers, project managers, and strategists based in Kenya. We combine deep technical expertise with a business-first mindset — shipping software that works, scales, and delivers measurable results.
+        A focused team of software engineers, designers, project managers, and strategists based in Kenya. We combine deep technical expertise with a business-first mindset — engineering software that works, scales, and delivers measurable results.
       </p>
     </div>
 
@@ -102,7 +123,7 @@ useHead({
     <div class="flex flex-col gap-4">
       <h2 class="bs-h3">Get in Touch</h2>
       <p class="text-bs-foreground-dark leading-relaxed">
-        Have a project in mind? We'd love to hear about it. Whether you're in Nairobi, Mombasa, or anywhere in the world — book a free consultation and let's discuss how we can help bring your vision to life.
+        Have a business challenge that needs a technical solution? We'd love to hear about it. Whether you're in Nairobi, Mombasa, or anywhere in the world — book a free consultation and let's discuss how we can engineer the right solution for your business.
       </p>
     </div>
 

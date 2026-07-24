@@ -1,26 +1,50 @@
 [
   {
-    "title": "Building Scalable SaaS Platforms: Lessons From the Trenches",
-    "excerpt": "What we've learned building multi-tenant SaaS applications — from database design to deployment strategies that actually work at scale.",
-    "category": "Engineering",
-    "date": "2026-06-15",
+    "title": "Building Scalable Laravel Applications with Clean Architecture",
+    "category": "Software Engineering",
+    "excerpt": "Learn how to structure Laravel applications using repository pattern, service layers, and clean architecture principles that scale with your business.",
+    "date": "2026-07-15",
     "read_time": "8 min read",
-    "link": "/blog/building-scalable-saas-platforms"
+    "image": "/content-images/blackspike-wallpaper-01.avif"
   },
   {
-    "title": "Why Laravel Remains the Best Choice for Business Software in 2026",
-    "excerpt": "With so many frameworks available, here's why we still reach for Laravel when building mission-critical business applications.",
-    "category": "Technology",
-    "date": "2026-05-22",
+    "title": "Nuxt 4: What's New and Why It Matters for Your Next Project",
+    "category": "Frontend",
+    "excerpt": "A deep dive into Nuxt 4 features — improved performance, better TypeScript support, and new composables that streamline development.",
+    "date": "2026-07-08",
     "read_time": "6 min read",
-    "link": "/blog/laravel-business-software-2026"
+    "image": "/content-images/blackspike-wallpaper-02.avif"
   },
   {
-    "title": "The Real Cost of Off-the-Shelf Software for Growing Businesses",
-    "excerpt": "Off-the-shelf tools seem cheaper upfront, but they often cost more in the long run. Here's how to know when it's time to invest in custom.",
-    "category": "Strategy",
-    "date": "2026-04-10",
-    "read_time": "5 min read",
-    "link": "/blog/cost-off-the-shelf-software"
+    "title": "Integrating AI Chatbots into Business Systems: A Practical Guide",
+    "category": "AI",
+    "excerpt": "How to build and deploy AI-powered chatbots that integrate with your existing business systems, knowledge bases, and workflows.",
+    "date": "2026-07-01",
+    "read_time": "10 min read",
+    "image": "/content-images/blackspike-wallpaper-03.avif"
+  },
+  {
+    "title": "M-Pesa Integration: Complete Guide for Kenyan Businesses",
+    "category": "Software Engineering",
+    "excerpt": "Step-by-step guide to integrating M-Pesa payments into your web application, including STK Push, C2B, and B2C transactions.",
+    "date": "2026-06-24",
+    "read_time": "12 min read",
+    "image": "/content-images/blackspike-wallpaper-04.avif"
+  },
+  {
+    "title": "Docker for Developers: From Development to Production",
+    "category": "DevOps",
+    "excerpt": "A practical guide to containerizing your applications with Docker, setting up CI/CD pipelines, and deploying to production.",
+    "date": "2026-06-17",
+    "read_time": "9 min read",
+    "image": "/content-images/blackspike-wallpaper-01.avif"
+  },
+  {
+    "title": "Digital Transformation for Kenyan SMEs: Where to Start",
+    "category": "Business Automation",
+    "excerpt": "A roadmap for small and medium businesses in Kenya looking to digitize operations, automate workflows, and scale with technology.",
+    "date": "2026-06-10",
+    "read_time": "7 min read",
+    "image": "/content-images/blackspike-wallpaper-02.avif"
   }
 ]
