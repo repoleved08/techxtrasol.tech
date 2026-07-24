@@ -54,18 +54,18 @@ const filteredPosts = computed(() => {
 
 <template>
 
-  <section class="max-w-[92vw] lg:max-w-4xl mx-auto bs-mt-md px-5 py-8 md:p-20 flex flex-col gap-6 border rounded-md bg-bs-surface-2 border-bs-surface-3">
+  <section class="w-full max-w-5xl mx-auto bs-mt-md px-5 md:px-8 lg:px-12 py-10 md:py-16 flex flex-col gap-8">
 
     <!-- Title -->
     <h1 class="bs-h1">Engineering Insights</h1>
 
     <!-- Intro -->
-    <p class="text-lg text-bs-foreground-dark">
+    <p class="text-lg text-bs-foreground-dark max-w-3xl">
       Articles, tutorials, and insights from our engineering team. We write about software architecture, development best practices, cloud infrastructure, and digital transformation strategies.
     </p>
 
     <!-- Categories -->
-    <div class="flex flex-wrap gap-2 bs-mt-md">
+    <div class="flex flex-wrap gap-2 mt-2">
       <button
         v-for="cat in categories"
         :key="cat"
@@ -79,8 +79,8 @@ const filteredPosts = computed(() => {
       </button>
     </div>
 
-    <!-- Articles -->
-    <div class="bs-mt-md flex flex-col gap-6">
+    <!-- Articles grid -->
+    <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
 
       <article
         v-for="post in filteredPosts"
@@ -94,11 +94,11 @@ const filteredPosts = computed(() => {
           </span>
         </div>
 
-        <h2 class="bs-h3 group-hover:text-bs-foreground-light transition-colors duration-300">
+        <h2 class="text-xl md:text-2xl font-display font-medium text-balance group-hover:text-bs-foreground-light transition-colors duration-300">
           <NuxtLink :to="'/blog/' + post.slug">{{ post.title }}</NuxtLink>
         </h2>
 
-        <p class="text-bs-foreground-dark leading-relaxed">
+        <p class="text-sm text-bs-foreground-dark leading-relaxed flex-1">
           {{ post.description }}
         </p>
 

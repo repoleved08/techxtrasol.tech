@@ -10,8 +10,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      supabaseUrl: process.env.SUPABASE_URL || 'https://ytakvlhdrfmktkputzjg.supabase.co',
-      supabaseKey: process.env.SUPABASE_KEY || 'sb_publishable_K0R0hIgsFLx8DlLO46hcDQ_cz_jiv3Z',
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY,
     },
   },
 
@@ -76,6 +76,7 @@ export default defineNuxtConfig({
     '~/assets/css/global.css',
     '~/assets/css/layout.css',
     '~/assets/css/typography.css',
+    '~/assets/css/blog-content.css',
   ],
 
   vite: {
