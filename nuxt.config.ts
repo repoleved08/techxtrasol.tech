@@ -6,6 +6,15 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  // Runtime config
+
+  runtimeConfig: {
+    public: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY,
+    },
+  },
+
   // Meta data
 
   app: {
