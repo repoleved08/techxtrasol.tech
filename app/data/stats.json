@@ -1,21 +1,25 @@
 [
   {
-    "value": "50+",
+    "number": 50,
+    "suffix": "+",
     "label": "Projects Delivered",
     "description": "Custom software solutions built and deployed"
   },
   {
-    "value": "99.9%",
+    "number": 99,
+    "suffix": ".9%",
     "label": "Uptime Guaranteed",
     "description": "Reliable systems that keep businesses running"
   },
   {
-    "value": "5+",
+    "number": 5,
+    "suffix": "+",
     "label": "Years Experience",
     "description": "Building enterprise-grade software"
   },
   {
-    "value": "24h",
+    "number": 24,
+    "suffix": "h",
     "label": "Response Time",
     "description": "Dedicated support when you need it"
   }

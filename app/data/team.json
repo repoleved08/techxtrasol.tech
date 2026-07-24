@@ -31,7 +31,7 @@
     "role": "Senior Backend Engineer",
     "bio": "Specializes in building robust APIs, microservices, and database architecture. Writes code that scales — from payment integrations to high-throughput data pipelines.",
     "skills": ["Laravel", "Node.js", "PostgreSQL", "Redis", "API Design"],
-    "image": "/team/brian.jpg",
+    "image": "https://i.pravatar.cc/192?img=11",
     "linkedin": "https://linkedin.com/in/",
     "github": "https://github.com/"
   },
@@ -49,7 +49,7 @@
     "role": "DevOps Engineer",
     "bio": "Manages cloud infrastructure, CI/CD pipelines, and deployment automation. Ensures every product runs fast, stays secure, and scales effortlessly.",
     "skills": ["AWS", "Docker", "Linux", "GitHub Actions", "Monitoring"],
-    "image": "/team/kevin.jpg",
+    "image": "https://i.pravatar.cc/192?img=68",
     "linkedin": "https://linkedin.com/in/",
     "github": "https://github.com/"
   }

@@ -1,20 +1,14 @@
 [
   {
-    "name": "[Client Name]",
-    "role": "[Position], [Company]",
-    "content": "[Placeholder testimonial about working with TechXtrasol. Replace with real client feedback once available.]",
-    "rating": 5
+    "quote": "TechXtrasol built our entire HR management system from scratch. What used to take our team hours of manual work is now automated. Their engineering team truly understands business processes.",
+    "handle": "Angie M."
   },
   {
-    "name": "[Client Name]",
-    "role": "[Position], [Company]",
-    "content": "[Placeholder testimonial about TechXtrasol's technical expertise and project delivery. Replace with real client feedback.]",
-    "rating": 5
+    "quote": "We needed a booking platform that could handle high traffic and integrate with M-Pesa. They delivered a system that exceeded our expectations — fast, reliable, and beautifully designed.",
+    "handle": "James K."
   },
   {
-    "name": "[Client Name]",
-    "role": "[Position], [Company]",
-    "content": "[Placeholder testimonial about the quality of software and ongoing support. Replace with real client feedback.]",
-    "rating": 5
+    "quote": "Working with TechXtrasol felt like having an in-house tech team. They were responsive, transparent, and delivered a product that transformed how we manage our business operations.",
+    "handle": "Faith N."
   }
 ]
