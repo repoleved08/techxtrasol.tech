@@ -16,8 +16,6 @@ useHead({
   ],
 })
 
-import blog from '../data/blog.json'
-
 const blogSchema = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
@@ -40,12 +38,17 @@ useHead({
   ],
 })
 
-const categories = ['All', ...new Set(blog.map(p => p.category))]
+const { data: posts } = await useAsyncData('blog-list', () =>
+  queryCollection('blog').order('date', 'DESC').all()
+)
+
+const categories = computed(() => ['All', ...new Set((posts.value || []).map(p => p.category))])
 const activeCategory = ref('All')
 
 const filteredPosts = computed(() => {
-  if (activeCategory.value === 'All') return blog
-  return blog.filter(p => p.category === activeCategory.value)
+  if (!posts.value) return []
+  if (activeCategory.value === 'All') return posts.value
+  return posts.value.filter(p => p.category === activeCategory.value)
 })
 </script>
 
@@ -80,8 +83,8 @@ const filteredPosts = computed(() => {
     <div class="bs-mt-md flex flex-col gap-6">
 
       <article
-        v-for="(post, idx) in filteredPosts"
-        :key="idx"
+        v-for="post in filteredPosts"
+        :key="post.path"
         class="group p-6 rounded-xl bg-bs-surface-1 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3/50 hover:border-transparent transition-all duration-300"
       >
 
@@ -92,16 +95,16 @@ const filteredPosts = computed(() => {
         </div>
 
         <h2 class="bs-h3 group-hover:text-bs-foreground-light transition-colors duration-300">
-          {{ post.title }}
+          <NuxtLink :to="post.path">{{ post.title }}</NuxtLink>
         </h2>
 
         <p class="text-bs-foreground-dark leading-relaxed">
-          {{ post.excerpt }}
+          {{ post.description }}
         </p>
 
         <div class="flex items-center justify-between text-xs text-bs-foreground-dark/60 pt-4 border-t border-bs-surface-3">
           <time :datetime="post.date">{{ new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</time>
-          <span>{{ post.read_time }}</span>
+          <span>{{ post.readTime }}</span>
         </div>
 
       </article>

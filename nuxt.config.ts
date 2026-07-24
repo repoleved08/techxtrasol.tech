@@ -38,7 +38,7 @@ export default defineNuxtConfig({
 
   //  Nuxt modules
 
-  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots'],
+  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/content'],
 
   // Nuxt icons
 
