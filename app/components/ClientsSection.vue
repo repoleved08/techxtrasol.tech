@@ -24,7 +24,7 @@ const props = defineProps(['title', 'clients'])
         <div class="shimmer absolute inset-0 pointer-events-none"></div>
 
         <Icon
-          :name="item.icon"
+          :name="`bs-icon:${item.icon}`"
           size="32"
           class="opacity-70 group-hover:scale-[1.1] group-hover:-translate-y-1 group-hover:opacity-100 ease-bs-bounce transition-all duration-1000"
         />
