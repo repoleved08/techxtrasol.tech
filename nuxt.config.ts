@@ -86,9 +86,7 @@ export default defineNuxtConfig({
     hostname: 'https://techxtrasol.tech',
     exclude: [
       '/credits',
-    ],
-    sources: [
-      '/api/__sitemap__/urls',
+      '/__sitemap__/**',
     ],
   },
 
