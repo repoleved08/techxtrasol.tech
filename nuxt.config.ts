@@ -10,8 +10,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      supabaseUrl: process.env.SUPABASE_URL,
-      supabaseKey: process.env.SUPABASE_KEY,
+      supabaseUrl: process.env.SUPABASE_URL || 'https://ytakvlhdrfmktkputzjg.supabase.co',
+      supabaseKey: process.env.SUPABASE_KEY || 'sb_publishable_K0R0hIgsFLx8DlLO46hcDQ_cz_jiv3Z',
     },
   },
 
