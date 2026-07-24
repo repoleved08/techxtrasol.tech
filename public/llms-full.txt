@@ -1,0 +1,108 @@
+# TechXtrasol — Full Site Context
+
+> TechXtrasol is a custom software development company headquartered in Nairobi with operations in Mombasa, Kenya. We design, build, and deploy software that helps businesses digitize operations, automate workflows, and scale with confidence. We work with startups, SMEs, NGOs, schools, financial institutions, healthcare providers, and government agencies across Kenya and internationally.
+
+## Company Overview
+
+TechXtrasol is a modern software development company. We build custom software that helps businesses digitize their operations, automate workflows, and scale with confidence. From custom websites and mobile apps to enterprise systems, SaaS platforms, and cloud infrastructure, we design, build, and deploy software that solves real business problems.
+
+### Mission
+
+We believe every business deserves access to world-class technology. From startups in Nairobi's tech hub to enterprises across East Africa, we deliver software solutions that compete on a global scale — built with modern tools, thoughtful design, and a deep understanding of local markets.
+
+### Locations
+
+- **Headquarters**: Nairobi, Kenya — Westlands Business District
+- **Regional Office**: Mombasa, Kenya — Nyali Business Center
+
+## Services
+
+### Custom Web Applications
+We build web applications that solve unique business challenges. From client portals to complex dashboards, our solutions are built to scale and deliver measurable results. Technologies: Laravel, Nuxt, Vue.js, React, Node.js.
+
+### Mobile Applications
+Native and cross-platform mobile apps that customers love. We design and develop iOS and Android applications that feel fast, look great, and solve real problems. Technologies: Flutter, React Native.
+
+### Enterprise & Business Systems
+Streamline operations with custom business systems. HR platforms, finance systems, inventory management, and document workflows — all built around how teams actually work.
+
+### SaaS & Cloud Platforms
+Launch SaaS products with confidence. Architecture, development, and deployment handled so you can focus on customers and growth. Multi-tenant isolation, subscription billing, role-based access control.
+
+## Pricing
+
+### Web Development
+- **Starter** — KES 45,000 one-time: Custom responsive website (up to 5 pages), mobile-friendly design, contact form, basic SEO, SSL, 1 month support
+- **Professional** — KES 120,000 one-time: Custom web app (up to 15 pages), admin dashboard, database integration, payment gateway (M-Pesa, cards), advanced SEO, 3 months support
+- **Enterprise** — Custom pricing: Unlimited pages, custom APIs, multi-user roles, security audit, 6 months support, dedicated project manager, 24/7 support
+
+### Website Maintenance
+- **Basic** — KES 5,000/month: Monthly updates, security monitoring, daily backups, uptime monitoring, email support
+- **Standard** — KES 12,000/month: Everything in Basic + content updates (4/month), performance optimization, monthly reports, priority support
+- **Premium** — KES 25,000/month: Everything in Standard + unlimited updates, feature enhancements, A/B testing, dedicated account manager, 24/7 support
+
+### Social Media Management
+- **Growth** — KES 25,000/month: 2 platforms, 12 posts/month, content calendar, basic design, community management, monthly reports
+- **Engage** — KES 50,000/month: 3 platforms, 20 posts/month, content strategy, custom graphics & reels, hashtag research, bi-weekly reports
+- **Dominate** — KES 85,000/month: 4+ platforms, 30 posts/month, full strategy, video production, paid ads, influencer outreach, weekly reports, dedicated manager
+
+## Featured Work
+
+### VT Ads Flow — Visa & Travel Agency
+A modern visa and travel agency website that streamlines the entire travel experience. From visa application tracking to flight bookings and travel packages. Live site: https://vtadsflow.com
+
+### Janda Haven — Premium Bed & Breakfast
+A premium bed and breakfast booking platform that captures warmth and elegance while making it effortless for guests to explore rooms, view amenities, and book their stay. Fully responsive, SEO-optimized.
+
+### M-Pesa Integration System
+A secure, real-time M-Pesa payment integration system for mobile money processing. Handles STK Push, C2B, B2C, and B2B transactions with full reconciliation, webhook handling, and real-time dashboard.
+
+### Multi-Tenant SaaS Platform
+A scalable multi-tenant SaaS platform with tenant isolation, subscription billing, role-based access control, and usage analytics. Designed for thousands of concurrent tenants.
+
+### AI Courses Platform
+An intelligent learning platform with AI-powered courses, adaptive quizzes, progress tracking, personalized learning paths, and certificate generation.
+
+## Technology Stack
+
+- **Backend**: Laravel (PHP), Go, Node.js
+- **Frontend**: Nuxt.js, Vue.js, React
+- **Mobile**: Flutter
+- **Databases**: MySQL, PostgreSQL, Redis
+- **DevOps**: Docker, AWS, Linux, GitHub
+- **Design**: Figma
+
+## Industries Served
+
+- Hospitality & Tourism — Booking platforms, travel agencies
+- Education & E-Learning — LMS, online courses
+- Healthcare — Patient management, telemedicine
+- Finance & Fintech — M-Pesa integration, banking
+- Retail & E-Commerce — Online stores, inventory
+- NGOs & Nonprofits — Donation platforms, impact tracking
+- Government — Citizen services, document management
+- Startups — MVP development, rapid prototyping
+
+## Team
+
+- **Norman** — Lead Developer: Full-stack developer specializing in Laravel, Vue.js, and cloud architecture
+- **Patrick** — Project Manager: Keeps projects on track, on budget, and on scope
+- **Emmanuela** — Marketing Strategist: Brand strategy, digital marketing, and growth campaigns
+- **Brian** — Senior Backend Developer: APIs, microservices, database architecture, payment integrations
+- **Amina** — UI/UX Designer: User research, visual design, conversion-focused experiences
+- **Kevin** — DevOps Engineer: Cloud infrastructure, CI/CD, deployment automation
+
+## Process
+
+1. Discovery & Strategy — Understanding goals, users, and technical requirements
+2. Design & Prototype — Wireframes, visual design, interactive prototypes
+3. Development & Testing — Agile sprints, code reviews, automated testing
+4. Launch & Support — Deployment, monitoring, ongoing maintenance
+
+## Contact
+
+- Website: https://techxtrasol.tech
+- WhatsApp: +254794312108
+- LinkedIn: https://www.linkedin.com/company/techxtrasol
+- GitHub: https://github.com/techxtrasol
+- Twitter/X: https://x.com/techxtrasol

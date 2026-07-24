@@ -78,6 +78,7 @@ export default defineNuxtConfig({
   // SEO
   site: {
     url: 'https://techxtrasol.tech',
+    name: 'TechXtrasol',
   },
 
   // Sitemap configuration
@@ -95,6 +96,11 @@ export default defineNuxtConfig({
   robots: {
     allow: '/',
     sitemap: 'https://techxtrasol.tech/sitemap.xml',
+    disallow: ['/credits', '/_nuxt/'],
+    extraRobotsTags: {
+      'LLMs': 'https://techxtrasol.tech/llms.txt',
+      'LLMs-full': 'https://techxtrasol.tech/llms-full.txt',
+    },
   },
 
 })

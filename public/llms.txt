@@ -1,0 +1,54 @@
+# TechXtrasol
+
+> TechXtrasol is a custom software development company based in Nairobi and Mombasa, Kenya. We build web applications, mobile apps, enterprise systems, and SaaS platforms for startups, SMEs, NGOs, and enterprises across Africa and beyond.
+
+## Main Pages
+
+- [Homepage](https://techxtrasol.tech): Company overview, services, and featured work
+- [About](https://techxtrasol.tech/about): Our mission, team, and locations in Nairobi and Mombasa
+- [Pricing](https://techxtrasol.tech/pricing): Web development, maintenance, and social media management pricing
+- [Blog](https://techxtrasol.tech/blog): Technical articles and software development insights
+
+## Services
+
+- Custom Web Applications — Laravel, Nuxt, React, Vue.js web apps and dashboards
+- Mobile Applications — iOS and Android apps using Flutter and native technologies
+- Enterprise & Business Systems — HR, finance, inventory, and document workflow systems
+- SaaS & Cloud Platforms — Multi-tenant SaaS products with subscription billing
+
+## Industries
+
+- Hospitality & Tourism — Booking platforms, travel agency websites
+- Education & E-Learning — LMS platforms, online course systems
+- Healthcare — Patient management, telemedicine platforms
+- Finance & Fintech — Payment integrations (M-Pesa), banking systems
+- Retail & E-Commerce — Online stores, inventory management
+- NGOs & Nonprofits — Donation platforms, impact tracking
+- Government — Citizen services, document management
+- Startups — MVP development, rapid prototyping
+
+## Technology Stack
+
+- Backend: Laravel, Go, Node.js
+- Frontend: Nuxt, Vue.js, React
+- Mobile: Flutter
+- Databases: MySQL, PostgreSQL, Redis
+- DevOps: Docker, AWS, Linux, GitHub
+- Design: Figma
+
+## Featured Work
+
+- VT Ads Flow — Visa and travel agency platform: https://vtadsflow.com
+- Janda Haven — Premium bed and breakfast booking website
+- M-Pesa Integration — Real-time mobile money payment system
+- Multi-Tenant SaaS Platform — Scalable cloud architecture
+- AI Courses Platform — Adaptive learning with AI-powered quizzes
+
+## Contact
+
+- Website: https://techxtrasol.tech
+- WhatsApp: +254794312108
+- LinkedIn: https://www.linkedin.com/company/techxtrasol
+- GitHub: https://github.com/techxtrasol
+- Twitter/X: https://x.com/techxtrasol
+- Locations: Nairobi (HQ) and Mombasa, Kenya
