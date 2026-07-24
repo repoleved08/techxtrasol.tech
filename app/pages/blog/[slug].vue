@@ -1,13 +1,21 @@
 <script setup>
+import { marked } from 'marked'
+
 const route = useRoute()
+const { getPostBySlug } = useSupabaseBlog()
 
 const { data: post } = await useAsyncData('blog-' + route.params.slug, () =>
-  queryCollection('blog').path('/blog/' + route.params.slug).first()
+  getPostBySlug(route.params.slug)
 )
 
 if (!post.value) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })
 }
+
+const renderedContent = computed(() => {
+  if (!post.value?.content) return ''
+  return marked(post.value.content)
+})
 
 useSeoMeta({
   title: () => post.value ? post.value.title + ' — TechXtrasol Blog' : 'Blog Post',
@@ -40,16 +48,14 @@ useHead({
       <time :datetime="post.date" class="text-xs text-bs-foreground-dark/60">
         {{ new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
       </time>
-      <span class="text-xs text-bs-foreground-dark/60">{{ post.readTime }}</span>
+      <span class="text-xs text-bs-foreground-dark/60">{{ post.read_time }}</span>
     </div>
 
     <!-- Title -->
     <h1 class="bs-h1">{{ post.title }}</h1>
 
     <!-- Content -->
-    <div class="prose prose-invert max-w-none bs-body-text">
-      <ContentRenderer :value="post" />
-    </div>
+    <div class="prose prose-invert max-w-none bs-body-text" v-html="renderedContent" />
 
   </article>
 
