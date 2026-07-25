@@ -122,7 +122,12 @@ export default defineNuxtConfig({
     },
     headers: {
       contentSecurityPolicy: {
+        'script-src': ["'self'", "'unsafe-inline'", "'unsafe-eval'"],
+        'script-src-attr': ["'unsafe-inline'"],
+        'style-src': ["'self'", "'unsafe-inline'"],
         'img-src': ["'self'", 'data:', 'https:', 'http:'],
+        'font-src': ["'self'", 'https:', 'data:'],
+        'connect-src': ["'self'", 'https:', 'http:'],
       },
     },
   },
