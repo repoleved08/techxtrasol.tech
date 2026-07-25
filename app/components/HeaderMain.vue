@@ -48,11 +48,14 @@ onMounted(() => {
       </nav>
 
       <!-- CTA (desktop) -->
-      <button type="button" class="hidden md:block min-w-32 bs-btn" @click="useDialogOpen">
-
-        {{ settings.demo.title }}
-
-      </button>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="/api/login" class="w-10 h-10 flex items-center justify-center rounded-lg text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200" aria-label="Account">
+          <Icon name="lucide:user" class="w-5 h-5" />
+        </a>
+        <button type="button" class="min-w-32 bs-btn" @click="useDialogOpen">
+          {{ settings.demo.title }}
+        </button>
+      </div>
 
       <!-- Mobile menu toggle -->
       <button
@@ -103,6 +106,16 @@ onMounted(() => {
 
           <!-- Divider -->
           <div class="my-2 border-t border-bs-surface-3/50"></div>
+
+          <!-- Account -->
+          <a
+            href="/api/login"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-lg font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+            @click="closeMenu"
+          >
+            <Icon name="lucide:user" class="w-5 h-5" />
+            Account
+          </a>
 
           <!-- CTA -->
           <button
