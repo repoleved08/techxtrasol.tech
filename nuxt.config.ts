@@ -47,7 +47,7 @@ export default defineNuxtConfig({
 
   //  Nuxt modules
 
-  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/content', 'nuxt-security'],
+  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/content', 'nuxt-security', '@nuxtjs/kinde'],
 
   // Nuxt icons
 
@@ -118,6 +118,11 @@ export default defineNuxtConfig({
       interval: 60000,
       headers: true,
     },
+  },
+
+  // Kinde Auth
+  kinde: {
+    debug: false,
   },
 
 })
