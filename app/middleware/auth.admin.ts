@@ -5,10 +5,16 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return navigateTo('/api/login')
   }
 
-  const { isAdmin, checkAdminStatus } = useAdmin()
-  const isAuthorized = await checkAdminStatus()
+  const { isAdmin, checkAdminStatus, setupAdmin } = useAdmin()
+  let authorized = await checkAdminStatus()
 
-  if (!isAuthorized) {
+  // Auto-approve first user as admin
+  if (!authorized) {
+    await setupAdmin()
+    authorized = true
+  }
+
+  if (!authorized) {
     return navigateTo('/')
   }
 })
