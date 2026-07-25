@@ -96,6 +96,8 @@ export default defineNuxtConfig({
     hostname: 'https://techxtrasol.tech',
     exclude: [
       '/credits',
+      '/admin/**',
+      '/api/**',
       '/__sitemap__/**',
     ],
   },
@@ -104,7 +106,7 @@ export default defineNuxtConfig({
   robots: {
     allow: '/',
     sitemap: 'https://techxtrasol.tech/sitemap.xml',
-    disallow: ['/credits', '/_nuxt/'],
+    disallow: ['/credits', '/admin/', '/api/', '/_nuxt/'],
     extraRobotsTags: {
       'LLMs': 'https://techxtrasol.tech/llms.txt',
       'LLMs-full': 'https://techxtrasol.tech/llms-full.txt',
