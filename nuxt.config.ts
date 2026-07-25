@@ -118,6 +118,11 @@ export default defineNuxtConfig({
       interval: 60000,
       headers: true,
     },
+    headers: {
+      contentSecurityPolicy: {
+        'img-src': ["'self'", 'data:', 'https:', 'http:'],
+      },
+    },
   },
 
   // Kinde Auth
