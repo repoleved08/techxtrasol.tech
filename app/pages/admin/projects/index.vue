@@ -1,5 +1,5 @@
 <script setup>
-definePageMeta({ middleware: 'auth.admin', layout: 'admin' })
+definePageMeta({ middleware: 'auth-admin', layout: 'admin' })
 
 const { getAllProjects, deleteProject, togglePublish, toggleFeatured } = useProjects()
 
