@@ -150,6 +150,24 @@ export interface PaginatedResponse<T> {
   total_pages: number
 }
 
+export interface UiTemplate {
+  id: string
+  slug: string
+  title: string
+  description: string | null
+  price: string | null
+  price_amount: number | null
+  demo_url: string | null
+  preview_image: string | null
+  category: string
+  features: string[]
+  tech_stack: string[]
+  featured: boolean
+  published: boolean
+  created_at: string
+  updated_at: string
+}
+
 export interface ProjectFilters {
   search?: string
   category?: string

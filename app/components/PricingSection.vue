@@ -6,20 +6,38 @@ const activeTab = ref('web')
 const tabs = [
   { id: 'web', label: 'Web Development' },
   { id: 'maintenance', label: 'Maintenance' },
-  { id: 'social', label: 'Social Media' }
+  { id: 'social', label: 'Social Media' },
+  { id: 'ui', label: 'UI Templates' },
 ]
 
 function getPlans() {
   if (activeTab.value === 'web') return props.data.plans
   if (activeTab.value === 'maintenance') return props.data.maintenance.plans
-  return props.data.social_media.plans
+  if (activeTab.value === 'social') return props.data.social_media.plans
+  return []
 }
 
 function getSection() {
   if (activeTab.value === 'maintenance') return props.data.maintenance
   if (activeTab.value === 'social') return props.data.social_media
+  if (activeTab.value === 'ui') return props.data.ui_templates || { title: 'Premium UI Templates', subtitle: 'Production-ready landing pages and UI kits. Purchase, customize, and deploy.' }
   return props.data
 }
+
+const { getPublishedTemplates } = useUiTemplates()
+const uiTemplates = ref([])
+
+onMounted(async () => {
+  if (activeTab.value === 'ui') {
+    uiTemplates.value = await getPublishedTemplates()
+  }
+})
+
+watch(activeTab, async (tab) => {
+  if (tab === 'ui' && uiTemplates.value.length === 0) {
+    uiTemplates.value = await getPublishedTemplates()
+  }
+})
 </script>
 
 <template>
@@ -58,7 +76,7 @@ function getSection() {
     </p>
 
     <!-- Pricing cards -->
-    <div class="mt-10 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div v-if="activeTab !== 'ui'" class="mt-10 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
       <div
         v-for="(plan, idx) in getPlans()"
@@ -114,6 +132,44 @@ function getSection() {
 
       </div>
 
+    </div>
+
+    <!-- UI Templates grid -->
+    <div v-else class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div
+        v-for="tpl in uiTemplates"
+        :key="tpl.id"
+        class="group relative flex flex-col bg-bs-surface-1 border border-bs-surface-3 rounded-xl overflow-hidden transition-all duration-300 hover:border-amber-400/40 hover:shadow-[0_0_30px_rgba(251,191,36,0.06)]"
+      >
+        <div class="relative h-40 bg-bs-surface-3/30 overflow-hidden">
+          <img v-if="tpl.preview_image" :src="tpl.preview_image" :alt="tpl.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          <div v-else class="w-full h-full flex items-center justify-center">
+            <Icon name="lucide:layout-template" class="w-10 h-10 text-bs-surface-3" />
+          </div>
+          <div class="absolute top-3 left-3">
+            <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded-full bg-amber-400 text-black">PRO</span>
+          </div>
+        </div>
+        <div class="p-5 flex flex-col flex-1">
+          <span class="text-xs text-bs-foreground-dark capitalize mb-1">{{ tpl.category?.replace('-', ' ') }}</span>
+          <h3 class="font-semibold text-bs-foreground-light mb-1 group-hover:text-amber-400 transition-colors">{{ tpl.title }}</h3>
+          <p class="text-sm text-bs-foreground-dark line-clamp-2 mb-4 flex-1">{{ tpl.description }}</p>
+          <div class="flex items-center justify-between pt-3 border-t border-bs-surface-3/50">
+            <span class="font-bold text-amber-400">{{ tpl.price || 'Free' }}</span>
+            <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer"
+              class="text-xs font-medium text-bs-foreground-dark hover:text-amber-400 transition-colors inline-flex items-center gap-1">
+              Live Demo
+              <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none"><path d="M3 9l6-6M5 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty state for UI tab -->
+    <div v-if="activeTab === 'ui' && uiTemplates.length === 0" class="text-center py-16">
+      <Icon name="lucide:layout-template" class="w-16 h-16 text-bs-surface-3 mx-auto mb-4" />
+      <p class="text-bs-foreground-dark">Templates coming soon. Check back soon.</p>
     </div>
 
     <!-- Contact note -->

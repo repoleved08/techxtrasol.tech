@@ -24,6 +24,7 @@ const navigation = [
   { name: 'Blog', href: '/admin/blog', icon: 'lucide:pencil' },
   { name: 'Services', href: '/admin/services', icon: 'lucide:cog' },
   { name: 'Testimonials', href: '/admin/testimonials', icon: 'lucide:quote' },
+  { name: 'UI Templates', href: '/admin/ui-templates', icon: 'lucide:layout-template' },
   { name: 'Categories', href: '/admin/categories', icon: 'lucide:tag' },
   { name: 'Technologies', href: '/admin/technologies', icon: 'lucide:cpu' },
   { name: 'Industries', href: '/admin/industries', icon: 'lucide:factory' },
