@@ -99,7 +99,7 @@ async function handleSave() {
               <input v-model="form.category" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
             </div>
           </div>
-          <div class="grid sm:grid-cols-3 gap-4">
+          <div class="grid sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Date</label>
               <input v-model="form.date" type="date" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
@@ -108,11 +108,8 @@ async function handleSave() {
               <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Read Time</label>
               <input v-model="form.read_time" placeholder="e.g., 8 min read" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
             </div>
-            <div>
-              <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Image URL</label>
-              <input v-model="form.image" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
-            </div>
           </div>
+          <ImageUpload v-model="form.image" label="Post Image" folder="blog" />
           <div>
             <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Description</label>
             <textarea v-model="form.description" rows="2" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors resize-none" />

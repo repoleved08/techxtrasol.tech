@@ -185,10 +185,7 @@ async function handleSave() {
               <input v-model="form.github_url" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
             </div>
           </div>
-          <div>
-            <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Featured Image URL</label>
-            <input v-model="form.featured_image" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
-          </div>
+          <ImageUpload v-model="form.featured_image" label="Featured Image" folder="projects" />
         </div>
       </div>
 

@@ -143,10 +143,7 @@ async function handleSave() {
             <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Introduction</label>
             <textarea v-model="form.introduction" rows="3" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors resize-y" />
           </div>
-          <div>
-            <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Featured Image URL</label>
-            <input v-model="form.featured_image" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
-          </div>
+          <ImageUpload v-model="form.featured_image" label="Featured Image" folder="case-studies" />
         </div>
       </div>
 
