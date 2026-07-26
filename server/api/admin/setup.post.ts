@@ -1,27 +1,13 @@
-import { createClient } from '@supabase/supabase-js'
+import { verifySupabaseSession } from '~~/server/utils/auth'
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig()
-  const supabase = createClient(
-    config.public.supabaseUrl,
-    config.public.supabaseKey,
-  )
+  const session = await verifySupabaseSession(event)
 
-  // Get user from Supabase session cookie
-  const cookieHeader = event.node.req.headers.cookie || ''
-  const tokenCookie = cookieHeader.split(';').find(c => c.trim().startsWith('sb-ytakvlhdrfmktkputzjg-auth-token'))
-
-  if (!tokenCookie) {
+  if (!session) {
     throw createError({ statusCode: 401, statusMessage: 'Not authenticated' })
   }
 
-  const cookieValue = tokenCookie.split('=').slice(1).join('=')
-  const parsed = JSON.parse(decodeURIComponent(cookieValue))
-  const { data: { user }, error: authError } = await supabase.auth.getUser(parsed.access_token)
-
-  if (authError || !user) {
-    throw createError({ statusCode: 401, statusMessage: 'Not authenticated' })
-  }
+  const { user, supabase } = session
 
   // Check if user already exists
   const { data: existing } = await supabase

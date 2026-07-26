@@ -1,51 +1,23 @@
+import { verifySupabaseSession } from '~~/server/utils/auth'
 import { createClient } from '@supabase/supabase-js'
 
 export default defineNuxtRouteMiddleware(async (to) => {
-  // Server-side: check Supabase auth directly
+  // Server-side: check Supabase session cookie
   if (import.meta.server) {
     const event = useRequestEvent()
-    const config = useRuntimeConfig()
+    if (!event) return navigateTo('/')
 
-    // Read session from cookie
-    const cookieHeader = event.node.req.headers.cookie || ''
-    const cookies = Object.fromEntries(
-      cookieHeader.split(';').map(c => {
-        const [key, ...val] = c.trim().split('=')
-        return [key, val.join('=')]
-      })
-    )
-
-    const accessToken = cookies['sb-access-token'] || cookies['sb-ytakvlhdrfmktkputzjg-auth-token']?.split('.')[1]
-
-    // Try to get user from Supabase using the access token from cookies
-    const supabase = createClient(
-      config.public.supabaseUrl,
-      config.public.supabaseKey,
-    )
-
-    // Check for supabase auth token cookie
-    const tokenCookie = cookieHeader.split(';').find(c => c.trim().startsWith('sb-ytakvlhdrfmktkputzjg-auth-token'))
-    let session = null
-
-    if (tokenCookie) {
-      try {
-        const cookieValue = tokenCookie.split('=').slice(1).join('=')
-        const parsed = JSON.parse(decodeURIComponent(cookieValue))
-        const { data: { user }, error } = await supabase.auth.getUser(parsed.access_token)
-        if (user && !error) {
-          session = { user, access_token: parsed.access_token }
-        }
-      } catch {
-        // Invalid cookie
-      }
-    }
+    const session = await verifySupabaseSession(event)
 
     if (!session) {
       return navigateTo('/')
     }
 
-    // Check admin status
+    // Check admin status, auto-create if first user
     try {
+      const config = useRuntimeConfig()
+      const supabase = createClient(config.public.supabaseUrl, config.public.supabaseKey)
+
       const { data: adminUser } = await supabase
         .from('admin_users')
         .select('id')
@@ -53,7 +25,6 @@ export default defineNuxtRouteMiddleware(async (to) => {
         .single()
 
       if (!adminUser) {
-        // Auto-create as admin (first user)
         await supabase.from('admin_users').insert({
           auth_id: session.user.id,
           email: session.user.email || '',
