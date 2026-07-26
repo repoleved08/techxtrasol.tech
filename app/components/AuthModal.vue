@@ -42,6 +42,7 @@ async function handleSubmit() {
         password: password.value,
         options: {
           data: { full_name: email.value.split('@')[0] },
+          emailRedirectTo: window.location.origin + '/admin',
         },
       })
       if (authError) throw authError
