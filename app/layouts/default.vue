@@ -54,4 +54,7 @@ useHead({
     <!-- Demo dialog modal -->
     <DialogModal id="demo" :demo="global_settings.demo" />
 
+    <!-- Auth dialog modal -->
+    <AuthModal />
+
 </template>

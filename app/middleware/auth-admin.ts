@@ -41,7 +41,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
     }
 
     if (!session) {
-      return navigateTo('/login')
+      return navigateTo('/')
     }
 
     // Check admin status
@@ -70,7 +70,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
 
   // Client-side: use useSupabaseUser() from Supabase module
   const user = useSupabaseUser()
-  if (!user.value) return navigateTo('/login')
+  if (!user.value) return navigateTo('/')
 
   const { checkAdminStatus, setupAdmin } = useAdmin()
   const authorized = await checkAdminStatus()

@@ -88,14 +88,15 @@ onMounted(() => {
         </button>
 
         <!-- Logged out: user icon -->
-        <a
+        <button
           v-if="!loggedIn"
-          href="/login"
+          type="button"
           class="w-10 h-10 flex items-center justify-center rounded-full bg-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3 transition-all duration-200"
           aria-label="Sign in"
+          @click="useAuthModalOpen"
         >
           <Icon name="lucide:user" class="w-5 h-5" />
-        </a>
+        </button>
 
         <!-- Logged in: initials dropdown -->
         <div v-else class="relative user-menu-container">
@@ -246,15 +247,15 @@ onMounted(() => {
           </template>
 
           <!-- Logged out -->
-          <a
+          <button
             v-else
-            href="/login"
-            class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
-            @click="closeMenu"
+            type="button"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200 w-full text-left"
+            @click="closeMenu(); useAuthModalOpen()"
           >
             <Icon name="lucide:user" class="w-5 h-5" />
             Sign in
-          </a>
+          </button>
         </nav>
       </div>
     </Transition>
