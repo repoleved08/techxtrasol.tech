@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY,
     resendApiKey: process.env.RESEND_API_KEY,
+    notificationEmail: process.env.NOTIFICATION_EMAIL,
     supabase: {},
     public: {
       supabaseUrl: process.env.SUPABASE_URL,
