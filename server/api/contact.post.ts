@@ -14,8 +14,8 @@ export default defineEventHandler(async (event) => {
 
   // Save to database
   const supabase = createClient(
-    config.supabase.url || config.public.supabaseUrl,
-    config.supabaseServiceKey || config.public.supabaseKey,
+    config.public.supabase.url,
+    config.supabase.serviceKey,
   )
 
   const { error: dbError } = await supabase

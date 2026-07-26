@@ -3,13 +3,13 @@ import { createClient } from '@supabase/supabase-js'
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
 
-  if (!config.supabaseServiceKey) {
+  if (!config.supabase?.serviceKey) {
     throw createError({ statusCode: 500, message: 'Service key not configured' })
   }
 
   const supabase = createClient(
-    config.public.supabaseUrl,
-    config.supabaseServiceKey,
+    config.public.supabase.url,
+    config.supabase.serviceKey,
   )
 
   // List all auth users via admin API

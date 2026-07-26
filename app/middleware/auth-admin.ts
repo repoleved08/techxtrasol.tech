@@ -13,10 +13,10 @@ export default defineNuxtRouteMiddleware(async (to) => {
       return navigateTo('/')
     }
 
-    // Check admin status, auto-create if first user
+    // Check admin status
     try {
       const config = useRuntimeConfig()
-      const supabase = createClient(config.public.supabaseUrl, config.public.supabaseKey)
+      const supabase = createClient(config.public.supabase.url, config.public.supabase.key)
 
       const { data: adminUser } = await supabase
         .from('admin_users')
@@ -25,16 +25,11 @@ export default defineNuxtRouteMiddleware(async (to) => {
         .single()
 
       if (!adminUser) {
-        await supabase.from('admin_users').insert({
-          auth_id: session.user.id,
-          email: session.user.email || '',
-          name: session.user.user_metadata?.full_name || session.user.email || '',
-          role: 'admin',
-        })
+        return navigateTo('/')
       }
     }
     catch {
-      // If Supabase check fails, still allow through (auth is valid)
+      return navigateTo('/')
     }
     return
   }
@@ -43,10 +38,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
   const user = useSupabaseUser()
   if (!user.value) return navigateTo('/')
 
-  const { checkAdminStatus, setupAdmin } = useAdmin()
+  const { checkAdminStatus } = useAdmin()
   const authorized = await checkAdminStatus()
   if (!authorized) {
-    try { await setupAdmin() }
-    catch { /* ignore */ }
+    return navigateTo('/')
   }
 })

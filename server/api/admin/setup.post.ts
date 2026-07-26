@@ -9,32 +9,15 @@ export default defineEventHandler(async (event) => {
 
   const { user, supabase } = session
 
-  // Check if user already exists
-  const { data: existing } = await supabase
+  const { data: adminUser } = await supabase
     .from('admin_users')
     .select('*')
     .eq('auth_id', user.id)
     .single()
 
-  if (existing) {
-    return { user: existing, isNew: false }
+  if (!adminUser) {
+    throw createError({ statusCode: 403, statusMessage: 'Not an admin' })
   }
 
-  // Create new admin user
-  const { data: newUser, error } = await supabase
-    .from('admin_users')
-    .insert({
-      auth_id: user.id,
-      email: user.email || '',
-      name: user.user_metadata?.full_name || user.email || '',
-      role: 'admin',
-    })
-    .select()
-    .single()
-
-  if (error) {
-    throw createError({ statusCode: 500, statusMessage: error.message })
-  }
-
-  return { user: newUser, isNew: true }
+  return { user: adminUser, isNew: false }
 })

@@ -30,7 +30,7 @@ export async function verifySupabaseSession(event: any) {
 
   if (!session) return null
 
-  const supabase = createClient(config.public.supabaseUrl, config.public.supabaseKey)
+  const supabase = createClient(config.public.supabase.url, config.public.supabase.key)
   const { data: { user }, error } = await supabase.auth.getUser(session.access_token)
 
   if (error || !user) return null
