@@ -37,7 +37,7 @@ export default defineEventHandler(async (event) => {
       const resend = new Resend(config.resendApiKey)
 
       await resend.emails.send({
-        from: 'TechXtrasol <onboarding@resend.dev>',
+        from: 'TechXtrasol <techxtrasol.design@gmail.com>',
         to: 'biinorman1@gmail.com',
         subject: `New Consultation Request from ${name}`,
         html: `
