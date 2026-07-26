@@ -1,50 +1,76 @@
 import { createClient } from '@supabase/supabase-js'
 
 export default defineNuxtRouteMiddleware(async (to) => {
-  // Server-side: check Kinde context + Supabase directly
+  // Server-side: check Supabase auth directly
   if (import.meta.server) {
     const event = useRequestEvent()
-    if (!event?.context?.kinde) return navigateTo('/api/login')
+    const config = useRuntimeConfig()
 
-    try {
-      const isAuthenticated = await event.context.kinde.isAuthenticated()
-      if (!isAuthenticated) return navigateTo('/api/login')
+    // Read session from cookie
+    const cookieHeader = event.node.req.headers.cookie || ''
+    const cookies = Object.fromEntries(
+      cookieHeader.split(';').map(c => {
+        const [key, ...val] = c.trim().split('=')
+        return [key, val.join('=')]
+      })
+    )
+
+    const accessToken = cookies['sb-access-token'] || cookies['sb-ytakvlhdrfmktkputzjg-auth-token']?.split('.')[1]
+
+    // Try to get user from Supabase using the access token from cookies
+    const supabase = createClient(
+      config.public.supabaseUrl,
+      config.public.supabaseKey,
+    )
+
+    // Check for supabase auth token cookie
+    const tokenCookie = cookieHeader.split(';').find(c => c.trim().startsWith('sb-ytakvlhdrfmktkputzjg-auth-token'))
+    let session = null
+
+    if (tokenCookie) {
+      try {
+        const cookieValue = tokenCookie.split('=').slice(1).join('=')
+        const parsed = JSON.parse(decodeURIComponent(cookieValue))
+        const { data: { user }, error } = await supabase.auth.getUser(parsed.access_token)
+        if (user && !error) {
+          session = { user, access_token: parsed.access_token }
+        }
+      } catch {
+        // Invalid cookie
+      }
     }
-    catch {
-      return navigateTo('/api/login')
+
+    if (!session) {
+      return navigateTo('/login')
     }
 
-    // Check admin status directly
+    // Check admin status
     try {
-      const profile = await event.context.kinde.getUserProfile()
-      const config = useRuntimeConfig()
-      const supabase = createClient(config.public.supabaseUrl, config.public.supabaseKey)
-
       const { data: adminUser } = await supabase
         .from('admin_users')
         .select('id')
-        .eq('kinde_id', profile.id)
+        .eq('auth_id', session.user.id)
         .single()
 
       if (!adminUser) {
         // Auto-create as admin (first user)
         await supabase.from('admin_users').insert({
-          kinde_id: profile.id,
-          email: profile.email,
-          name: `${profile.given_name || ''} ${profile.family_name || ''}`.trim() || profile.email,
+          auth_id: session.user.id,
+          email: session.user.email || '',
+          name: session.user.user_metadata?.full_name || session.user.email || '',
           role: 'admin',
         })
       }
     }
     catch {
-      // If Supabase check fails, still allow through (Kinde auth is valid)
+      // If Supabase check fails, still allow through (auth is valid)
     }
     return
   }
 
-  // Client-side: use useAuth() from Kinde plugin
-  const { loggedIn } = useAuth()
-  if (!loggedIn.value) return navigateTo('/api/login')
+  // Client-side: use useSupabaseUser() from Supabase module
+  const user = useSupabaseUser()
+  if (!user.value) return navigateTo('/login')
 
   const { checkAdminStatus, setupAdmin } = useAdmin()
   const authorized = await checkAdminStatus()

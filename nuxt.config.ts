@@ -10,9 +10,15 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY,
+    supabase: {},
     public: {
       supabaseUrl: process.env.SUPABASE_URL,
       supabaseKey: process.env.SUPABASE_KEY,
+      supabase: {
+        url: process.env.SUPABASE_URL,
+        key: process.env.SUPABASE_KEY,
+        cookiePrefix: 'sb-ytakvlhdrfmktkputzjg',
+      },
     },
   },
 
@@ -48,7 +54,7 @@ export default defineNuxtConfig({
 
   //  Nuxt modules
 
-  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/content', 'nuxt-security', '@nuxtjs/kinde'],
+  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/content', 'nuxt-security', '@nuxtjs/supabase'],
 
   // Nuxt icons
 
@@ -133,9 +139,9 @@ export default defineNuxtConfig({
     },
   },
 
-  // Kinde Auth
-  kinde: {
-    debug: false,
+  // Supabase Auth
+  supabase: {
+    redirect: false,
   },
 
 })

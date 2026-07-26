@@ -2,17 +2,24 @@
 
 const props = defineProps(['settings'])
 
-const { loggedIn, user } = useAuth()
+const user = useSupabaseUser()
+const loggedIn = computed(() => !!user.value)
+const client = useSupabaseClient()
 
 const menuOpen = ref(false)
 const userMenuOpen = ref(false)
 
 const initials = computed(() => {
   if (!user.value) return '?'
-  const first = (user.value.given_name || '').charAt(0).toUpperCase()
-  const last = (user.value.family_name || '').charAt(0).toUpperCase()
+  const name = user.value.user_metadata?.full_name || user.value.email || ''
+  const parts = name.split(' ')
+  const first = (parts[0] || '').charAt(0).toUpperCase()
+  const last = (parts.length > 1 ? parts[parts.length - 1] : '').charAt(0).toUpperCase()
   return first + last
 })
+
+const userName = computed(() => user.value?.user_metadata?.full_name || user.value?.email || '')
+const userEmail = computed(() => user.value?.email || '')
 
 const toggleMenu = () => {
   menuOpen.value = !menuOpen.value
@@ -28,6 +35,11 @@ const toggleUserMenu = () => {
 
 const closeUserMenu = () => {
   userMenuOpen.value = false
+}
+
+async function signOut() {
+  await client.auth.signOut()
+  navigateTo('/')
 }
 
 onMounted(() => {
@@ -78,7 +90,7 @@ onMounted(() => {
         <!-- Logged out: user icon -->
         <a
           v-if="!loggedIn"
-          href="/api/login"
+          href="/login"
           class="w-10 h-10 flex items-center justify-center rounded-full bg-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3 transition-all duration-200"
           aria-label="Sign in"
         >
@@ -106,10 +118,10 @@ onMounted(() => {
               <!-- User info -->
               <div class="px-3 py-2.5 border-b border-bs-surface-3/50 mb-1">
                 <p class="text-sm font-medium text-bs-foreground-light truncate">
-                  {{ user?.given_name }} {{ user?.family_name }}
+                  {{ userName }}
                 </p>
                 <p class="text-xs text-bs-foreground-dark truncate">
-                  {{ user?.email }}
+                  {{ userEmail }}
                 </p>
               </div>
 
@@ -124,14 +136,14 @@ onMounted(() => {
               </a>
 
               <!-- Logout -->
-              <a
-                href="/api/logout"
-                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-200"
-                @click="closeUserMenu"
+              <button
+                type="button"
+                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-200 w-full text-left"
+                @click="signOut(); closeUserMenu()"
               >
                 <Icon name="lucide:log-out" class="w-4 h-4" />
                 Sign out
-              </a>
+              </button>
             </div>
           </Transition>
         </div>
@@ -206,10 +218,10 @@ onMounted(() => {
               </span>
               <div class="min-w-0">
                 <p class="text-sm font-medium text-bs-foreground-light truncate">
-                  {{ user?.given_name }} {{ user?.family_name }}
+                  {{ userName }}
                 </p>
                 <p class="text-xs text-bs-foreground-dark truncate">
-                  {{ user?.email }}
+                  {{ userEmail }}
                 </p>
               </div>
             </div>
@@ -223,20 +235,20 @@ onMounted(() => {
               Dashboard
             </a>
 
-            <a
-              href="/api/logout"
-              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-200"
-              @click="closeMenu"
+            <button
+              type="button"
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-200 w-full text-left"
+              @click="signOut(); closeMenu()"
             >
               <Icon name="lucide:log-out" class="w-5 h-5" />
               Sign out
-            </a>
+            </button>
           </template>
 
           <!-- Logged out -->
           <a
             v-else
-            href="/api/login"
+            href="/login"
             class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
             @click="closeMenu"
           >

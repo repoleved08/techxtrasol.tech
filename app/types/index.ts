@@ -135,7 +135,7 @@ export interface BlogPost {
 
 export interface AdminUser {
   id: string
-  kinde_id: string
+  auth_id: string
   email: string
   name: string | null
   role: string

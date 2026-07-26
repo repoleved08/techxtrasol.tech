@@ -386,7 +386,7 @@ export interface Database {
       admin_users: {
         Row: {
           id: string
-          kinde_id: string
+          auth_id: string
           email: string
           name: string | null
           role: string
@@ -394,7 +394,7 @@ export interface Database {
         }
         Insert: {
           id?: string
-          kinde_id: string
+          auth_id: string
           email: string
           name?: string | null
           role?: string
@@ -402,7 +402,7 @@ export interface Database {
         }
         Update: {
           id?: string
-          kinde_id?: string
+          auth_id?: string
           email?: string
           name?: string | null
           role?: string
