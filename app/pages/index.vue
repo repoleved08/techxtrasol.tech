@@ -1,5 +1,4 @@
 <script setup>
-import caseStudies from '../data/case_studies.json'
 import clients from '../data/clients.json'
 import faq from '../data/faq.json'
 import services from '../data/services.json'
@@ -13,6 +12,21 @@ import process from '../data/process.json'
 import why_choose from '../data/why_choose.json'
 import blog from '../data/blog.json'
 import stats from '../data/stats.json'
+
+const { getPublishedCaseStudies } = useCaseStudies()
+const { getFeaturedProjects } = useProjects()
+
+const caseStudiesData = ref([])
+const featuredProjects = ref([])
+
+onMounted(async () => {
+  const [cs, proj] = await Promise.all([
+    getPublishedCaseStudies(4),
+    getFeaturedProjects(6),
+  ])
+  caseStudiesData.value = cs
+  featuredProjects.value = proj
+})
 
 useSeoMeta({
   title: 'TechXtrasol — Software Engineering Company in Kenya',
@@ -132,8 +146,18 @@ useHead({
     :title="home.why_choose_title"
   />
 
+  <ProjectsSection :title="home.projects_title || 'Our Work'">
+    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <CardProject
+        v-for="project in featuredProjects"
+        :key="project.id"
+        :project="project"
+      />
+    </div>
+  </ProjectsSection>
+
   <CaseStudiesSection
-    :caseStudies="caseStudies"
+    :caseStudies="caseStudiesData"
     :title="home.case_studies_title"
   />
 
