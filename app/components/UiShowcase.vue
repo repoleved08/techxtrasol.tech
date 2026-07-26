@@ -1,5 +1,13 @@
 <script setup>
 const props = defineProps(['title', 'templates'])
+
+const selectedTemplate = ref(null)
+const modalEl = ref(null)
+
+function openDetails(tpl) {
+  selectedTemplate.value = tpl
+  nextTick(() => modalEl.value?.open())
+}
 </script>
 
 <template>
@@ -68,19 +76,28 @@ const props = defineProps(['title', 'templates'])
               {{ tech }}
             </span>
           </div>
-          <!-- Price + CTA -->
+          <!-- Price + CTAs -->
           <div class="flex items-center justify-between pt-3 border-t border-bs-surface-3/50 mt-1">
             <span class="font-display font-bold text-lg text-amber-400">{{ tpl.price || 'Free' }}</span>
-            <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-xs font-medium text-bs-foreground-dark hover:text-amber-400 transition-colors">
-              Live Demo
-              <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
+            <div class="flex items-center gap-3">
+              <button @click="openDetails(tpl)"
+                class="inline-flex items-center gap-1.5 text-xs font-medium text-bs-foreground-dark hover:text-amber-400 transition-colors">
+                View Details
+              </button>
+              <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs font-medium text-amber-400 hover:text-amber-300 transition-colors">
+                Live Demo
+                <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 11l8-8M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Detail modal -->
+    <UiTemplateModal ref="modalEl" :template="selectedTemplate" />
   </section>
 </template>

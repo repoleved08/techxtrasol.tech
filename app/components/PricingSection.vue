@@ -27,6 +27,14 @@ function getSection() {
 const { getPublishedTemplates } = useUiTemplates()
 const uiTemplates = ref([])
 
+const selectedTemplate = ref(null)
+const pricingModalEl = ref(null)
+
+function openDetails(tpl) {
+  selectedTemplate.value = tpl
+  nextTick(() => pricingModalEl.value?.open())
+}
+
 onMounted(async () => {
   if (activeTab.value === 'ui') {
     uiTemplates.value = await getPublishedTemplates()
@@ -156,11 +164,17 @@ watch(activeTab, async (tab) => {
           <p class="text-sm text-bs-foreground-dark line-clamp-2 mb-4 flex-1">{{ tpl.description }}</p>
           <div class="flex items-center justify-between pt-3 border-t border-bs-surface-3/50">
             <span class="font-bold text-amber-400">{{ tpl.price || 'Free' }}</span>
-            <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer"
-              class="text-xs font-medium text-bs-foreground-dark hover:text-amber-400 transition-colors inline-flex items-center gap-1">
-              Live Demo
-              <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none"><path d="M3 9l6-6M5 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <div class="flex items-center gap-3">
+              <button @click="openDetails(tpl)"
+                class="text-xs font-medium text-bs-foreground-dark hover:text-amber-400 transition-colors inline-flex items-center gap-1">
+                View Details
+              </button>
+              <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer"
+                class="text-xs font-medium text-amber-400 hover:text-amber-300 transition-colors inline-flex items-center gap-1">
+                Live Demo
+                <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none"><path d="M3 9l6-6M5 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -177,6 +191,9 @@ watch(activeTab, async (tab) => {
       Need something custom?
       <a href="#contact" class="text-bs-accent hover:underline">Talk to us</a> about your specific requirements.
     </p>
+
+    <!-- Detail modal -->
+    <UiTemplateModal ref="pricingModalEl" :template="selectedTemplate" />
 
   </section>
 
