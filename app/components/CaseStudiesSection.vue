@@ -14,9 +14,9 @@ const props = defineProps(['title', 'caseStudies'])
       </NuxtLink>
     </div>
 
-    <!-- Featured case study (first) -->
+    <!-- Featured case study (first) — horizontal layout -->
     <div class="bs-mt-md">
-      <CardCaseStudy v-if="caseStudies[0]" :caseStudy="caseStudies[0]" />
+      <CardCaseStudy v-if="caseStudies[0]" :caseStudy="caseStudies[0]" :featured="true" />
     </div>
 
     <!-- Case studies grid -->
