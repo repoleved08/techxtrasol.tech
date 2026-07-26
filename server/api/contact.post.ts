@@ -38,7 +38,7 @@ export default defineEventHandler(async (event) => {
 
       await resend.emails.send({
         from: 'TechXtrasol <techxtrasol.design@gmail.com>',
-        to: config.notificationEmail || 'biinorman1@gmail.com',
+        to: config.notificationEmail,
         subject: `New Consultation Request from ${name}`,
         html: `
           <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
