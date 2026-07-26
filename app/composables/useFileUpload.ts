@@ -3,11 +3,7 @@ import { createClient } from '@supabase/supabase-js'
 const BUCKET = 'techxtrasol'
 
 export function useFileUpload() {
-  const config = useRuntimeConfig()
-  const supabase = createClient(
-    config.public.supabaseUrl,
-    config.public.supabaseKey,
-  )
+  const supabase = useSupabase()
 
   const uploading = ref(false)
   const progress = ref(0)
