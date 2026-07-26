@@ -4,8 +4,9 @@ definePageMeta({ middleware: 'auth-admin', layout: 'admin' })
 const route = useRoute()
 const router = useRouter()
 const projectId = route.params.id
+const isNew = computed(() => projectId === 'new')
 
-const { getAllProjects, updateProject } = useProjects()
+const { getAllProjects, createProject, updateProject } = useProjects()
 const { getCategories, getTechnologies, getIndustries } = useTaxonomy()
 
 const form = reactive({
@@ -35,13 +36,12 @@ const technologies = ref([])
 const industries = ref([])
 const selectedCategories = ref([])
 const selectedTechnologies = ref([])
-const loading = ref(true)
+const loading = ref(!isNew.value)
 const saving = ref(false)
 
 onMounted(async () => {
   try {
-    const [allProjects, cats, techs, inds] = await Promise.all([
-      getAllProjects(),
+    const [cats, techs, inds] = await Promise.all([
       getCategories(),
       getTechnologies(),
       getIndustries(),
@@ -50,33 +50,35 @@ onMounted(async () => {
     technologies.value = techs
     industries.value = inds
 
-    const project = allProjects.find(p => p.id === projectId)
-    if (!project) {
-      router.push('/admin/projects')
-      return
+    if (!isNew.value) {
+      const allProjects = await getAllProjects()
+      const project = allProjects.find(p => p.id === projectId)
+      if (!project) {
+        router.push('/admin/projects')
+        return
+      }
+      Object.assign(form, {
+        title: project.title,
+        slug: project.slug,
+        short_description: project.short_description,
+        full_description: project.full_description || '',
+        client_name: project.client_name || '',
+        client_industry: project.client_industry || '',
+        project_url: project.project_url || '',
+        github_url: project.github_url || '',
+        featured_image: project.featured_image || '',
+        gallery: project.gallery || [],
+        challenge: project.challenge || '',
+        solution: project.solution || '',
+        outcome: project.outcome || '',
+        duration: project.duration || '',
+        completion_date: project.completion_date || '',
+        featured: project.featured,
+        published: project.published,
+        seo_title: project.seo_title || '',
+        seo_description: project.seo_description || '',
+      })
     }
-
-    Object.assign(form, {
-      title: project.title,
-      slug: project.slug,
-      short_description: project.short_description,
-      full_description: project.full_description || '',
-      client_name: project.client_name || '',
-      client_industry: project.client_industry || '',
-      project_url: project.project_url || '',
-      github_url: project.github_url || '',
-      featured_image: project.featured_image || '',
-      gallery: project.gallery || [],
-      challenge: project.challenge || '',
-      solution: project.solution || '',
-      outcome: project.outcome || '',
-      duration: project.duration || '',
-      completion_date: project.completion_date || '',
-      featured: project.featured,
-      published: project.published,
-      seo_title: project.seo_title || '',
-      seo_description: project.seo_description || '',
-    })
   }
   finally {
     loading.value = false
@@ -93,7 +95,11 @@ function generateSlug() {
 async function handleSave() {
   saving.value = true
   try {
-    await updateProject(projectId, { ...form })
+    if (isNew.value) {
+      await createProject({ ...form })
+    } else {
+      await updateProject(projectId, { ...form })
+    }
     router.push('/admin/projects')
   }
   finally {
@@ -109,8 +115,8 @@ async function handleSave() {
         <Icon name="lucide:arrow-left" class="w-5 h-5" />
       </a>
       <div>
-        <h1 class="text-2xl font-bold text-bs-foreground-light">Edit Project</h1>
-        <p class="text-sm text-bs-foreground-dark mt-1">Update project details</p>
+        <h1 class="text-2xl font-bold text-bs-foreground-light">{{ isNew ? 'New Project' : 'Edit Project' }}</h1>
+        <p class="text-sm text-bs-foreground-dark mt-1">{{ isNew ? 'Create a new project' : 'Update project details' }}</p>
       </div>
     </div>
 
@@ -238,7 +244,7 @@ async function handleSave() {
       <div class="flex items-center gap-3">
         <button type="submit" :disabled="saving" class="bs-btn inline-flex items-center gap-2">
           <Icon v-if="saving" name="lucide:loader-2" class="w-4 h-4 animate-spin" />
-          {{ saving ? 'Saving...' : 'Save Changes' }}
+          {{ saving ? 'Saving...' : (isNew ? 'Create Project' : 'Save Changes') }}
         </button>
         <a href="/admin/projects" class="px-4 py-2.5 rounded-lg text-sm font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all">
           Cancel

@@ -4,8 +4,9 @@ definePageMeta({ middleware: 'auth-admin', layout: 'admin' })
 const route = useRoute()
 const router = useRouter()
 const postId = route.params.id
+const isNew = computed(() => postId === 'new')
 
-const { getAllPosts, updatePost } = useSupabaseBlog()
+const { getAllPosts, createPost, updatePost } = useSupabaseBlog()
 
 const form = reactive({
   title: '',
@@ -18,37 +19,43 @@ const form = reactive({
   image: '',
 })
 
-const loading = ref(true)
+const loading = ref(!isNew.value)
 const saving = ref(false)
 
 onMounted(async () => {
-  try {
-    const posts = await getAllPosts()
-    const post = posts.find(p => p.id === postId)
-    if (!post) {
-      router.push('/admin/blog')
-      return
+  if (!isNew.value) {
+    try {
+      const posts = await getAllPosts()
+      const post = posts.find(p => p.id === postId)
+      if (!post) {
+        router.push('/admin/blog')
+        return
+      }
+      Object.assign(form, {
+        title: post.title,
+        slug: post.slug,
+        description: post.description,
+        content: post.content,
+        date: post.date,
+        category: post.category,
+        read_time: post.read_time,
+        image: post.image,
+      })
     }
-    Object.assign(form, {
-      title: post.title,
-      slug: post.slug,
-      description: post.description,
-      content: post.content,
-      date: post.date,
-      category: post.category,
-      read_time: post.read_time,
-      image: post.image,
-    })
-  }
-  finally {
-    loading.value = false
+    finally {
+      loading.value = false
+    }
   }
 })
 
 async function handleSave() {
   saving.value = true
   try {
-    await updatePost(postId, { ...form })
+    if (isNew.value) {
+      await createPost({ ...form })
+    } else {
+      await updatePost(postId, { ...form })
+    }
     router.push('/admin/blog')
   }
   finally {
@@ -64,8 +71,8 @@ async function handleSave() {
         <Icon name="lucide:arrow-left" class="w-5 h-5" />
       </a>
       <div>
-        <h1 class="text-2xl font-bold text-bs-foreground-light">Edit Blog Post</h1>
-        <p class="text-sm text-bs-foreground-dark mt-1">Update post content</p>
+        <h1 class="text-2xl font-bold text-bs-foreground-light">{{ isNew ? 'New Blog Post' : 'Edit Blog Post' }}</h1>
+        <p class="text-sm text-bs-foreground-dark mt-1">{{ isNew ? 'Write a new blog post' : 'Update post content' }}</p>
       </div>
     </div>
 
@@ -128,7 +135,7 @@ async function handleSave() {
       <div class="flex items-center gap-3">
         <button type="submit" :disabled="saving" class="bs-btn inline-flex items-center gap-2">
           <Icon v-if="saving" name="lucide:loader-2" class="w-4 h-4 animate-spin" />
-          {{ saving ? 'Saving...' : 'Save Changes' }}
+          {{ saving ? 'Saving...' : (isNew ? 'Create Post' : 'Save Changes') }}
         </button>
         <a href="/admin/blog" class="px-4 py-2.5 rounded-lg text-sm font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all">
           Cancel

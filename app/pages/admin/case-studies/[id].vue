@@ -4,8 +4,9 @@ definePageMeta({ middleware: 'auth-admin', layout: 'admin' })
 const route = useRoute()
 const router = useRouter()
 const studyId = route.params.id
+const isNew = computed(() => studyId === 'new')
 
-const { getAllCaseStudies, updateCaseStudy } = useCaseStudies()
+const { getAllCaseStudies, createCaseStudy, updateCaseStudy } = useCaseStudies()
 const { getAllProjects } = useProjects()
 
 const form = reactive({
@@ -27,42 +28,42 @@ const form = reactive({
 })
 
 const projects = ref([])
-const loading = ref(true)
+const loading = ref(!isNew.value)
 const saving = ref(false)
 const newObjective = ref('')
 const newResult = ref('')
 
 onMounted(async () => {
   try {
-    const [allStudies, allProjects] = await Promise.all([
-      getAllCaseStudies(),
-      getAllProjects(),
-    ])
+    const allProjects = await getAllProjects()
     projects.value = allProjects
 
-    const study = allStudies.find(s => s.id === studyId)
-    if (!study) {
-      router.push('/admin/case-studies')
-      return
-    }
+    if (!isNew.value) {
+      const allStudies = await getAllCaseStudies()
+      const study = allStudies.find(s => s.id === studyId)
+      if (!study) {
+        router.push('/admin/case-studies')
+        return
+      }
 
-    Object.assign(form, {
-      slug: study.slug,
-      title: study.title,
-      introduction: study.introduction || '',
-      business_problem: study.business_problem || '',
-      objectives: study.objectives || [],
-      approach: study.approach || '',
-      implementation: study.implementation || '',
-      results: study.results || [],
-      lessons: study.lessons || '',
-      conclusion: study.conclusion || '',
-      featured_image: study.featured_image || '',
-      seo_title: study.seo_title || '',
-      seo_description: study.seo_description || '',
-      published: study.published,
-      project_id: study.project_id || '',
-    })
+      Object.assign(form, {
+        slug: study.slug,
+        title: study.title,
+        introduction: study.introduction || '',
+        business_problem: study.business_problem || '',
+        objectives: study.objectives || [],
+        approach: study.approach || '',
+        implementation: study.implementation || '',
+        results: study.results || [],
+        lessons: study.lessons || '',
+        conclusion: study.conclusion || '',
+        featured_image: study.featured_image || '',
+        seo_title: study.seo_title || '',
+        seo_description: study.seo_description || '',
+        published: study.published,
+        project_id: study.project_id || '',
+      })
+    }
   }
   finally {
     loading.value = false
@@ -94,7 +95,11 @@ function removeResult(i) {
 async function handleSave() {
   saving.value = true
   try {
-    await updateCaseStudy(studyId, { ...form })
+    if (isNew.value) {
+      await createCaseStudy({ ...form })
+    } else {
+      await updateCaseStudy(studyId, { ...form })
+    }
     router.push('/admin/case-studies')
   }
   finally {
@@ -110,8 +115,8 @@ async function handleSave() {
         <Icon name="lucide:arrow-left" class="w-5 h-5" />
       </a>
       <div>
-        <h1 class="text-2xl font-bold text-bs-foreground-light">Edit Case Study</h1>
-        <p class="text-sm text-bs-foreground-dark mt-1">Update case study details</p>
+        <h1 class="text-2xl font-bold text-bs-foreground-light">{{ isNew ? 'New Case Study' : 'Edit Case Study' }}</h1>
+        <p class="text-sm text-bs-foreground-dark mt-1">{{ isNew ? 'Create a new case study' : 'Update case study details' }}</p>
       </div>
     </div>
 
@@ -232,7 +237,7 @@ async function handleSave() {
       <div class="flex items-center gap-3">
         <button type="submit" :disabled="saving" class="bs-btn inline-flex items-center gap-2">
           <Icon v-if="saving" name="lucide:loader-2" class="w-4 h-4 animate-spin" />
-          {{ saving ? 'Saving...' : 'Save Changes' }}
+          {{ saving ? 'Saving...' : (isNew ? 'Create Case Study' : 'Save Changes') }}
         </button>
         <a href="/admin/case-studies" class="px-4 py-2.5 rounded-lg text-sm font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all">
           Cancel
