@@ -168,6 +168,20 @@ export interface UiTemplate {
   updated_at: string
 }
 
+export interface GalleryItem {
+  id: string
+  title: string
+  description: string | null
+  image_url: string
+  category: string
+  project_name: string | null
+  client_name: string | null
+  featured: boolean
+  published: boolean
+  sort_order: number
+  created_at: string
+}
+
 export interface ProjectFilters {
   search?: string
   category?: string

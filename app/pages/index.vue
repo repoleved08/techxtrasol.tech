@@ -16,20 +16,24 @@ import stats from '../data/stats.json'
 const { getPublishedCaseStudies } = useCaseStudies()
 const { getFeaturedProjects } = useProjects()
 const { getFeaturedTemplates } = useUiTemplates()
+const { getPublishedGallery } = useGallery()
 
 const caseStudiesData = ref([])
 const featuredProjects = ref([])
 const uiTemplates = ref([])
+const galleryItems = ref([])
 
 onMounted(async () => {
-  const [cs, proj, templates] = await Promise.all([
+  const [cs, proj, templates, gallery] = await Promise.all([
     getPublishedCaseStudies(4),
     getFeaturedProjects(6),
     getFeaturedTemplates(),
+    getPublishedGallery(),
   ])
   caseStudiesData.value = cs
   featuredProjects.value = proj
   uiTemplates.value = templates
+  galleryItems.value = gallery
 })
 
 useSeoMeta({
@@ -163,6 +167,12 @@ useHead({
   <CaseStudiesSection
     :caseStudies="caseStudiesData"
     :title="home.case_studies_title"
+  />
+
+  <GallerySection
+    v-if="galleryItems.length"
+    :items="galleryItems"
+    title="Our Design Work"
   />
 
   <UiShowcase
