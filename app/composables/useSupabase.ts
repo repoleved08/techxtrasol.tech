@@ -8,8 +8,8 @@ export function useSupabase() {
 
   const config = useRuntimeConfig()
   supabaseInstance = createClient<Database>(
-    config.public.supabaseUrl,
-    config.public.supabaseKey,
+    config.public.supabase.url,
+    config.public.supabase.key,
   )
 
   return supabaseInstance

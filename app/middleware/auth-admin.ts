@@ -1,5 +1,4 @@
 import { verifySupabaseSession } from '~~/server/utils/auth'
-import { createClient } from '@supabase/supabase-js'
 
 export default defineNuxtRouteMiddleware(async (to) => {
   // Server-side: check Supabase session cookie
@@ -13,12 +12,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
       return navigateTo('/')
     }
 
-    // Check admin status
+    // Check admin status using the authenticated client
     try {
-      const config = useRuntimeConfig()
-      const supabase = createClient(config.public.supabase.url, config.public.supabase.key)
-
-      const { data: adminUser } = await supabase
+      const { data: adminUser } = await session.supabase
         .from('admin_users')
         .select('id')
         .eq('auth_id', session.user.id)

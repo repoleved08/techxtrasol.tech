@@ -1,41 +1,45 @@
+import { createServerClient } from '@supabase/ssr'
 import { createClient } from '@supabase/supabase-js'
 
-const COOKIE_PREFIX = 'sb-ytakvlhdrfmktkputzjg'
+export function createSupabaseServerClient(event: any) {
+  const config = useRuntimeConfig()
 
-export function getSupabaseSession(event: any, config: any) {
-  const cookieHeader = event.node.req.headers.cookie || ''
-
-  // Find the session cookie — Supabase module sets sb-{ref}.{N}=base64-{json}
-  // Match both sb-{ref}= and sb-{ref}.1= patterns
-  const sessionCookie = cookieHeader.split(';').find(c => {
-    const trimmed = c.trim()
-    return trimmed.startsWith(`${COOKIE_PREFIX}=`) || trimmed.startsWith(`${COOKIE_PREFIX}.`)
-  })
-
-  if (!sessionCookie) return null
-
-  try {
-    const rawValue = sessionCookie.split('=').slice(1).join('=')
-    const decoded = decodeURIComponent(rawValue)
-
-    // Strip base64- prefix and decode
-    const base64 = decoded.startsWith('base64-') ? decoded.slice(7) : decoded
-    const json = JSON.parse(Buffer.from(base64, 'base64').toString('utf-8'))
-
-    return json.access_token ? json : null
-  } catch {
-    return null
-  }
+  return createServerClient(
+    config.public.supabase.url,
+    config.public.supabase.key,
+    {
+      cookies: {
+        getAll() {
+          const cookieHeader = event.node.req.headers.cookie || ''
+          return cookieHeader.split(';').map(c => {
+            const [name, ...rest] = c.trim().split('=')
+            return { name, value: decodeURIComponent(rest.join('=')) }
+          }).filter(c => c.name)
+        },
+        setAll(cookiesToSet) {
+          if (!event.node.res) return
+          const existing = event.node.res.getHeader('set-cookie')
+          const newCookies = cookiesToSet.map(({ name, value, options }) => {
+            const parts = [`${name}=${encodeURIComponent(value)}`]
+            if (options?.maxAge) parts.push(`Max-Age=${options.maxAge}`)
+            if (options?.path) parts.push(`Path=${options.path}`)
+            if (options?.domain) parts.push(`Domain=${options.domain}`)
+            if (options?.sameSite) parts.push(`SameSite=${options.sameSite}`)
+            if (options?.secure) parts.push('Secure')
+            if (options?.httpOnly) parts.push('HttpOnly')
+            return parts.join('; ')
+          })
+          const allCookies = [...(Array.isArray(existing) ? existing : existing ? [existing] : []), ...newCookies]
+          event.node.res.setHeader('set-cookie', allCookies)
+        },
+      },
+    },
+  )
 }
 
 export async function verifySupabaseSession(event: any) {
-  const config = useRuntimeConfig()
-  const session = getSupabaseSession(event, config)
-
-  if (!session) return null
-
-  const supabase = createClient(config.public.supabase.url, config.public.supabase.key)
-  const { data: { user }, error } = await supabase.auth.getUser(session.access_token)
+  const supabase = createSupabaseServerClient(event)
+  const { data: { user }, error } = await supabase.auth.getUser()
 
   if (error || !user) return null
 
