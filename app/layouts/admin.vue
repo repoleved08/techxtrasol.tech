@@ -32,6 +32,7 @@ const navigation = [
   { name: 'Technologies', href: '/admin/technologies', icon: 'lucide:cpu' },
   { name: 'Industries', href: '/admin/industries', icon: 'lucide:factory' },
   { name: 'Settings', href: '/admin/settings', icon: 'lucide:settings' },
+  { name: 'MFA Setup', href: '/auth/mfa-setup', icon: 'lucide:shield' },
 ]
 
 function isActive(href) {

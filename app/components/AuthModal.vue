@@ -4,15 +4,36 @@ const client = useSupabaseClient()
 
 const email = ref('')
 const password = ref('')
+const totpCode = ref('')
 const loading = ref(false)
 const error = ref('')
 const mode = ref('login')
 const successMessage = ref('')
 
-const title = computed(() => mode.value === 'login' ? 'Welcome back' : 'Create account')
-const subtitle = computed(() => mode.value === 'login' ? 'Sign in to access your dashboard' : 'Set up your admin account')
+// MFA state
+const mfaFactorId = ref('')
+const mfaChallengeId = ref('')
+
+const title = computed(() => {
+  if (mode.value === 'reset') return 'Reset password'
+  if (mode.value === 'mfa') return 'Two-factor authentication'
+  return mode.value === 'login' ? 'Welcome back' : 'Create account'
+})
+
+const subtitle = computed(() => {
+  if (mode.value === 'reset') return "Enter your email and we'll send a reset link"
+  if (mode.value === 'mfa') return 'Enter the 6-digit code from your authenticator app'
+  return mode.value === 'login' ? 'Sign in to access your dashboard' : 'Set up your admin account'
+})
+
 const submitLabel = computed(() => {
-  if (loading.value) return mode.value === 'login' ? 'Signing in...' : 'Creating account...'
+  if (loading.value) {
+    if (mode.value === 'mfa') return 'Verifying...'
+    if (mode.value === 'reset') return 'Sending...'
+    return mode.value === 'login' ? 'Signing in...' : 'Creating account...'
+  }
+  if (mode.value === 'reset') return 'Send Reset Link'
+  if (mode.value === 'mfa') return 'Verify Code'
   return mode.value === 'login' ? 'Sign In' : 'Create Account'
 })
 
@@ -22,6 +43,78 @@ function switchMode() {
   successMessage.value = ''
 }
 
+function goToReset() {
+  mode.value = 'reset'
+  error.value = ''
+  successMessage.value = ''
+}
+
+function backToLogin() {
+  mode.value = 'login'
+  error.value = ''
+  successMessage.value = ''
+}
+
+async function handleLogin() {
+  const { data, error: authError } = await client.auth.signInWithPassword({
+    email: email.value,
+    password: password.value,
+  })
+  if (authError) throw authError
+
+  // Check if user has MFA factors
+  const { data: factors } = await client.auth.mfa.listFactors()
+  const totpFactor = factors?.totp?.[0]
+
+  if (totpFactor) {
+    // User has TOTP enrolled — create challenge
+    mfaFactorId.value = totpFactor.id
+    const { data: challenge, error: challengeError } = await client.auth.mfa.challenge({ factorId: totpFactor.id })
+    if (challengeError) throw challengeError
+    mfaChallengeId.value = challenge.id
+    mode.value = 'mfa'
+    return
+  }
+
+  // No MFA — proceed
+  document.querySelector('#auth-modal').close('success')
+  navigateTo('/admin')
+}
+
+async function handleMfaVerify() {
+  const { error: verifyError } = await client.auth.mfa.verify({
+    factorId: mfaFactorId.value,
+    challengeId: mfaChallengeId.value,
+    code: totpCode.value,
+  })
+  if (verifyError) throw verifyError
+
+  document.querySelector('#auth-modal').close('success')
+  navigateTo('/admin')
+}
+
+async function handleReset() {
+  const { error: authError } = await client.auth.resetPasswordForEmail(email.value, {
+    redirectTo: window.location.origin + '/auth/confirm',
+  })
+  if (authError) throw authError
+  successMessage.value = 'Check your email for a password reset link.'
+}
+
+async function handleRegister() {
+  const { error: authError } = await client.auth.signUp({
+    email: email.value,
+    password: password.value,
+    options: {
+      data: { full_name: email.value.split('@')[0] },
+      emailRedirectTo: window.location.origin + '/admin',
+    },
+  })
+  if (authError) throw authError
+  successMessage.value = 'Check your email for a confirmation link, then sign in.'
+  mode.value = 'login'
+}
+
 async function handleSubmit() {
   loading.value = true
   error.value = ''
@@ -29,25 +122,13 @@ async function handleSubmit() {
 
   try {
     if (mode.value === 'login') {
-      const { error: authError } = await client.auth.signInWithPassword({
-        email: email.value,
-        password: password.value,
-      })
-      if (authError) throw authError
-      document.querySelector('#auth-modal').close('success')
-      navigateTo('/admin')
-    } else {
-      const { error: authError } = await client.auth.signUp({
-        email: email.value,
-        password: password.value,
-        options: {
-          data: { full_name: email.value.split('@')[0] },
-          emailRedirectTo: window.location.origin + '/admin',
-        },
-      })
-      if (authError) throw authError
-      successMessage.value = 'Check your email for a confirmation link, then sign in.'
-      mode.value = 'login'
+      await handleLogin()
+    } else if (mode.value === 'register') {
+      await handleRegister()
+    } else if (mode.value === 'reset') {
+      await handleReset()
+    } else if (mode.value === 'mfa') {
+      await handleMfaVerify()
     }
   } catch (e) {
     error.value = e.message || 'An error occurred'
@@ -61,6 +142,9 @@ function onDialogClose() {
   successMessage.value = ''
   email.value = ''
   password.value = ''
+  totpCode.value = ''
+  mfaFactorId.value = ''
+  mfaChallengeId.value = ''
   mode.value = 'login'
 }
 
@@ -138,21 +222,29 @@ function onDialogClose() {
           <!-- Form -->
           <form class="flex flex-col gap-4" @submit.prevent="handleSubmit">
 
-            <!-- Email -->
-            <div>
+            <!-- Email (login, register, reset) -->
+            <div v-if="mode !== 'mfa'">
               <label for="auth-email" class="sr-only">Email</label>
               <input id="auth-email" v-model="email" type="email" required autocomplete="email"
                 placeholder="Email address"
                 class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all" />
             </div>
 
-            <!-- Password -->
-            <div>
+            <!-- Password (login, register) -->
+            <div v-if="mode === 'login' || mode === 'register'">
               <label for="auth-password" class="sr-only">Password</label>
               <input id="auth-password" v-model="password" type="password" required
                 :autocomplete="mode === 'login' ? 'current-password' : 'new-password'"
                 placeholder="Password" minlength="6"
                 class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all" />
+            </div>
+
+            <!-- TOTP Code (mfa) -->
+            <div v-if="mode === 'mfa'">
+              <label for="auth-totp" class="sr-only">Authentication code</label>
+              <input id="auth-totp" v-model="totpCode" type="text" inputmode="numeric" required
+                autocomplete="one-time-code" placeholder="000000" maxlength="6" pattern="[0-9]{6}"
+                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all text-center text-2xl tracking-[0.5em] font-mono" />
             </div>
 
             <!-- Submit -->
@@ -163,8 +255,23 @@ function onDialogClose() {
 
           </form>
 
-          <!-- Toggle mode -->
-          <p class="mt-5 text-center text-sm text-bs-foreground-dark">
+          <!-- Forgot password (login mode only) -->
+          <p v-if="mode === 'login'" class="mt-3 text-center">
+            <button type="button" class="text-sm text-bs-accent hover:underline font-medium" @click="goToReset">
+              Forgot password?
+            </button>
+          </p>
+
+          <!-- Back to login (reset mode) -->
+          <p v-if="mode === 'reset'" class="mt-5 text-center text-sm text-bs-foreground-dark">
+            Remember your password?
+            <button type="button" class="text-bs-accent hover:underline font-medium ml-1" @click="backToLogin">
+              Sign In
+            </button>
+          </p>
+
+          <!-- Toggle mode (login/register only) -->
+          <p v-if="mode === 'login' || mode === 'register'" class="mt-5 text-center text-sm text-bs-foreground-dark">
             {{ mode === 'login' ? "Don't have an account?" : 'Already have an account?' }}
             <button type="button" class="text-bs-accent hover:underline font-medium ml-1" @click="switchMode">
               {{ mode === 'login' ? 'Register' : 'Sign In' }}

@@ -21,7 +21,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "better-sqlite3": "^12.11.1",
     "marked": "^18.0.7",
-    "nuxt": "^4.4.2",
+    "nuxt": "^4.5.1",
     "nuxt-security": "^2.6.0",
     "resend": "^6.18.0",
     "swiper": "^12.1.2",
