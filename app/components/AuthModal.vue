@@ -95,10 +95,10 @@ async function handleMfaVerify() {
 
 async function handleReset() {
   const { error: authError } = await client.auth.resetPasswordForEmail(email.value, {
-    redirectTo: window.location.origin + '/auth/confirm',
+    redirectTo: `${window.location.origin}/auth/confirm`,
   })
   if (authError) throw authError
-  successMessage.value = 'Check your email for a password reset link.'
+  success.value = 'Check your email for a password reset link.'
 }
 
 async function handleRegister() {

@@ -5,8 +5,12 @@ const COOKIE_PREFIX = 'sb-ytakvlhdrfmktkputzjg'
 export function getSupabaseSession(event: any, config: any) {
   const cookieHeader = event.node.req.headers.cookie || ''
 
-  // Find the session cookie: sb-{project-ref}=base64-{json}
-  const sessionCookie = cookieHeader.split(';').find(c => c.trim().startsWith(`${COOKIE_PREFIX}=`))
+  // Find the session cookie — Supabase module sets sb-{ref}.{N}=base64-{json}
+  // Match both sb-{ref}= and sb-{ref}.1= patterns
+  const sessionCookie = cookieHeader.split(';').find(c => {
+    const trimmed = c.trim()
+    return trimmed.startsWith(`${COOKIE_PREFIX}=`) || trimmed.startsWith(`${COOKIE_PREFIX}.`)
+  })
 
   if (!sessionCookie) return null
 

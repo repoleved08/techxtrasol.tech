@@ -5,6 +5,7 @@ const props = defineProps(['settings'])
 const user = useSupabaseUser()
 const loggedIn = computed(() => !!user.value)
 const client = useSupabaseClient()
+const { isAdmin, checkAdminStatus } = useAdmin()
 
 const menuOpen = ref(false)
 const userMenuOpen = ref(false)
@@ -42,7 +43,10 @@ async function signOut() {
   navigateTo('/')
 }
 
-onMounted(() => {
+onMounted(async () => {
+  if (user.value) {
+    await checkAdminStatus()
+  }
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       closeMenu()
@@ -134,6 +138,27 @@ onMounted(() => {
               >
                 <Icon name="lucide:layout-dashboard" class="w-4 h-4" />
                 Dashboard
+              </a>
+
+              <!-- Admin (only for admins) -->
+              <a
+                v-if="isAdmin"
+                href="/admin"
+                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+                @click="closeUserMenu"
+              >
+                <Icon name="lucide:shield" class="w-4 h-4" />
+                Admin Panel
+              </a>
+
+              <!-- MFA Setup -->
+              <a
+                href="/auth/mfa-setup"
+                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+                @click="closeUserMenu"
+              >
+                <Icon name="lucide:shield-check" class="w-4 h-4" />
+                Security (MFA)
               </a>
 
               <!-- Logout -->
@@ -234,6 +259,25 @@ onMounted(() => {
             >
               <Icon name="lucide:layout-dashboard" class="w-5 h-5" />
               Dashboard
+            </a>
+
+            <a
+              v-if="isAdmin"
+              href="/admin"
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+              @click="closeMenu"
+            >
+              <Icon name="lucide:shield" class="w-5 h-5" />
+              Admin Panel
+            </a>
+
+            <a
+              href="/auth/mfa-setup"
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+              @click="closeMenu"
+            >
+              <Icon name="lucide:shield-check" class="w-5 h-5" />
+              Security (MFA)
             </a>
 
             <button
