@@ -60,7 +60,7 @@ function isActive(href) {
       <!-- Logo -->
       <div class="flex items-center gap-3 px-6 py-5 border-b border-bs-surface-3/50">
         <a href="/" class="flex items-center gap-2">
-          <img src="/icons/logo.svg" alt="TechXtrasol" class="h-7 w-auto" />
+          <Icon name="bs-icon:logo" alt="TechXtrasol" class="h-7 w-auto text-bs-foreground-light" />
         </a>
         <span class="text-xs font-medium text-bs-foreground-dark bg-bs-accent/10 text-bs-accent px-2 py-0.5 rounded-full">Admin</span>
       </div>

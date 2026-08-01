@@ -44,14 +44,15 @@
 
 /* Links */
 .blog-content a {
-  color: #818cf8;
+  color: var(--color-bs-accent);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.2s;
 }
 
 .blog-content a:hover {
-  color: #a5b4fc;
+  color: var(--color-bs-accent);
+  opacity: 0.85;
 }
 
 /* Strong / bold */
@@ -86,7 +87,7 @@
 
 /* Blockquote */
 .blog-content blockquote {
-  border-left: 3px solid #818cf8;
+  border-left: 3px solid var(--color-bs-accent);
   padding-left: 1.25em;
   margin-left: 0;
   margin-top: 1.5em;
@@ -98,11 +99,11 @@
 .blog-content code {
   font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
   font-size: 0.875em;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-bs-surface-2);
+  border: 1px solid var(--color-bs-surface-3);
   border-radius: 6px;
   padding: 0.15em 0.4em;
-  color: #c4b5fd;
+  color: var(--color-bs-foreground-light);
 }
 
 /* Code — block */
@@ -147,7 +148,7 @@
 }
 
 .blog-content th {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--color-bs-surface-2);
   color: var(--color-bs-foreground-light);
   font-weight: 600;
   font-size: 0.875rem;

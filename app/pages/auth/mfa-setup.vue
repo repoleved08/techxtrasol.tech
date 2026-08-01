@@ -85,7 +85,7 @@ function copySecret() {
 
       <!-- Logo -->
       <div class="flex items-center gap-2 mb-8 justify-center">
-        <img src="/icons/logo.svg" alt="TechXtrasol" class="h-7 w-auto" />
+        <Icon name="bs-icon:logo" alt="TechXtrasol" class="h-7 w-auto text-bs-foreground-light" />
       </div>
 
       <!-- Card -->

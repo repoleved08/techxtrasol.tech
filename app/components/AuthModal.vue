@@ -170,7 +170,7 @@ function onDialogClose() {
 
         <!-- Branding text -->
         <div class="relative z-10">
-          <img src="/icons/logo.svg" alt="TechXtrasol" class="h-7 w-auto mb-4 brightness-0 invert" />
+          <Icon name="bs-icon:logo" alt="TechXtrasol" class="h-7 w-auto mb-4 text-bs-foreground-light" />
           <p class="text-sm text-white/70 leading-relaxed">
             Engineering software that moves businesses forward.
           </p>
@@ -198,7 +198,7 @@ function onDialogClose() {
 
           <!-- Mobile logo -->
           <div class="md:hidden flex items-center gap-2 mb-6">
-            <img src="/icons/logo.svg" alt="TechXtrasol" class="h-6 w-auto" />
+            <Icon name="bs-icon:logo" alt="TechXtrasol" class="h-6 w-auto text-bs-foreground-light" />
           </div>
 
           <!-- Header -->

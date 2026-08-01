@@ -17,7 +17,7 @@ const url = `https://wa.me/${phone.replace(/[^0-9]/g, '')}`
     </svg>
 
     <!-- Tooltip -->
-    <span class="absolute right-full mr-3 px-3 py-1.5 bg-gray-900 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+    <span class="absolute right-full mr-3 px-3 py-1.5 bg-bs-surface-0 text-bs-foreground-light border border-bs-surface-3 text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none shadow-lg">
       Chat with us
     </span>
   </a>

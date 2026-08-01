@@ -72,7 +72,7 @@ onMounted(async () => {
 
       <!-- Logo -->
       <a class="shrink-0 group" href="/" :aria-label="settings.title + ' - Home'">
-        <img src="/icons/logo.svg" alt="Techxtrasol" class="h-7 md:h-8 w-auto" />
+        <Icon name="bs-icon:logo" alt="Techxtrasol" class="h-7 md:h-8 w-auto text-bs-foreground-light" />
       </a>
 
       <!-- Nav (desktop) -->
@@ -90,6 +90,9 @@ onMounted(async () => {
         <button type="button" class="min-w-32 bs-btn" @click="useDialogOpen">
           {{ settings.demo.title }}
         </button>
+
+        <!-- Theme toggle -->
+        <ThemeToggle />
 
         <!-- Logged out: user icon -->
         <button
@@ -183,6 +186,9 @@ onMounted(async () => {
         <button type="button" class="bs-btn text-sm px-4 py-2" @click="useDialogOpen">
           {{ settings.demo.title }}
         </button>
+
+        <!-- Theme toggle -->
+        <ThemeToggle />
 
         <!-- Hamburger -->
         <button
