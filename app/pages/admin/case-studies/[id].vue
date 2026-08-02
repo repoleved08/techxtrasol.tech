@@ -95,10 +95,13 @@ function removeResult(i) {
 async function handleSave() {
   saving.value = true
   try {
+    const { notify } = useIndexNow()
     if (isNew.value) {
-      await createCaseStudy({ ...form })
+      const study = await createCaseStudy({ ...form })
+      await notify([`https://techxtrasol.tech/case-studies/${study.slug}`])
     } else {
-      await updateCaseStudy(studyId, { ...form })
+      const study = await updateCaseStudy(studyId, { ...form })
+      await notify([`https://techxtrasol.tech/case-studies/${study.slug}`])
     }
     router.push('/admin/case-studies')
   }

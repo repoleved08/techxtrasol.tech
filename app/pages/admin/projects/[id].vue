@@ -95,10 +95,13 @@ function generateSlug() {
 async function handleSave() {
   saving.value = true
   try {
+    const { notify } = useIndexNow()
     if (isNew.value) {
-      await createProject({ ...form })
+      const project = await createProject({ ...form })
+      await notify([`https://techxtrasol.tech/projects/${project.slug}`])
     } else {
-      await updateProject(projectId, { ...form })
+      const project = await updateProject(projectId, { ...form })
+      await notify([`https://techxtrasol.tech/projects/${project.slug}`])
     }
     router.push('/admin/projects')
   }

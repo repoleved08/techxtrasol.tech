@@ -54,9 +54,13 @@ async function handleSave() {
   saving.value = true
   try {
     if (isNew.value) {
-      await createPost({ ...form, author: form.author || 'Norman Bii' })
+      const post = await createPost({ ...form, author: form.author || 'Norman Bii' })
+      const { notify } = useIndexNow()
+      await notify([`https://techxtrasol.tech/blog/${post.slug}`])
     } else {
-      await updatePost(postId, { ...form, author: form.author || 'Norman Bii' })
+      const post = await updatePost(postId, { ...form, author: form.author || 'Norman Bii' })
+      const { notify } = useIndexNow()
+      await notify([`https://techxtrasol.tech/blog/${post.slug}`])
     }
     router.push('/admin/blog')
   }

@@ -73,7 +73,9 @@ function removeItem(field, i) {
 async function handleSave() {
   saving.value = true
   try {
-    await updateService(serviceId, { ...form })
+    const service = await updateService(serviceId, { ...form })
+    const { notify } = useIndexNow()
+    await notify([`https://techxtrasol.tech/services/${service.slug}`])
     router.push('/admin/services')
   }
   finally {
