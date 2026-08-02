@@ -126,6 +126,35 @@
   line-height: 1.7;
 }
 
+/* Shiki syntax highlighting */
+.blog-content pre.shiki {
+  background-color: var(--shiki-dark-bg, #0f0f11);
+  color: var(--shiki-dark, var(--color-bs-foreground-dark));
+  border-color: var(--color-bs-surface-3);
+}
+
+.blog-content pre.shiki code {
+  color: var(--shiki-dark, var(--color-bs-foreground-dark));
+}
+
+.blog-content pre.shiki .line span {
+  color: var(--shiki-dark);
+}
+
+html.light .blog-content pre.shiki {
+  background-color: var(--shiki-light-bg, #ffffff);
+  color: var(--shiki-light, var(--color-bs-foreground-dark));
+  border-color: var(--color-bs-surface-3);
+}
+
+html.light .blog-content pre.shiki code {
+  color: var(--shiki-light, var(--color-bs-foreground-dark));
+}
+
+html.light .blog-content pre.shiki .line span {
+  color: var(--shiki-light);
+}
+
 /* Horizontal rule */
 .blog-content hr {
   border: none;

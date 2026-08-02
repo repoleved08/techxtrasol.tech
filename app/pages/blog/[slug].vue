@@ -1,21 +1,14 @@
 <script setup>
-import { marked } from 'marked'
-
 const route = useRoute()
-const { getPostBySlug } = useSupabaseBlog()
 
-const { data: post } = await useAsyncData('blog-' + route.params.slug, () =>
-  getPostBySlug(route.params.slug)
-)
+const { data, error } = await useFetch(`/api/blog/${route.params.slug}`)
 
-if (!post.value) {
+if (error.value || !data.value?.post) {
   throw createError({ statusCode: 404, statusMessage: 'Post not found' })
 }
 
-const renderedContent = computed(() => {
-  if (!post.value?.content) return ''
-  return marked(post.value.content)
-})
+const post = computed(() => data.value.post)
+const renderedContent = computed(() => data.value.html || '')
 
 useSeoMeta({
   title: () => post.value ? post.value.title + ' — TechXtrasol Blog' : 'Blog Post',
