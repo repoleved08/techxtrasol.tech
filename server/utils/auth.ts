@@ -8,6 +8,9 @@ export function createSupabaseServerClient(event: any) {
     config.public.supabase.url,
     config.public.supabase.key,
     {
+      cookieOptions: {
+        name: config.public.supabase.cookiePrefix,
+      },
       cookies: {
         getAll() {
           const cookieHeader = event.node.req.headers.cookie || ''
