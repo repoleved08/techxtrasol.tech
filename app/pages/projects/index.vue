@@ -20,7 +20,7 @@ useHead({
 useSeoMeta({
   ogTitle: 'Our Projects | TechXtrasol',
   ogDescription: 'Explore our portfolio of software engineering projects built for businesses across Kenya and beyond.',
-  ogImage: '/1200x630.jpg',
+  ogImage: '/content-images/blog-default-og.jpg',
 })
 
 async function loadProjects(page = 1) {

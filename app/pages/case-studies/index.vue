@@ -14,7 +14,7 @@ useHead({
 useSeoMeta({
   ogTitle: 'Case Studies | TechXtrasol',
   ogDescription: 'In-depth case studies showing how we solve complex business problems with software engineering.',
-  ogImage: '/1200x630.jpg',
+  ogImage: '/content-images/blog-default-og.jpg',
 })
 
 onMounted(async () => {

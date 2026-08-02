@@ -14,7 +14,7 @@ useHead({
 useSeoMeta({
   ogTitle: 'Our Services | TechXtrasol',
   ogDescription: 'Software engineering services for businesses in Kenya and beyond.',
-  ogImage: '/1200x630.jpg',
+  ogImage: '/content-images/blog-default-og.jpg',
 })
 
 onMounted(async () => {

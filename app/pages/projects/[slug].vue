@@ -33,14 +33,14 @@ useHead({
     { name: 'description', content: () => project.value?.seo_description || project.value?.short_description || '' },
     { property: 'og:title', content: () => project.value?.seo_title || project.value?.title || '' },
     { property: 'og:description', content: () => project.value?.seo_description || project.value?.short_description || '' },
-    { property: 'og:image', content: () => project.value?.featured_image || '/1200x630.jpg' },
+    { property: 'og:image', content: () => project.value?.featured_image || '/content-images/blog-default-og.jpg' },
   ],
 })
 
 useSeoMeta({
   ogTitle: () => project.value?.seo_title || project.value?.title || '',
   ogDescription: () => project.value?.seo_description || project.value?.short_description || '',
-  ogImage: () => project.value?.featured_image || '/1200x630.jpg',
+  ogImage: () => project.value?.featured_image || '/content-images/blog-default-og.jpg',
 })
 
 useSchemaOrg(() => {

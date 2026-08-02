@@ -32,7 +32,7 @@ useHead({
 useSeoMeta({
   ogTitle: () => service.value?.seo_title || service.value?.title || '',
   ogDescription: () => service.value?.seo_description || service.value?.short_description || '',
-  ogImage: () => service.value?.featured_image || '/1200x630.jpg',
+  ogImage: () => service.value?.featured_image || '/content-images/blog-default-og.jpg',
 })
 
 useSchemaOrg(() => {

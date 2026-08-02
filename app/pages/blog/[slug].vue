@@ -12,9 +12,22 @@ const renderedContent = computed(() => data.value.html || '')
 
 const siteUrl = 'https://techxtrasol.tech'
 const postUrl = computed(() => siteUrl + route.path)
-const ogImage = computed(() => post.value?.image?.startsWith('http')
-  ? post.value.image
-  : siteUrl + (post.value?.image || '/1200x630.jpg'))
+
+const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
+const supportedSocialFormats = ['jpg', 'jpeg', 'png', 'webp', 'gif']
+
+const ogImage = computed(() => {
+  const image = post.value?.image
+  if (!image) return DEFAULT_OG_IMAGE
+  const ext = image.split('.').pop()?.toLowerCase() || ''
+  if (image.startsWith('http') && supportedSocialFormats.includes(ext)) {
+    return image
+  }
+  if (!image.startsWith('http') && supportedSocialFormats.includes(ext)) {
+    return siteUrl + image
+  }
+  return DEFAULT_OG_IMAGE
+})
 
 useSeoMeta({
   title: () => post.value ? post.value.title + ' — TechXtrasol Blog' : 'Blog Post',

@@ -30,7 +30,7 @@ useHead({
 useSeoMeta({
   ogTitle: () => study.value?.seo_title || study.value?.title || '',
   ogDescription: () => study.value?.seo_description || study.value?.introduction || '',
-  ogImage: () => study.value?.featured_image || '/1200x630.jpg',
+  ogImage: () => study.value?.featured_image || '/content-images/blog-default-og.jpg',
 })
 
 useSchemaOrg(() => {
