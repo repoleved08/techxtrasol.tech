@@ -24,7 +24,7 @@ This project is deployed as the live TechXtrasol website at https://www.techxtra
 - Schema.org structured data (Organization, LocalBusiness, Article, Service, Product, FAQPage) via `@nuxtjs/seo`
 - Dynamic sitemap at `/sitemap.xml` powered by Supabase content
 - `robots.txt` including an LLMs group allowing `/llms.txt` and `/llms-full.txt`
-- IndexNow key file at `/b08246a0ebe24302893bd17ea8edb2af.txt`; URL notifications submitted on publish via `/api/indexnow`
+- IndexNow key file (Bing API key) at `/e62b6d50bfb44503b030be33b9101571.txt`; URL notifications submitted on publish via `/api/indexnow`
 
 ## License
 

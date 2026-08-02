@@ -12,7 +12,7 @@ export default defineNuxtConfig({
     supabaseServiceKey: process.env.SUPABASE_SERVICE_KEY,
     resendApiKey: process.env.RESEND_API_KEY,
     notificationEmail: process.env.NOTIFICATION_EMAIL,
-    indexnowKey: process.env.INDEXNOW_KEY || 'b08246a0ebe24302893bd17ea8edb2af',
+    indexnowKey: process.env.INDEXNOW_KEY || 'e62b6d50bfb44503b030be33b9101571',
     supabase: {},
     public: {
       supabase: {
