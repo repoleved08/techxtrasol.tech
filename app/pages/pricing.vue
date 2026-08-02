@@ -35,25 +35,13 @@ const toProductSchema = (plan, category) => ({
   },
 })
 
-const pricingSchema = {
-  '@type': 'WebPage',
-  name: 'TechXtrasol Pricing',
-  description: 'Transparent pricing for web development, website maintenance, and social media management.',
-  url: siteUrl + '/pricing',
-  provider: {
-    '@type': 'Organization',
-    name: 'TechXtrasol',
-    url: siteUrl,
-  },
-}
-
 const offersSchema = [
   ...pricing.plans.map(plan => toProductSchema(plan, 'Web Development & Custom Software')),
   ...pricing.maintenance.plans.map(plan => toProductSchema(plan, 'System Maintenance & Support')),
   ...pricing.social_media.plans.map(plan => toProductSchema(plan, 'Digital Marketing & Growth')),
 ]
 
-useSchemaOrg([pricingSchema, ...offersSchema])
+useSchemaOrg(offersSchema)
 </script>
 
 <template>

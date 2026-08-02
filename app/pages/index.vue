@@ -53,94 +53,44 @@ useHead({
   ],
 })
 
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'TechXtrasol',
-  url: 'https://techxtrasol.tech',
-  logo: 'https://techxtrasol.tech/icons/logo.svg',
-  description: 'Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Nairobi',
-    addressCountry: 'KE',
-  },
-  sameAs: [
-    'https://www.linkedin.com/company/techxtrasol',
-    'https://github.com/techxtrasol',
-    'https://x.com/techxtrasol',
-  ],
-}
-
-const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'TechXtrasol',
-  url: 'https://techxtrasol.tech',
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: 'https://techxtrasol.tech/search?q={search_term_string}',
-    'query-input': 'required name=search_term_string',
-  },
-}
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'TechXtrasol',
-  image: 'https://techxtrasol.tech/icons/logo.svg',
-  url: 'https://techxtrasol.tech',
-  telephone: '+254794312108',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Nairobi',
-    addressRegion: 'Nairobi County',
-    addressCountry: 'KE',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: -1.2921,
-    longitude: 36.8219,
-  },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-    opens: '08:00',
-    closes: '18:00',
-  },
-  priceRange: '$$',
-}
-
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(organizationSchema),
+useSchemaOrg([
+  {
+    '@type': 'LocalBusiness',
+    name: 'TechXtrasol',
+    image: 'https://techxtrasol.tech/icons/logo.svg',
+    url: 'https://techxtrasol.tech',
+    telephone: '+254794312108',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Nairobi',
+      addressRegion: 'Nairobi County',
+      addressCountry: 'KE',
     },
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(websiteSchema),
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: -1.2921,
+      longitude: 36.8219,
     },
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(localBusinessSchema),
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '08:00',
+      closes: '18:00',
     },
-  ],
-})
-
-const faqSchema = {
-  '@type': 'FAQPage',
-  mainEntity: faq.map(item => ({
-    '@type': 'Question',
-    name: item.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.answer,
-    },
-  })),
-}
-
-useSchemaOrg(faqSchema)
+    priceRange: '$$',
+  },
+  {
+    '@type': 'FAQPage',
+    mainEntity: faq.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  },
+])
 </script>
 
 <template>

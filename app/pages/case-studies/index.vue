@@ -26,14 +26,6 @@ onMounted(async () => {
   }
 })
 
-useSchemaOrg([
-  {
-    '@type': 'CollectionPage',
-    name: 'Case Studies',
-    description: 'In-depth case studies by TechXtrasol.',
-    url: 'https://techxtrasol.tech/case-studies',
-  },
-])
 </script>
 
 <template>

@@ -43,7 +43,7 @@ useSeoMeta({
     : project.value?.featured_image ? siteUrl + project.value.featured_image : DEFAULT_OG_IMAGE,
 })
 
-useSchemaOrg(() => {
+useSchemaOrg(computed(() => {
   if (!project.value) return []
   return [
     {
@@ -62,7 +62,7 @@ useSchemaOrg(() => {
       ],
     },
   ]
-})
+}))
 </script>
 
 <template>

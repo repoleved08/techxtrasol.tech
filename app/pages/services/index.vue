@@ -25,15 +25,6 @@ onMounted(async () => {
     loading.value = false
   }
 })
-
-useSchemaOrg([
-  {
-    '@type': 'Organization',
-    name: 'TechXtrasol',
-    url: 'https://techxtrasol.tech',
-    knowsAbout: services.value.map(s => s.title),
-  },
-])
 </script>
 
 <template>

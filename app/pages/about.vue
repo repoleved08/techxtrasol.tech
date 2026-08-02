@@ -19,24 +19,6 @@ useHead({
 
 const siteUrl = 'https://techxtrasol.tech'
 
-const aboutSchema = {
-  '@type': 'AboutPage',
-  name: 'About TechXtrasol',
-  description: 'TechXtrasol is a software engineering company based in Nairobi and Mombasa, Kenya.',
-  url: siteUrl + '/about',
-  mainEntity: {
-    '@type': 'Organization',
-    name: 'TechXtrasol',
-    url: siteUrl,
-    description: 'Software engineering company building mission-critical digital systems.',
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: 'Nairobi',
-      addressCountry: 'KE',
-    },
-  },
-}
-
 const teamSchema = team.map(member => ({
   '@type': 'Person',
   name: member.name,
@@ -59,7 +41,7 @@ const breadcrumbSchema = {
   ],
 }
 
-useSchemaOrg([aboutSchema, breadcrumbSchema, ...teamSchema])
+useSchemaOrg([breadcrumbSchema, ...teamSchema])
 </script>
 
 <template>

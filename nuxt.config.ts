@@ -54,7 +54,7 @@ export default defineNuxtConfig({
 
   //  Nuxt modules
 
-  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxtjs/sitemap', '@nuxtjs/robots', '@nuxt/content', 'nuxt-security', '@nuxtjs/supabase'],
+  modules: ['@nuxt/fonts', '@nuxt/image', '@nuxt/icon', '@nuxt/content', 'nuxt-security', '@nuxtjs/supabase', '@nuxtjs/seo'],
 
   // Nuxt icons
 
@@ -98,6 +98,27 @@ export default defineNuxtConfig({
     name: 'TechXtrasol',
   },
 
+  // Schema.org structured data
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'TechXtrasol',
+      url: 'https://techxtrasol.tech',
+      logo: 'https://techxtrasol.tech/icons/logo.svg',
+      description: 'Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.',
+      sameAs: [
+        'https://www.linkedin.com/company/techxtrasol',
+        'https://github.com/techxtrasol',
+        'https://x.com/techxtrasol',
+      ],
+    },
+  },
+
+  // OG images are provided statically per-page; the module's runtime renderer isn't needed.
+  ogImage: {
+    enabled: false,
+  },
+
   // Sitemap configuration
   sitemap: {
     hostname: 'https://techxtrasol.tech',
@@ -117,10 +138,12 @@ export default defineNuxtConfig({
     allow: '/',
     sitemap: 'https://techxtrasol.tech/sitemap.xml',
     disallow: ['/credits', '/admin/', '/api/', '/_nuxt/'],
-    extraRobotsTags: {
-      'LLMs': 'https://techxtrasol.tech/llms.txt',
-      'LLMs-full': 'https://techxtrasol.tech/llms-full.txt',
-    },
+    groups: [
+      {
+        userAgents: ['LLMs', 'LLMs-full'],
+        allow: ['/llms.txt', '/llms-full.txt'],
+      },
+    ],
   },
 
   // Security

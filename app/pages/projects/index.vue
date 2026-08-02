@@ -62,15 +62,6 @@ function goToPage(page) {
   loadProjects(page)
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
-
-useSchemaOrg([
-  {
-    '@type': 'CollectionPage',
-    name: 'Our Projects',
-    description: 'Portfolio of software engineering projects by TechXtrasol.',
-    url: 'https://techxtrasol.tech/projects',
-  },
-])
 </script>
 
 <template>

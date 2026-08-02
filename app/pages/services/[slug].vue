@@ -34,7 +34,7 @@ useSeoMeta({
     : service.value?.featured_image ? siteUrl + service.value.featured_image : DEFAULT_OG_IMAGE,
 })
 
-useSchemaOrg(() => {
+useSchemaOrg(computed(() => {
   if (!service.value) return []
   return [
     {
@@ -53,7 +53,7 @@ useSchemaOrg(() => {
       ],
     },
   ]
-})
+}))
 </script>
 
 <template>

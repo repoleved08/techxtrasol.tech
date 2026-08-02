@@ -50,7 +50,7 @@ useHead({
   ],
 })
 
-useSchemaOrg(() => {
+useSchemaOrg(computed(() => {
   if (!post.value) return []
   const authorName = post.value.author || 'TechXtrasol'
   const articleSchema = {
@@ -82,7 +82,7 @@ useSchemaOrg(() => {
     ],
   }
   return [articleSchema, breadcrumbSchema]
-})
+}))
 
 const copied = ref(false)
 const copyTimer = ref(null)
