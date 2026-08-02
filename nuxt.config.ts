@@ -128,6 +128,8 @@ export default defineNuxtConfig({
       '/admin/**',
       '/api/**',
       '/__sitemap__/**',
+      '/auth/**',
+      '/login',
     ],
     sources: [
       '/api/__sitemap__/urls',
