@@ -127,6 +127,20 @@ useHead({
     },
   ],
 })
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faq.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+}
+
+useSchemaOrg(faqSchema)
 </script>
 
 <template>
