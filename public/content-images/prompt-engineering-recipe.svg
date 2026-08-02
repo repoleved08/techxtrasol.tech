@@ -1,0 +1,57 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121212"/>
+      <stop offset="0.55" stop-color="#1c1c21"/>
+      <stop offset="1" stop-color="#18181B"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="0.6" stop-color="#6366f1" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366f1"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <rect x="0" y="0" width="1200" height="5" fill="url(#bar)"/>
+
+  <!-- Terminal window -->
+  <rect x="100" y="150" width="560" height="340" rx="14" fill="#0d0d10" stroke="#2F2F31" stroke-width="1.5"/>
+  <rect x="100" y="150" width="560" height="42" rx="14" fill="#18181B"/>
+  <rect x="100" y="178" width="560" height="14" fill="#18181B"/>
+  <circle cx="126" cy="171" r="6" fill="#F97583"/>
+  <circle cx="148" cy="171" r="6" fill="#fbbf24"/>
+  <circle cx="170" cy="171" r="6" fill="#34d399"/>
+
+  <!-- Prompt lines -->
+  <text x="130" y="225" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="20" fill="#9f9f9f">$ ai "explain how authentication</text>
+  <text x="130" y="253" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="20" fill="#9f9f9f">  works in Laravel"</text>
+
+  <text x="130" y="305" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="20" fill="#8b5cf6">▸ context: HTTP sessions, bcrypt,</text>
+  <text x="130" y="333" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="20" fill="#8b5cf6">  CSRF tokens, guards</text>
+  <text x="130" y="361" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="20" fill="#8b5cf6">▸ audience: junior developer</text>
+  <text x="130" y="389" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="20" fill="#8b5cf6">▸ format: step-by-step with code</text>
+
+  <text x="130" y="447" font-family="'JetBrains Mono','SFMono-Regular',Consolas,monospace" font-size="20" fill="#34d399">✓ clear, structured answer</text>
+
+  <!-- Chat bubbles right side -->
+  <rect x="720" y="180" width="380" height="120" rx="14" fill="#6366f1" fill-opacity="0.14" stroke="#6366f1" stroke-opacity="0.35"/>
+  <text x="748" y="220" font-family="'Inter','Helvetica Neue',sans-serif" font-size="18" font-weight="600" fill="#eeeeee">The Prompt Recipe</text>
+  <text x="748" y="252" font-family="'Inter','Helvetica Neue',sans-serif" font-size="16" fill="#c7c7c7">Context · Role · Task · Format ·</text>
+  <text x="748" y="276" font-family="'Inter','Helvetica Neue',sans-serif" font-size="16" fill="#c7c7c7">Constraints · Verification</text>
+
+  <rect x="720" y="330" width="380" height="160" rx="14" fill="#0d0d10" stroke="#2F2F31" stroke-width="1.5"/>
+  <text x="748" y="370" font-family="'Inter','Helvetica Neue',sans-serif" font-size="16" font-weight="600" fill="#6366f1">Custom GPT / Project Notes</text>
+  <text x="748" y="402" font-family="'Inter','Helvetica Neue',sans-serif" font-size="16" fill="#c7c7c7">• Tech stack you work in</text>
+  <text x="748" y="430" font-family="'Inter','Helvetica Neue',sans-serif" font-size="16" fill="#c7c7c7">• Conventions &amp; idioms</text>
+  <text x="748" y="458" font-family="'Inter','Helvetica Neue',sans-serif" font-size="16" fill="#c7c7c7">• Stored knowledge files</text>
+
+  <text x="100" y="560" font-family="'Inter','Helvetica Neue',sans-serif" font-size="30" font-weight="700" fill="#ffffff">Prompting AI That Actually Understands You</text>
+  <text x="100" y="594" font-family="'Inter','Helvetica Neue',sans-serif" font-size="20" fill="#9f9f9f">How to write prompts — and personalise ChatGPT — so the output reads like it came from your team.</text>
+</svg>
