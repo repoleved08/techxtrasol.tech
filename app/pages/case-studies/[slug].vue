@@ -4,24 +4,19 @@ const slug = route.params.slug
 
 const { getCaseStudyBySlug, getRelatedCaseStudies } = useCaseStudies()
 
-const study = ref(null)
-const relatedStudies = ref([])
-const loading = ref(true)
-
 const siteUrl = 'https://techxtrasol.tech'
 const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
 
-onMounted(async () => {
-  try {
-    study.value = await getCaseStudyBySlug(slug)
-    if (study.value) {
-      relatedStudies.value = await getRelatedCaseStudies(slug, 3)
-    }
-  }
-  finally {
-    loading.value = false
-  }
+const { data, pending } = await useAsyncData(`case-study-${slug}`, async () => {
+  const study = await getCaseStudyBySlug(slug)
+  if (!study) return { study: null, relatedStudies: [] }
+  const relatedStudies = await getRelatedCaseStudies(slug, 3)
+  return { study, relatedStudies }
 })
+
+const study = computed(() => data.value?.study || null)
+const relatedStudies = computed(() => data.value?.relatedStudies || [])
+const loading = computed(() => pending.value)
 
 useHead({
   title: () => study.value?.seo_title || study.value?.title ? `${study.value.title} | TechXtrasol` : 'Case Study | TechXtrasol',
@@ -47,6 +42,14 @@ useSchemaOrg(() => {
       description: study.value.introduction,
       datePublished: study.value.created_at,
       author: { '@type': 'Organization', name: 'TechXtrasol' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Case Studies', item: siteUrl + '/case-studies' },
+        { '@type': 'ListItem', position: 3, name: study.value.title, item: siteUrl + route.path },
+      ],
     },
   ]
 })

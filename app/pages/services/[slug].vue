@@ -5,25 +5,19 @@ const slug = route.params.slug
 const { getServiceBySlug } = useServices()
 const { getPublishedProjects } = useProjects()
 
-const service = ref(null)
-const relatedProjects = ref([])
-const loading = ref(true)
-
 const siteUrl = 'https://techxtrasol.tech'
 const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
 
-onMounted(async () => {
-  try {
-    service.value = await getServiceBySlug(slug)
-    if (service.value) {
-      const result = await getPublishedProjects({ per_page: 3 })
-      relatedProjects.value = result.data
-    }
-  }
-  finally {
-    loading.value = false
-  }
+const { data, pending } = await useAsyncData(`service-${slug}`, async () => {
+  const service = await getServiceBySlug(slug)
+  if (!service) return { service: null, relatedProjects: [] }
+  const result = await getPublishedProjects({ per_page: 3 })
+  return { service, relatedProjects: result.data }
 })
+
+const service = computed(() => data.value?.service || null)
+const relatedProjects = computed(() => data.value?.relatedProjects || [])
+const loading = computed(() => pending.value)
 
 useHead({
   title: () => service.value ? `${service.value.title} | TechXtrasol` : 'Service | TechXtrasol',
@@ -49,6 +43,14 @@ useSchemaOrg(() => {
       description: service.value.short_description,
       provider: { '@type': 'Organization', name: 'TechXtrasol', url: 'https://techxtrasol.tech' },
       areaServed: { '@type': 'Country', name: 'Kenya' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: siteUrl + '/services' },
+        { '@type': 'ListItem', position: 3, name: service.value.title, item: siteUrl + route.path },
+      ],
     },
   ]
 })

@@ -1,4 +1,5 @@
 <script setup>
+import team from '../data/team.json'
 
 useSeoMeta({
   title: 'About Us — TechXtrasol Software Engineering Company Kenya',
@@ -16,16 +17,17 @@ useHead({
   ],
 })
 
+const siteUrl = 'https://techxtrasol.tech'
+
 const aboutSchema = {
-  '@context': 'https://schema.org',
   '@type': 'AboutPage',
   name: 'About TechXtrasol',
   description: 'TechXtrasol is a software engineering company based in Nairobi and Mombasa, Kenya.',
-  url: 'https://techxtrasol.tech/about',
+  url: siteUrl + '/about',
   mainEntity: {
     '@type': 'Organization',
     name: 'TechXtrasol',
-    url: 'https://techxtrasol.tech',
+    url: siteUrl,
     description: 'Software engineering company building mission-critical digital systems.',
     address: {
       '@type': 'PostalAddress',
@@ -35,14 +37,29 @@ const aboutSchema = {
   },
 }
 
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(aboutSchema),
-    },
+const teamSchema = team.map(member => ({
+  '@type': 'Person',
+  name: member.name,
+  jobTitle: member.role,
+  description: member.bio,
+  image: member.image.startsWith('http') ? member.image : siteUrl + member.image,
+  worksFor: {
+    '@type': 'Organization',
+    name: 'TechXtrasol',
+    url: siteUrl,
+  },
+  ...(member.linkedin && !member.linkedin.endsWith('/') ? { sameAs: [member.linkedin] } : {}),
+}))
+
+const breadcrumbSchema = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'About', item: siteUrl + '/about' },
   ],
-})
+}
+
+useSchemaOrg([aboutSchema, breadcrumbSchema, ...teamSchema])
 </script>
 
 <template>

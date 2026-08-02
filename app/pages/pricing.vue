@@ -17,27 +17,43 @@ useHead({
   ],
 })
 
+const siteUrl = 'https://techxtrasol.tech'
+
+const toProductSchema = (plan, category) => ({
+  '@type': 'Product',
+  name: plan.name,
+  description: plan.description,
+  category,
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'KES',
+    price: plan.price.replace(/[^0-9]/g, '').trim() || undefined,
+    priceValidUntil: '2027-12-31',
+    availability: 'https://schema.org/InStock',
+    url: siteUrl + '/pricing',
+    seller: { '@type': 'Organization', name: 'TechXtrasol', url: siteUrl },
+  },
+})
+
 const pricingSchema = {
-  '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'TechXtrasol Pricing',
   description: 'Transparent pricing for web development, website maintenance, and social media management.',
-  url: 'https://techxtrasol.tech/pricing',
+  url: siteUrl + '/pricing',
   provider: {
     '@type': 'Organization',
     name: 'TechXtrasol',
-    url: 'https://techxtrasol.tech',
+    url: siteUrl,
   },
 }
 
-useHead({
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(pricingSchema),
-    },
-  ],
-})
+const offersSchema = [
+  ...pricing.plans.map(plan => toProductSchema(plan, 'Web Development & Custom Software')),
+  ...pricing.maintenance.plans.map(plan => toProductSchema(plan, 'System Maintenance & Support')),
+  ...pricing.social_media.plans.map(plan => toProductSchema(plan, 'Digital Marketing & Growth')),
+]
+
+useSchemaOrg([pricingSchema, ...offersSchema])
 </script>
 
 <template>

@@ -5,30 +5,23 @@ const slug = route.params.slug
 const { getProjectBySlug, getRelatedProjects } = useProjects()
 const { getCaseStudyByProjectId } = useCaseStudies()
 
-const project = ref(null)
-const relatedProjects = ref([])
-const caseStudy = ref(null)
-const loading = ref(true)
-
 const siteUrl = 'https://techxtrasol.tech'
 const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
 
-onMounted(async () => {
-  try {
-    project.value = await getProjectBySlug(slug)
-    if (project.value) {
-      const [related, cs] = await Promise.all([
-        getRelatedProjects(slug, 3),
-        getCaseStudyByProjectId(project.value.id),
-      ])
-      relatedProjects.value = related
-      caseStudy.value = cs
-    }
-  }
-  finally {
-    loading.value = false
-  }
+const { data, pending } = await useAsyncData(`project-${slug}`, async () => {
+  const project = await getProjectBySlug(slug)
+  if (!project) return { project: null, relatedProjects: [], caseStudy: null }
+  const [related, cs] = await Promise.all([
+    getRelatedProjects(slug, 3),
+    getCaseStudyByProjectId(project.id),
+  ])
+  return { project, relatedProjects: related, caseStudy: cs }
 })
+
+const project = computed(() => data.value?.project || null)
+const relatedProjects = computed(() => data.value?.relatedProjects || [])
+const caseStudy = computed(() => data.value?.caseStudy || null)
+const loading = computed(() => pending.value)
 
 useHead({
   title: () => project.value?.seo_title || project.value?.title ? `${project.value.title} | TechXtrasol` : 'Project | TechXtrasol',
@@ -59,6 +52,14 @@ useSchemaOrg(() => {
       description: project.value.short_description,
       applicationCategory: 'BusinessApplication',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'KES' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Projects', item: siteUrl + '/projects' },
+        { '@type': 'ListItem', position: 3, name: project.value.title, item: siteUrl + route.path },
+      ],
     },
   ]
 })
