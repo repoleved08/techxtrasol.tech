@@ -50,6 +50,40 @@ useHead({
   ],
 })
 
+useSchemaOrg(() => {
+  if (!post.value) return []
+  const authorName = post.value.author || 'TechXtrasol'
+  const articleSchema = {
+    '@type': 'Article',
+    headline: post.value.title,
+    description: post.value.description,
+    image: ogImage.value,
+    datePublished: post.value.date || post.value.created_at,
+    dateModified: post.value.created_at,
+    author: { '@type': 'Person', name: authorName },
+    publisher: {
+      '@type': 'Organization',
+      name: 'TechXtrasol',
+      logo: {
+        '@type': 'ImageObject',
+        url: siteUrl + '/icons/logo.svg',
+      },
+    },
+    mainEntityOfPage: postUrl.value,
+    articleSection: post.value.category || undefined,
+    inLanguage: 'en',
+  }
+  const breadcrumbSchema = {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: siteUrl + '/blog' },
+      { '@type': 'ListItem', position: 3, name: post.value.title, item: postUrl.value },
+    ],
+  }
+  return [articleSchema, breadcrumbSchema]
+})
+
 const copied = ref(false)
 const copyTimer = ref(null)
 

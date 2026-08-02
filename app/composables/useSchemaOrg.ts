@@ -9,7 +9,7 @@ export function useSchemaOrg(schemas: SchemaOrgItem[] | (() => SchemaOrgItem[]))
     return Array.isArray(s) ? s : [s]
   })
 
-  useHead({
+  useHead(() => ({
     script: resolvedSchemas.value.map(schema => ({
       type: 'application/ld+json',
       innerHTML: JSON.stringify({
@@ -17,5 +17,5 @@ export function useSchemaOrg(schemas: SchemaOrgItem[] | (() => SchemaOrgItem[]))
         ...schema,
       }),
     })),
-  })
+  }))
 }
