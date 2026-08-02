@@ -20,10 +20,11 @@ const props = defineProps(['title', 'posts'])
 
     <div class="bs-mt-md grid md:grid-cols-3 gap-6">
 
-      <article
+      <NuxtLink
         v-for="(post, idx) in posts"
         :key="idx"
-        class="group p-6 md:p-8 rounded-xl bg-bs-surface-2 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3 hover:border-transparent transition-all duration-300"
+        :to="`/blog/${post.slug}`"
+        class="group p-6 md:p-8 rounded-xl bg-bs-surface-2 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3 hover:border-bs-accent/40 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)] transition-all duration-300"
       >
 
         <!-- Category -->
@@ -50,7 +51,7 @@ const props = defineProps(['title', 'posts'])
 
         </div>
 
-      </article>
+      </NuxtLink>
 
     </div>
 

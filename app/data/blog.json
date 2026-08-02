@@ -5,7 +5,8 @@
     "excerpt": "Learn how to structure Laravel applications using repository pattern, service layers, and clean architecture principles that scale with your business.",
     "date": "2026-07-15",
     "read_time": "8 min read",
-    "image": "/content-images/blackspike-wallpaper-01.avif"
+    "image": "/content-images/blackspike-wallpaper-01.avif",
+    "slug": "building-scalable-laravel-applications"
   },
   {
     "title": "Nuxt 4: What's New and Why It Matters for Your Next Project",
@@ -13,7 +14,8 @@
     "excerpt": "A deep dive into Nuxt 4 features — improved performance, better TypeScript support, and new composables that streamline development.",
     "date": "2026-07-08",
     "read_time": "6 min read",
-    "image": "/content-images/blackspike-wallpaper-02.avif"
+    "image": "/content-images/blackspike-wallpaper-02.avif",
+    "slug": "nuxt-4-whats-new"
   },
   {
     "title": "Integrating AI Chatbots into Business Systems: A Practical Guide",
@@ -21,7 +23,8 @@
     "excerpt": "How to build and deploy AI-powered chatbots that integrate with your existing business systems, knowledge bases, and workflows.",
     "date": "2026-07-01",
     "read_time": "10 min read",
-    "image": "/content-images/blackspike-wallpaper-03.avif"
+    "image": "/content-images/blackspike-wallpaper-03.avif",
+    "slug": "integrating-ai-chatbots"
   },
   {
     "title": "M-Pesa Integration: Complete Guide for Kenyan Businesses",
@@ -29,7 +32,8 @@
     "excerpt": "Step-by-step guide to integrating M-Pesa payments into your web application, including STK Push, C2B, and B2C transactions.",
     "date": "2026-06-24",
     "read_time": "12 min read",
-    "image": "/content-images/blackspike-wallpaper-04.avif"
+    "image": "/content-images/blackspike-wallpaper-04.avif",
+    "slug": "m-pesa-integration-guide"
   },
   {
     "title": "Docker for Developers: From Development to Production",
@@ -37,7 +41,8 @@
     "excerpt": "A practical guide to containerizing your applications with Docker, setting up CI/CD pipelines, and deploying to production.",
     "date": "2026-06-17",
     "read_time": "9 min read",
-    "image": "/content-images/blackspike-wallpaper-01.avif"
+    "image": "/content-images/blackspike-wallpaper-01.avif",
+    "slug": "docker-for-developers"
   },
   {
     "title": "Digital Transformation for Kenyan SMEs: Where to Start",
@@ -45,6 +50,7 @@
     "excerpt": "A roadmap for small and medium businesses in Kenya looking to digitize operations, automate workflows, and scale with technology.",
     "date": "2026-06-10",
     "read_time": "7 min read",
-    "image": "/content-images/blackspike-wallpaper-02.avif"
+    "image": "/content-images/blackspike-wallpaper-02.avif",
+    "slug": "digital-transformation-kenyan-smes"
   }
 ]
