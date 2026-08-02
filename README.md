@@ -15,6 +15,17 @@ You can read more about how we built it and the cool new tech we used [on our bl
 
 We hope you find it useful!
 
+## Production site
+
+This project is deployed as the live TechXtrasol website at https://www.techxtrasol.tech. Content (blog posts, projects, case studies, services) is managed through the admin panel at `/admin` and stored in Supabase.
+
+## SEO
+
+- Schema.org structured data (Organization, LocalBusiness, Article, Service, Product, FAQPage) via `@nuxtjs/seo`
+- Dynamic sitemap at `/sitemap.xml` powered by Supabase content
+- `robots.txt` including an LLMs group allowing `/llms.txt` and `/llms-full.txt`
+- IndexNow key file at `/b08246a0ebe24302893bd17ea8edb2af.txt`; URL notifications submitted on publish via `/api/indexnow`
+
 ## License
 
 Theme and 3D images are licensed under a [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/).
