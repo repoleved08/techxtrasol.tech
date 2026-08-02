@@ -107,6 +107,9 @@ export default defineNuxtConfig({
       '/api/**',
       '/__sitemap__/**',
     ],
+    sources: [
+      '/api/__sitemap__/urls',
+    ],
   },
 
   // Robots.txt
