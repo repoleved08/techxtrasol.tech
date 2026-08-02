@@ -1,7 +1,7 @@
 [
   {
     "name": "Norman",
-    "role": "Founder & Lead Software Engineer",
+    "role": "Lead Software Engineer",
     "bio": "Full-stack software engineer with deep expertise in Laravel, Vue.js, Go, and cloud architecture. Leads all technical decisions and ensures every system meets the highest engineering standards.",
     "skills": ["Laravel", "Vue.js", "Go", "AWS", "System Architecture"],
     "image": "https://avatars.githubusercontent.com/u/88892542?v=4",

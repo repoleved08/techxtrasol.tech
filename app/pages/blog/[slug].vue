@@ -10,20 +10,86 @@ if (error.value || !data.value?.post) {
 const post = computed(() => data.value.post)
 const renderedContent = computed(() => data.value.html || '')
 
+const siteUrl = 'https://techxtrasol.tech'
+const postUrl = computed(() => siteUrl + route.path)
+const ogImage = computed(() => post.value?.image?.startsWith('http')
+  ? post.value.image
+  : siteUrl + (post.value?.image || '/1200x630.jpg'))
+
 useSeoMeta({
   title: () => post.value ? post.value.title + ' — TechXtrasol Blog' : 'Blog Post',
   ogTitle: () => post.value?.title,
   description: () => post.value?.description,
   ogDescription: () => post.value?.description,
-  ogImage: '/1200x630.jpg',
+  ogImage: () => ogImage.value,
+  ogUrl: () => postUrl.value,
+  ogType: 'article',
+  ogSiteName: 'TechXtrasol',
   twitterCard: 'summary_large_image',
+  twitterImage: () => ogImage.value,
+  twitterTitle: () => post.value?.title,
+  twitterDescription: () => post.value?.description,
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://techxtrasol.tech' + route.path },
+    { rel: 'canonical', href: siteUrl + route.path },
   ],
 })
+
+const copied = ref(false)
+const copyTimer = ref(null)
+
+async function copyLink() {
+  try {
+    await navigator.clipboard.writeText(postUrl.value)
+    copied.value = true
+    clearTimeout(copyTimer.value)
+    copyTimer.value = setTimeout(() => (copied.value = false), 2000)
+  }
+  catch {
+    copied.value = false
+  }
+}
+
+const shareText = computed(() => post.value ? `"${post.value.title}" — read on TechXtrasol Blog` : 'TechXtrasol Blog')
+const encodedUrl = computed(() => encodeURIComponent(postUrl.value))
+const encodedText = computed(() => encodeURIComponent(shareText.value))
+
+const shareLinks = computed(() => [
+  {
+    label: 'Share on X',
+    href: `https://twitter.com/intent/tweet?text=${encodedText.value}&url=${encodedUrl.value}`,
+    icon: 'twitter',
+  },
+  {
+    label: 'Share on Discord',
+    href: null,
+    action: copyLink,
+    icon: 'discord',
+    copyLabel: 'Copy to share on Discord',
+  },
+  {
+    label: 'Share on Telegram',
+    href: `https://t.me/share/url?url=${encodedUrl.value}&text=${encodedText.value}`,
+    icon: 'telegram',
+  },
+  {
+    label: 'Share on LinkedIn',
+    href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl.value}`,
+    icon: 'linkedin',
+  },
+  {
+    label: 'Share on WhatsApp',
+    href: `https://api.whatsapp.com/send?text=${encodedText.value}%20${encodedUrl.value}`,
+    icon: 'whatsapp',
+  },
+  {
+    label: 'Share on Facebook',
+    href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl.value}`,
+    icon: 'facebook',
+  },
+])
 </script>
 
 <template>
@@ -45,6 +111,7 @@ useHead({
           {{ new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
         </time>
         <span class="text-xs text-bs-foreground-dark/60">{{ post.read_time }}</span>
+        <span v-if="post.author" class="text-xs text-bs-foreground-dark/60">By {{ post.author }}</span>
       </div>
 
       <!-- Title -->
@@ -59,6 +126,37 @@ useHead({
 
     <!-- Content -->
     <div class="blog-content" v-html="renderedContent" />
+
+    <!-- Share -->
+    <div class="mt-6 border-t border-bs-surface-3 pt-6 flex flex-col gap-3">
+      <div class="flex items-center gap-3">
+        <span class="text-sm font-medium text-bs-foreground-light">Share this article</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-2.5">
+        <button
+          @click="copyLink"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-bs-accent text-white text-sm font-medium hover:bg-bs-accent/90 transition-all duration-300"
+          :aria-label="copied ? 'Link copied' : 'Copy link'"
+        >
+          <Icon v-if="copied" name="lucide:check" class="w-4 h-4" />
+          <Icon v-else name="lucide:link" class="w-4 h-4" />
+          {{ copied ? 'Copied!' : 'Copy link' }}
+        </button>
+
+        <a
+          v-for="share in shareLinks"
+          :key="share.icon"
+          v-bind="share.href ? { href: share.href, target: '_blank', rel: 'noopener noreferrer' } : {}"
+          :href="share.href || undefined"
+          @click="share.action ? share.action() : undefined"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-bs-surface-1 border border-bs-surface-3 text-sm text-bs-foreground-dark hover:text-bs-accent hover:border-bs-accent/40 transition-all duration-300"
+          :aria-label="share.label"
+        >
+          <Icon :name="`bs-icon:${share.icon}`" class="w-4 h-4" />
+          <span class="hidden sm:inline">{{ share.action ? share.copyLabel : share.label.split(' on ')[1] }}</span>
+        </a>
+      </div>
+    </div>
 
   </article>
 

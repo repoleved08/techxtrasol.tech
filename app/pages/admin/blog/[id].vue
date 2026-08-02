@@ -11,6 +11,7 @@ const { getAllPosts, createPost, updatePost } = useSupabaseBlog()
 const form = reactive({
   title: '',
   slug: '',
+  author: '',
   description: '',
   content: '',
   date: '',
@@ -34,6 +35,7 @@ onMounted(async () => {
       Object.assign(form, {
         title: post.title,
         slug: post.slug,
+        author: post.author || 'Norman Bii',
         description: post.description,
         content: post.content,
         date: post.date,
@@ -52,9 +54,9 @@ async function handleSave() {
   saving.value = true
   try {
     if (isNew.value) {
-      await createPost({ ...form })
+      await createPost({ ...form, author: form.author || 'Norman Bii' })
     } else {
-      await updatePost(postId, { ...form })
+      await updatePost(postId, { ...form, author: form.author || 'Norman Bii' })
     }
     router.push('/admin/blog')
   }
@@ -97,6 +99,10 @@ async function handleSave() {
             <div>
               <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Category</label>
               <input v-model="form.category" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Author</label>
+              <input v-model="form.author" placeholder="e.g., Norman Bii" class="w-full px-4 py-2.5 rounded-lg bg-bs-surface-0 border border-bs-surface-3/50 text-bs-foreground-light text-sm focus:outline-none focus:border-bs-accent transition-colors" />
             </div>
           </div>
           <div class="grid sm:grid-cols-2 gap-4">
