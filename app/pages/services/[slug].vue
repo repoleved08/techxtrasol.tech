@@ -9,6 +9,9 @@ const service = ref(null)
 const relatedProjects = ref([])
 const loading = ref(true)
 
+const siteUrl = 'https://techxtrasol.tech'
+const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
+
 onMounted(async () => {
   try {
     service.value = await getServiceBySlug(slug)
@@ -32,7 +35,9 @@ useHead({
 useSeoMeta({
   ogTitle: () => service.value?.seo_title || service.value?.title || '',
   ogDescription: () => service.value?.seo_description || service.value?.short_description || '',
-  ogImage: () => service.value?.featured_image || '/content-images/blog-default-og.jpg',
+  ogImage: () => service.value?.featured_image?.startsWith('http')
+    ? service.value.featured_image
+    : service.value?.featured_image ? siteUrl + service.value.featured_image : DEFAULT_OG_IMAGE,
 })
 
 useSchemaOrg(() => {

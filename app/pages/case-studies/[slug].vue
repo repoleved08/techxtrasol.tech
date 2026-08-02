@@ -8,6 +8,9 @@ const study = ref(null)
 const relatedStudies = ref([])
 const loading = ref(true)
 
+const siteUrl = 'https://techxtrasol.tech'
+const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
+
 onMounted(async () => {
   try {
     study.value = await getCaseStudyBySlug(slug)
@@ -30,7 +33,9 @@ useHead({
 useSeoMeta({
   ogTitle: () => study.value?.seo_title || study.value?.title || '',
   ogDescription: () => study.value?.seo_description || study.value?.introduction || '',
-  ogImage: () => study.value?.featured_image || '/content-images/blog-default-og.jpg',
+  ogImage: () => study.value?.featured_image?.startsWith('http')
+    ? study.value.featured_image
+    : study.value?.featured_image ? siteUrl + study.value.featured_image : DEFAULT_OG_IMAGE,
 })
 
 useSchemaOrg(() => {

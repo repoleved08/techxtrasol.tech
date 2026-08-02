@@ -10,6 +10,9 @@ const relatedProjects = ref([])
 const caseStudy = ref(null)
 const loading = ref(true)
 
+const siteUrl = 'https://techxtrasol.tech'
+const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
+
 onMounted(async () => {
   try {
     project.value = await getProjectBySlug(slug)
@@ -33,14 +36,18 @@ useHead({
     { name: 'description', content: () => project.value?.seo_description || project.value?.short_description || '' },
     { property: 'og:title', content: () => project.value?.seo_title || project.value?.title || '' },
     { property: 'og:description', content: () => project.value?.seo_description || project.value?.short_description || '' },
-    { property: 'og:image', content: () => project.value?.featured_image || '/content-images/blog-default-og.jpg' },
+    { property: 'og:image', content: () => project.value?.featured_image?.startsWith('http')
+      ? project.value.featured_image
+      : project.value?.featured_image ? siteUrl + project.value.featured_image : DEFAULT_OG_IMAGE },
   ],
 })
 
 useSeoMeta({
   ogTitle: () => project.value?.seo_title || project.value?.title || '',
   ogDescription: () => project.value?.seo_description || project.value?.short_description || '',
-  ogImage: () => project.value?.featured_image || '/content-images/blog-default-og.jpg',
+  ogImage: () => project.value?.featured_image?.startsWith('http')
+    ? project.value.featured_image
+    : project.value?.featured_image ? siteUrl + project.value.featured_image : DEFAULT_OG_IMAGE,
 })
 
 useSchemaOrg(() => {

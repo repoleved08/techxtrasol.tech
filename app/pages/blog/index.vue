@@ -5,7 +5,7 @@ useSeoMeta({
   ogTitle: 'TechXtrasol Blog — Software Engineering Insights',
   description: 'Technical articles, tutorials, and insights from the TechXtrasol engineering team. Learn about Laravel, Vue, Nuxt, Go, AI, cloud, DevOps, and software architecture.',
   ogDescription: 'Technical articles and software engineering insights from the TechXtrasol team.',
-  ogImage: '/content-images/blog-default-og.jpg',
+  ogImage: 'https://techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
   keywords: 'software engineering blog, Laravel tutorial, Vue.js tutorial, Nuxt tutorial, Go programming, AI tutorials, cloud computing, DevOps, cybersecurity, software architecture',
 })
