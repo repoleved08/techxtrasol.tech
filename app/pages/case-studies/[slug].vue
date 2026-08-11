@@ -4,7 +4,7 @@ const slug = route.params.slug
 
 const { getCaseStudyBySlug, getRelatedCaseStudies } = useCaseStudies()
 
-const siteUrl = 'https://techxtrasol.tech'
+const siteUrl = 'https://www.techxtrasol.tech'
 const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
 
 const { data, pending } = await useAsyncData(`case-study-${slug}`, async () => {

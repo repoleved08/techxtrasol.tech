@@ -54,13 +54,13 @@ export default defineNuxtConfig({
         { property: 'og:type', content: 'website' },
         { property: 'og:title', content: 'TechXtrasol — Software Engineering Company' },
         { property: 'og:description', content: 'Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.' },
-        { property: 'og:image', content: 'https://techxtrasol.tech/content-images/blog-default-og.jpg' },
-        { property: 'og:url', content: 'https://techxtrasol.tech' },
+        { property: 'og:image', content: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg' },
+        { property: 'og:url', content: 'https://www.techxtrasol.tech' },
         { property: 'og:site_name', content: 'TechXtrasol' },
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'TechXtrasol — Software Engineering Company' },
         { name: 'twitter:description', content: 'Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.' },
-        { name: 'twitter:image', content: 'https://techxtrasol.tech/content-images/blog-default-og.jpg' },
+        { name: 'twitter:image', content: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg' },
         { name: 'theme-color', content: '#18181b' },
       ],
     }
@@ -108,7 +108,7 @@ export default defineNuxtConfig({
 
   // SEO
   site: {
-    url: 'https://techxtrasol.tech',
+    url: 'https://www.techxtrasol.tech',
     name: 'TechXtrasol',
   },
 
@@ -117,8 +117,8 @@ export default defineNuxtConfig({
     identity: {
       type: 'Organization',
       name: 'TechXtrasol',
-      url: 'https://techxtrasol.tech',
-      logo: 'https://techxtrasol.tech/icons/logo.svg',
+      url: 'https://www.techxtrasol.tech',
+      logo: 'https://www.techxtrasol.tech/icons/logo.svg',
       description: 'Software engineering company building mission-critical digital systems for businesses in Kenya, Africa, and globally.',
       sameAs: [
         'https://www.linkedin.com/company/techxtrasol',
@@ -135,7 +135,7 @@ export default defineNuxtConfig({
 
   // Sitemap configuration
   sitemap: {
-    hostname: 'https://techxtrasol.tech',
+    hostname: 'https://www.techxtrasol.tech',
     exclude: [
       '/credits',
       '/admin/**',
@@ -152,7 +152,7 @@ export default defineNuxtConfig({
   // Robots.txt
   robots: {
     allow: '/',
-    sitemap: 'https://techxtrasol.tech/sitemap.xml',
+    sitemap: 'https://www.techxtrasol.tech/sitemap.xml',
     disallow: ['/credits', '/admin/', '/api/', '/_nuxt/'],
     groups: [
       {

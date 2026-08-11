@@ -41,7 +41,7 @@ useSeoMeta({
   ogTitle: 'TechXtrasol — Software Engineering Company',
   description: 'TechXtrasol is a software engineering company that designs, builds, deploys, and supports mission-critical digital systems for businesses in Kenya, Africa, and globally. Custom software, ERP systems, web apps, mobile apps, cloud solutions, and AI.',
   ogDescription: 'Software engineering company building mission-critical digital systems for businesses in Kenya and globally.',
-  ogImage: 'https://techxtrasol.tech/content-images/blog-default-og.jpg',
+  ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
   keywords: 'software development company Kenya, software development Africa, custom software Kenya, Laravel developers Kenya, Vue.js development, Nuxt development, mobile app development Kenya, enterprise software, ERP development, HR system development, AI software company, cloud consulting Kenya, digital transformation, software engineering Kenya',
 })
@@ -49,7 +49,7 @@ useSeoMeta({
 useHead({
   htmlAttrs: { lang: 'en' },
   link: [
-    { rel: 'canonical', href: 'https://techxtrasol.tech' },
+    { rel: 'canonical', href: 'https://www.techxtrasol.tech' },
   ],
 })
 
@@ -57,8 +57,8 @@ useSchemaOrg([
   {
     '@type': 'LocalBusiness',
     name: 'TechXtrasol',
-    image: 'https://techxtrasol.tech/icons/logo.svg',
-    url: 'https://techxtrasol.tech',
+    image: 'https://www.techxtrasol.tech/icons/logo.svg',
+    url: 'https://www.techxtrasol.tech',
     telephone: '+254794312108',
     address: {
       '@type': 'PostalAddress',

@@ -5,7 +5,7 @@ const slug = route.params.slug
 const { getServiceBySlug } = useServices()
 const { getPublishedProjects } = useProjects()
 
-const siteUrl = 'https://techxtrasol.tech'
+const siteUrl = 'https://www.techxtrasol.tech'
 const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'
 
 const { data, pending } = await useAsyncData(`service-${slug}`, async () => {
@@ -41,7 +41,7 @@ useSchemaOrg(computed(() => {
       '@type': 'Service',
       name: service.value.title,
       description: service.value.short_description,
-      provider: { '@type': 'Organization', name: 'TechXtrasol', url: 'https://techxtrasol.tech' },
+      provider: { '@type': 'Organization', name: 'TechXtrasol', url: 'https://www.techxtrasol.tech' },
       areaServed: { '@type': 'Country', name: 'Kenya' },
     },
     {

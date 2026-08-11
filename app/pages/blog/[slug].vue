@@ -10,7 +10,7 @@ if (error.value || !data.value?.post) {
 const post = computed(() => data.value.post)
 const renderedContent = computed(() => data.value.html || '')
 
-const siteUrl = 'https://techxtrasol.tech'
+const siteUrl = 'https://www.techxtrasol.tech'
 const postUrl = computed(() => siteUrl + route.path)
 
 const DEFAULT_OG_IMAGE = siteUrl + '/content-images/blog-default-og.jpg'

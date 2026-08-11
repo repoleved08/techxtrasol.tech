@@ -1,6 +1,6 @@
 {
   "title": "Credits",
-  "content": "This website is built with <a href='https://nuxt.com/'>Nuxt</a> and <a href='https://tailwindcss.com/'>Tailwind CSS</a> by <a href='https://techxtrasol.tech'>Techxtrasol</a>. Originally based on the <a href='https://github.com/blackspike/blackspike-nuxt-landing-page'>Blackspike Nuxt landing page theme</a>.",
+  "content": "This website is built with <a href='https://nuxt.com/'>Nuxt</a> and <a href='https://tailwindcss.com/'>Tailwind CSS</a> by <a href='https://www.techxtrasol.tech'>Techxtrasol</a>. Originally based on the <a href='https://github.com/blackspike/blackspike-nuxt-landing-page'>Blackspike Nuxt landing page theme</a>.",
   "list": [
     {
       "item": "Powered by <a href='https://nuxt.com/'>Nuxt.js</a> with SSR for performance and SEO"

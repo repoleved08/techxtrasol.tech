@@ -5,14 +5,14 @@ useSeoMeta({
   ogTitle: 'TechXtrasol Blog — Software Engineering Insights',
   description: 'Technical articles, tutorials, and insights from the TechXtrasol engineering team. Learn about Laravel, Vue, Nuxt, Go, AI, cloud, DevOps, and software architecture.',
   ogDescription: 'Technical articles and software engineering insights from the TechXtrasol team.',
-  ogImage: 'https://techxtrasol.tech/content-images/blog-default-og.jpg',
+  ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
   keywords: 'software engineering blog, Laravel tutorial, Vue.js tutorial, Nuxt tutorial, Go programming, AI tutorials, cloud computing, DevOps, cybersecurity, software architecture',
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://techxtrasol.tech/blog' },
+    { rel: 'canonical', href: 'https://www.techxtrasol.tech/blog' },
   ],
 })
 
@@ -21,11 +21,11 @@ const blogSchema = {
   '@type': 'Blog',
   name: 'TechXtrasol Blog',
   description: 'Technical articles and software engineering insights from the TechXtrasol team.',
-  url: 'https://techxtrasol.tech/blog',
+  url: 'https://www.techxtrasol.tech/blog',
   publisher: {
     '@type': 'Organization',
     name: 'TechXtrasol',
-    url: 'https://techxtrasol.tech',
+    url: 'https://www.techxtrasol.tech',
   },
 }
 

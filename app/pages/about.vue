@@ -6,18 +6,18 @@ useSeoMeta({
   ogTitle: 'About TechXtrasol — Software Engineering Company Kenya',
   description: 'TechXtrasol is a software engineering company based in Nairobi and Mombasa, Kenya. We design, build, deploy, and support mission-critical digital systems for businesses across Africa and globally.',
   ogDescription: 'TechXtrasol — software engineering company in Nairobi and Mombasa, Kenya.',
-  ogImage: 'https://techxtrasol.tech/content-images/blog-default-og.jpg',
+  ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
   keywords: 'about TechXtrasol, software company Kenya, tech company Nairobi, developers Kenya, software engineering Mombasa, IT company Kenya',
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://techxtrasol.tech/about' },
+    { rel: 'canonical', href: 'https://www.techxtrasol.tech/about' },
   ],
 })
 
-const siteUrl = 'https://techxtrasol.tech'
+const siteUrl = 'https://www.techxtrasol.tech'
 
 const teamSchema = team.map(member => ({
   '@type': 'Person',

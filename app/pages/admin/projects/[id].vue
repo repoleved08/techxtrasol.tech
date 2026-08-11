@@ -98,10 +98,10 @@ async function handleSave() {
     const { notify } = useIndexNow()
     if (isNew.value) {
       const project = await createProject({ ...form })
-      await notify([`https://techxtrasol.tech/projects/${project.slug}`])
+      await notify([`https://www.techxtrasol.tech/projects/${project.slug}`])
     } else {
       const project = await updateProject(projectId, { ...form })
-      await notify([`https://techxtrasol.tech/projects/${project.slug}`])
+      await notify([`https://www.techxtrasol.tech/projects/${project.slug}`])
     }
     router.push('/admin/projects')
   }

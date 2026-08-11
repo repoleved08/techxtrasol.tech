@@ -75,7 +75,7 @@ async function handleSave() {
   try {
     const service = await updateService(serviceId, { ...form })
     const { notify } = useIndexNow()
-    await notify([`https://techxtrasol.tech/services/${service.slug}`])
+    await notify([`https://www.techxtrasol.tech/services/${service.slug}`])
     router.push('/admin/services')
   }
   finally {

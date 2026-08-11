@@ -6,18 +6,18 @@ useSeoMeta({
   ogTitle: 'TechXtrasol Pricing — Web Development & Digital Services',
   description: 'Transparent pricing for custom web development (from KES 45,000), website maintenance (from KES 5,000/mo), and social media management (from KES 25,000/mo). Choose the plan that fits your business in Kenya.',
   ogDescription: 'Transparent pricing for web development, website maintenance, and social media management in Kenya.',
-  ogImage: 'https://techxtrasol.tech/content-images/blog-default-og.jpg',
+  ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
   keywords: 'web development pricing Kenya, website cost Kenya, software development prices, maintenance plan Kenya, social media management pricing, Laravel development cost, website packages Kenya',
 })
 
 useHead({
   link: [
-    { rel: 'canonical', href: 'https://techxtrasol.tech/pricing' },
+    { rel: 'canonical', href: 'https://www.techxtrasol.tech/pricing' },
   ],
 })
 
-const siteUrl = 'https://techxtrasol.tech'
+const siteUrl = 'https://www.techxtrasol.tech'
 
 const toProductSchema = (plan, category) => ({
   '@type': 'Product',
