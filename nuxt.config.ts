@@ -37,14 +37,14 @@ export default defineNuxtConfig({
       ],
       script: [
         {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-B1VZ6HR1QF',
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-YEJTW5MG5V',
           async: true,
         },
         {
           children: `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-B1VZ6HR1QF');`,
+          gtag('config', 'G-YEJTW5MG5V');`,
           tagPosition: 'bodyClose',
         },
       ],
