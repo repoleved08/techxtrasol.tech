@@ -38,7 +38,7 @@ useHead({
     <!-- bg image -->
     <NuxtImg src="/hero-image.jpg" alt="" format="avif" :height="1080" :width="1920"
       class="absolute min-h-svh object-cover inset-0 bottom-auto -z-1 w-full h-auto opacity-20 mask-b-from-50%"
-      loading="eager" />
+      loading="eager" fetchpriority="high" />
 
     <!-- Header -->
     <HeaderMain :settings="global_settings" />

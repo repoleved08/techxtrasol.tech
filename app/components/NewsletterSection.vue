@@ -18,6 +18,7 @@ const props = defineProps(['newsletter'])
         format="avif"
         :height="1080"
         :width="1920"
+        loading="lazy"
         class="rounded-xl overflow-hidden w-full h-full object-cover object-left absolute inset-0 opacity-50" />
 
       <!-- Content -->

@@ -21,10 +21,18 @@ This project is deployed as the live TechXtrasol website at https://www.techxtra
 
 ## SEO
 
-- Schema.org structured data (Organization, LocalBusiness, Article, Service, Product, FAQPage) via `@nuxtjs/seo`
+- Schema.org structured data (Organization, LocalBusiness/ProfessionalService, Article, Service, Product, FAQPage, Review, BreadcrumbList) via `@nuxtjs/seo`
 - Dynamic sitemap at `/sitemap.xml` powered by Supabase content
+- Dynamically generated per-page OG images via `nuxt-og-image` (Satori renderer, no browser required)
 - `robots.txt` including an LLMs group allowing `/llms.txt` and `/llms-full.txt`
 - IndexNow key file (Bing API key) at `/e62b6d50bfb44503b030be33b9101571.txt`; URL notifications submitted on publish via `/api/indexnow`
+
+### Manual / host-level SEO to-dos
+
+- Change the `techxtrasol.tech` → `www.techxtrasol.tech` redirect from `307` to `301` (permanent) at the hosting/DNS provider so Google follows it permanently.
+- In Google Search Console, resubmit the sitemap at `https://www.techxtrasol.tech/sitemap.xml` and request re-indexing of affected pages.
+- Verify the Google Analytics data stream domain is `techxtrasol.tech` (the earlier GA test reported `www.techxtrasol.com`, which does not exist).
+- Complete the Google Business Profile (Nairobi HQ + Mombasa office) and link it from the site.
 
 ## License
 

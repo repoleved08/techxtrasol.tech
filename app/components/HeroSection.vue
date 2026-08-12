@@ -67,6 +67,7 @@ const props = defineProps(['settings', 'title', 'content'])
         src="/hero-screens.png"
         alt="Screens showing phone, tablet and desktop views of software built by Techxtrasol"
         loading="eager"
+        fetchpriority="high"
       />
 
     </figure>
