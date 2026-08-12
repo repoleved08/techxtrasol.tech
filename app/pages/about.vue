@@ -8,7 +8,6 @@ useSeoMeta({
   ogDescription: 'TechXtrasol — software engineering company in Nairobi and Mombasa, Kenya.',
   ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
-  keywords: 'about TechXtrasol, software company Kenya, tech company Nairobi, developers Kenya, software engineering Mombasa, IT company Kenya',
 })
 
 useHead({

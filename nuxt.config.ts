@@ -33,7 +33,13 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
-        { rel: 'manifest', href: '/manifest.json' }
+        { rel: 'manifest', href: '/manifest.json' },
+        { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
+        { rel: 'preconnect', href: 'https://www.google-analytics.com' },
+        ...(process.env.SUPABASE_URL ? [
+          { rel: 'preconnect', href: process.env.SUPABASE_URL },
+          { rel: 'dns-prefetch', href: process.env.SUPABASE_URL },
+        ] : []),
       ],
       script: [
         {
@@ -128,9 +134,15 @@ export default defineNuxtConfig({
     },
   },
 
-  // OG images are provided statically per-page; the module's runtime renderer isn't needed.
+  // Dynamically generated per-page OG images using the Satori renderer (no browser required).
   ogImage: {
-    enabled: false,
+    enabled: true,
+    defaults: {
+      component: 'Default',
+      width: 1200,
+      height: 630,
+      extension: 'png',
+    },
   },
 
   // Sitemap configuration
@@ -143,6 +155,7 @@ export default defineNuxtConfig({
       '/__sitemap__/**',
       '/auth/**',
       '/login',
+      '/_og/**',
     ],
     sources: [
       '/api/__sitemap__/urls',
@@ -153,7 +166,7 @@ export default defineNuxtConfig({
   robots: {
     allow: '/',
     sitemap: 'https://www.techxtrasol.tech/sitemap.xml',
-    disallow: ['/credits', '/admin/', '/api/', '/_nuxt/'],
+    disallow: ['/credits', '/admin/', '/api/', '/_nuxt/', '/_og/'],
     groups: [
       {
         userAgents: ['LLMs', 'LLMs-full'],

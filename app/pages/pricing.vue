@@ -8,7 +8,6 @@ useSeoMeta({
   ogDescription: 'Transparent pricing for web development, website maintenance, and social media management in Kenya.',
   ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
-  keywords: 'web development pricing Kenya, website cost Kenya, software development prices, maintenance plan Kenya, social media management pricing, Laravel development cost, website packages Kenya',
 })
 
 useHead({

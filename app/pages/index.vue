@@ -43,7 +43,6 @@ useSeoMeta({
   ogDescription: 'Software engineering company building mission-critical digital systems for businesses in Kenya and globally.',
   ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
-  keywords: 'software development company Kenya, software development Africa, custom software Kenya, Laravel developers Kenya, Vue.js development, Nuxt development, mobile app development Kenya, enterprise software, ERP development, HR system development, AI software company, cloud consulting Kenya, digital transformation, software engineering Kenya',
 })
 
 useHead({
@@ -55,11 +54,12 @@ useHead({
 
 useSchemaOrg([
   {
-    '@type': 'LocalBusiness',
+    '@type': 'ProfessionalService',
     name: 'TechXtrasol',
     image: 'https://www.techxtrasol.tech/icons/logo.svg',
     url: 'https://www.techxtrasol.tech',
     telephone: '+254794312108',
+    email: 'hello@techxtrasol.tech',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Nairobi',
@@ -71,6 +71,19 @@ useSchemaOrg([
       latitude: -1.2921,
       longitude: 36.8219,
     },
+    hasMap: 'https://maps.google.com/?q=Westlands,Nairobi,Kenya',
+    areaServed: [
+      { '@type': 'Country', name: 'Kenya' },
+      { '@type': 'Country', name: 'East Africa' },
+      { '@type': 'Place', name: 'Africa' },
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+254794312108',
+      contactType: 'sales',
+      areaServed: 'KE',
+      availableLanguage: ['en', 'sw'],
+    },
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -78,6 +91,24 @@ useSchemaOrg([
       closes: '18:00',
     },
     priceRange: '$$',
+    sameAs: [
+      'https://www.linkedin.com/company/techxtrasol',
+      'https://github.com/techxtrasol',
+      'https://x.com/techxtrasol',
+    ],
+    department: [
+      {
+        '@type': 'ProfessionalService',
+        name: 'TechXtrasol Mombasa',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Mombasa',
+          addressRegion: 'Mombasa County',
+          addressCountry: 'KE',
+        },
+        telephone: '+254794312108',
+      },
+    ],
   },
   {
     '@type': 'FAQPage',
@@ -90,6 +121,27 @@ useSchemaOrg([
       },
     })),
   },
+  ...testimonials.map((t, index) => ({
+    '@type': 'Review',
+    name: `TechXtrasol Client Review — ${t.handle}`,
+    reviewBody: t.quote,
+    itemReviewed: {
+      '@type': 'ProfessionalService',
+      name: 'TechXtrasol',
+      url: 'https://www.techxtrasol.tech',
+    },
+    author: {
+      '@type': 'Person',
+      name: t.handle,
+    },
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: 5,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    identifier: `review-${index}`,
+  })),
 ])
 </script>
 

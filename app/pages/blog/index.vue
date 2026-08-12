@@ -7,7 +7,6 @@ useSeoMeta({
   ogDescription: 'Technical articles and software engineering insights from the TechXtrasol team.',
   ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
-  keywords: 'software engineering blog, Laravel tutorial, Vue.js tutorial, Nuxt tutorial, Go programming, AI tutorials, cloud computing, DevOps, cybersecurity, software architecture',
 })
 
 useHead({
