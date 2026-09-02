@@ -19,7 +19,18 @@ export default defineSitemapEventHandler(async () => {
   const lastmod = (updated?: string | null, created?: string | null) =>
     updated || created || undefined
 
+  const staticPages = [
+    { loc: '/', changefreq: 'weekly' as const, priority: 1.0 as const },
+    { loc: '/about', changefreq: 'yearly' as const, priority: 0.5 as const },
+    { loc: '/pricing', changefreq: 'yearly' as const, priority: 0.5 as const },
+    { loc: '/blog', changefreq: 'weekly' as const, priority: 0.9 as const },
+    { loc: '/projects', changefreq: 'monthly' as const, priority: 0.6 as const },
+    { loc: '/case-studies', changefreq: 'yearly' as const, priority: 0.5 as const },
+    { loc: '/services', changefreq: 'yearly' as const, priority: 0.6 as const },
+  ]
+
   return [
+    ...staticPages,
     ...(blog.data || []).map(p => ({
       loc: `/blog/${p.slug}`,
       lastmod: p.date || p.created_at,
