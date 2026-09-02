@@ -182,7 +182,7 @@ const shareLinks = computed(() => [
       <div class="flex flex-wrap items-center gap-2.5">
         <button
           @click="copyLink"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-bs-accent text-white text-sm font-medium hover:bg-bs-accent/90 transition-all duration-300"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-bs-accent text-white text-sm font-medium hover:bg-bs-accent/90 transition-colors transition-transform transition-opacity duration-300"
           :aria-label="copied ? 'Link copied' : 'Copy link'"
         >
           <Icon v-if="copied" name="lucide:check" class="w-4 h-4" />
@@ -196,7 +196,7 @@ const shareLinks = computed(() => [
           v-bind="share.href ? { href: share.href, target: '_blank', rel: 'noopener noreferrer' } : {}"
           :href="share.href || undefined"
           @click="share.action ? share.action() : undefined"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-bs-surface-1 border border-bs-surface-3 text-sm text-bs-foreground-dark hover:text-bs-accent hover:border-bs-accent/40 transition-all duration-300"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-bs-surface-1 border border-bs-surface-3 text-sm text-bs-foreground-dark hover:text-bs-accent hover:border-bs-accent/40 transition-colors transition-transform transition-opacity duration-300"
           :aria-label="share.label"
         >
           <Icon :name="`bs-icon:${share.icon}`" class="w-4 h-4" />

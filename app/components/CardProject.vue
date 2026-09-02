@@ -11,7 +11,7 @@ const technologies = computed(() => {
 <template>
   <NuxtLink
     :to="`/projects/${project.slug}`"
-    class="group relative flex flex-col bg-bs-surface-0 border border-bs-surface-3 rounded-xl overflow-hidden transition-all duration-500 ease-bs-spring hover:border-bs-accent/40 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)]"
+    class="group relative flex flex-col bg-bs-surface-0 border border-bs-surface-3 rounded-xl overflow-hidden transition-colors transition-transform transition-opacity duration-500 ease-bs-spring hover:border-bs-accent/40 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)]"
   >
     <!-- Image -->
     <div class="relative h-52 overflow-hidden">

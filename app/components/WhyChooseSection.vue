@@ -13,6 +13,9 @@ const props = defineProps(['title', 'items'])
       src="/content-images/blackspike-wallpaper-01.avif"
       alt=""
       format="avif"
+      width="600"
+      height="400"
+      quality="60"
       class="absolute inset-0 w-full h-full object-cover rounded-2xl opacity-40"
       loading="lazy"
     />
@@ -30,7 +33,7 @@ const props = defineProps(['title', 'items'])
         <article
           v-for="(item, idx) in items"
           :key="idx"
-          class="group p-6 md:p-10 rounded-xl bg-bs-surface-0/60 backdrop-blur-sm border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-0/80 hover:border-bs-foreground-dark/20 transition-all duration-300"
+          class="group p-6 md:p-10 rounded-xl bg-bs-surface-0/60 backdrop-blur-sm border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-0/80 hover:border-bs-foreground-dark/20 transition-colors transition-transform transition-opacity duration-300"
         >
 
           <!-- Number -->

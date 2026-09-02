@@ -11,7 +11,7 @@
   --color-bs-surface-3: #2F2F31;
 
   --color-bs-foreground-light: #eee;
-  --color-bs-foreground-dark: #b5b5b5;
+  --color-bs-foreground-dark: #c8c8c8;
 
   --color-bs-accent: #6366f1;
 
@@ -34,7 +34,7 @@ html.light {
   --color-bs-surface-3: #e4e4e7;
 
   --color-bs-foreground-light: #18181b;
-  --color-bs-foreground-dark: #52525b;
+  --color-bs-foreground-dark: #333333;
 
   --color-bs-accent: #4f46e5;
 }

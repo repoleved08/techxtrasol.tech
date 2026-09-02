@@ -182,7 +182,7 @@ useSchemaOrg(computed(() => {
             v-for="rs in relatedStudies"
             :key="rs.id"
             :to="`/case-studies/${rs.slug}`"
-            class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl overflow-hidden hover:border-bs-accent/30 transition-all duration-300"
+            class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl overflow-hidden hover:border-bs-accent/30 transition-colors transition-transform transition-opacity duration-300"
           >
             <div class="h-36 bg-bs-surface-3/50 overflow-hidden">
               <img v-if="rs.featured_image" :src="rs.featured_image" :alt="rs.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />

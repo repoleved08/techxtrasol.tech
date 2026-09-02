@@ -44,11 +44,11 @@ async function signOut() {
     <div class="bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl p-6 mb-6">
       <h2 class="text-lg font-semibold text-bs-foreground-light mb-4">Quick Links</h2>
       <div class="space-y-2">
-        <a href="/" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all">
+        <a href="/" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity">
           <Icon name="lucide:external-link" class="w-4 h-4" />
           View Live Site
         </a>
-        <button type="button" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all w-full text-left" @click="signOut">
+        <button type="button" class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-colors transition-transform transition-opacity w-full text-left" @click="signOut">
           <Icon name="lucide:log-out" class="w-4 h-4" />
           Sign Out
         </button>

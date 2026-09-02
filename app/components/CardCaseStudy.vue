@@ -5,7 +5,7 @@ const props = defineProps(['caseStudy', 'featured'])
 <template>
   <NuxtLink
     :to="`/case-studies/${caseStudy.slug}`"
-    class="group relative flex flex-col bg-bs-surface-0 border border-bs-surface-3 rounded-xl overflow-hidden transition-all duration-500 ease-bs-spring hover:border-bs-accent/40 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)]"
+    class="group relative flex flex-col bg-bs-surface-0 border border-bs-surface-3 rounded-xl overflow-hidden transition-colors transition-transform transition-opacity duration-500 ease-bs-spring hover:border-bs-accent/40 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)]"
     :class="featured ? 'lg:flex-row lg:h-[28rem]' : ''"
   >
     <!-- Image -->
@@ -43,7 +43,7 @@ const props = defineProps(['caseStudy', 'featured'])
 
       <!-- CTA -->
       <div class="flex items-center gap-2 mt-auto pt-2">
-        <span class="inline-flex items-center gap-2 text-sm font-medium text-bs-accent group-hover:gap-3 transition-all duration-300">
+        <span class="inline-flex items-center gap-2 text-sm font-medium text-bs-accent group-hover:gap-3 transition-colors transition-transform transition-opacity duration-300">
           Read Case Study
           <svg class="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5" viewBox="0 0 16 16" fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

@@ -57,7 +57,7 @@ async function handleToggleFeatured(item) {
 
     <div v-else class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       <div v-for="item in items" :key="item.id"
-        class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl overflow-hidden hover:border-bs-accent/30 transition-all">
+        class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl overflow-hidden hover:border-bs-accent/30 transition-colors transition-transform transition-opacity">
         <!-- Image -->
         <div class="relative h-44 bg-bs-surface-3/30 overflow-hidden">
           <img :src="item.image_url" :alt="item.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />

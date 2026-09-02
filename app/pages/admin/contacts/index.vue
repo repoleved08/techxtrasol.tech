@@ -74,7 +74,7 @@ const statusColors = {
       <div class="flex-1 space-y-2">
         <div v-for="sub in submissions" :key="sub.id"
           @click="viewSubmission(sub)"
-          class="p-4 rounded-xl border cursor-pointer transition-all"
+          class="p-4 rounded-xl border cursor-pointer transition-colors transition-transform transition-opacity"
           :class="selectedSubmission?.id === sub.id
             ? 'bg-bs-surface-1 border-bs-accent/40'
             : 'bg-bs-surface-1 border-bs-surface-3/50 hover:border-bs-surface-3'">

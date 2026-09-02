@@ -30,7 +30,7 @@ const props = defineProps(['title', 'steps'])
         <article
           v-for="(step, idx) in steps"
           :key="idx"
-          class="group relative p-6 md:p-10 rounded-xl bg-bs-surface-0/60 backdrop-blur-sm border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-0/80 hover:border-bs-foreground-dark/20 transition-all duration-300"
+          class="group relative p-6 md:p-10 rounded-xl bg-bs-surface-0/60 backdrop-blur-sm border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-0/80 hover:border-bs-foreground-dark/20 transition-colors transition-transform transition-opacity duration-300"
         >
 
           <!-- Step number -->

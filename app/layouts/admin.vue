@@ -71,7 +71,7 @@ function isActive(href) {
           v-for="item in navigation"
           :key="item.href"
           :href="item.href"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors transition-transform transition-opacity duration-200"
           :class="isActive(item.href) ? 'bg-bs-accent/10 text-bs-accent' : 'text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50'"
           @click="sidebarOpen = false"
         >
@@ -101,7 +101,7 @@ function isActive(href) {
         <!-- Mobile menu toggle -->
         <button
           type="button"
-          class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-bs-surface-3/50 text-bs-foreground-dark hover:bg-bs-surface-3 transition-all"
+          class="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-bs-surface-3/50 text-bs-foreground-dark hover:bg-bs-surface-3 transition-colors transition-transform transition-opacity"
           @click="sidebarOpen = true"
         >
           <Icon name="lucide:menu" class="w-5 h-5" />
@@ -112,7 +112,7 @@ function isActive(href) {
         <!-- Back to site -->
         <a
           href="/"
-          class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all"
+          class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity"
         >
           <Icon name="lucide:external-link" class="w-4 h-4" />
           <span class="hidden sm:inline">View Site</span>
@@ -121,7 +121,7 @@ function isActive(href) {
         <!-- Sign out -->
         <button
           type="button"
-          class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all"
+          class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-colors transition-transform transition-opacity"
           @click="signOut"
         >
           <Icon name="lucide:log-out" class="w-4 h-4" />

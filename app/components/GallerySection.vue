@@ -26,7 +26,7 @@ function closeLightbox() {
       <div
         v-for="item in items"
         :key="item.id"
-        class="group relative break-inside-avoid cursor-pointer overflow-hidden rounded-xl border border-bs-surface-3/50 hover:border-bs-accent/40 transition-all duration-300"
+        class="group relative break-inside-avoid cursor-pointer overflow-hidden rounded-xl border border-bs-surface-3/50 hover:border-bs-accent/40 transition-colors transition-transform transition-opacity duration-300"
         @click="openLightbox(item)"
       >
         <img

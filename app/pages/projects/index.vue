@@ -96,7 +96,7 @@ function goToPage(page) {
           <button
             v-for="cat in categories"
             :key="cat.slug"
-            class="px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-200"
+            class="px-3 py-1.5 rounded-full text-xs font-medium transition-colors transition-transform transition-opacity duration-200"
             :class="activeCategory === cat.slug ? 'bg-bs-accent text-white' : 'bg-bs-surface-1 border border-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:border-bs-surface-3'"
             @click="setCategory(cat.slug)"
           >
@@ -120,7 +120,7 @@ function goToPage(page) {
           v-for="project in projects"
           :key="project.id"
           :to="`/projects/${project.slug}`"
-          class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl overflow-hidden hover:border-bs-accent/30 transition-all duration-300"
+          class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl overflow-hidden hover:border-bs-accent/30 transition-colors transition-transform transition-opacity duration-300"
         >
           <!-- Image -->
           <div class="h-48 bg-bs-surface-3/50 overflow-hidden">
@@ -168,7 +168,7 @@ function goToPage(page) {
         <button
           v-for="page in totalPages"
           :key="page"
-          class="w-10 h-10 rounded-lg text-sm font-medium transition-all"
+          class="w-10 h-10 rounded-lg text-sm font-medium transition-colors transition-transform transition-opacity"
           :class="currentPage === page ? 'bg-bs-accent text-white' : 'bg-bs-surface-1 border border-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light'"
           @click="goToPage(page)"
         >

@@ -26,7 +26,7 @@ const props = defineProps(['title', 'clients'])
         <Icon
           :name="`bs-icon:${item.icon}`"
           size="32"
-          class="opacity-70 group-hover:scale-[1.1] group-hover:-translate-y-1 group-hover:opacity-100 ease-bs-bounce transition-all duration-1000"
+          class="opacity-70 group-hover:scale-[1.1] group-hover:-translate-y-1 group-hover:opacity-100 ease-bs-bounce transition-colors transition-transform transition-opacity duration-1000"
         />
 
         <span class="font-semibold text-sm relative z-10">{{ item.title }}</span>

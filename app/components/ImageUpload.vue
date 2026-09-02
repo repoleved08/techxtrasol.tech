@@ -71,7 +71,7 @@ function clearImage() {
       @dragover.prevent="dragOver = true"
       @dragleave="dragOver = false"
       @drop.prevent="onDrop"
-      class="relative flex flex-col items-center justify-center h-40 rounded-xl border-2 border-dashed cursor-pointer transition-all"
+      class="relative flex flex-col items-center justify-center h-40 rounded-xl border-2 border-dashed cursor-pointer transition-colors transition-transform transition-opacity"
       :class="dragOver ? 'border-bs-accent bg-bs-accent/5' : 'border-bs-surface-3/50 hover:border-bs-surface-3 bg-bs-surface-0'">
 
       <div v-if="uploading" class="flex flex-col items-center gap-2">

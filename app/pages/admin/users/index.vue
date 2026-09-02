@@ -115,7 +115,7 @@ function formatDate(d) {
               <button
                 @click="toggleAdmin(user)"
                 :disabled="actionLoading === user.id"
-                class="text-xs px-3 py-1.5 rounded-lg font-medium transition-all"
+                class="text-xs px-3 py-1.5 rounded-lg font-medium transition-colors transition-transform transition-opacity"
                 :class="user.is_admin
                   ? 'bg-red-400/10 text-red-400 hover:bg-red-400/20'
                   : 'bg-green-400/10 text-green-400 hover:bg-green-400/20'"

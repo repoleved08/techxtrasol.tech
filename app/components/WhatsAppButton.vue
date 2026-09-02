@@ -8,7 +8,7 @@ const url = `https://wa.me/${phone.replace(/[^0-9]/g, '')}`
     :href="url"
     target="_blank"
     rel="noopener noreferrer"
-    class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 group"
+    class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-lg hover:scale-110 hover:shadow-xl transition-colors transition-transform transition-opacity duration-300 group"
     aria-label="Chat on WhatsApp"
   >
     <!-- WhatsApp icon -->

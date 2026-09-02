@@ -104,19 +104,19 @@ async function handleToggleFeatured(t) {
             <td class="px-5 py-4">
               <div class="flex items-center justify-end gap-1">
                 <button v-if="!t.featured" @click="handleToggleFeatured(t)"
-                  class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-yellow-400 hover:bg-yellow-400/10 transition-all" title="Feature">
+                  class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-yellow-400 hover:bg-yellow-400/10 transition-colors transition-transform transition-opacity" title="Feature">
                   <Icon name="lucide:star" class="w-4 h-4" />
                 </button>
                 <button v-else @click="handleToggleFeatured(t)"
-                  class="p-1.5 rounded-lg text-yellow-400 hover:text-bs-foreground-dark hover:bg-bs-surface-3/50 transition-all" title="Unfeature">
+                  class="p-1.5 rounded-lg text-yellow-400 hover:text-bs-foreground-dark hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity" title="Unfeature">
                   <Icon name="lucide:star-off" class="w-4 h-4" />
                 </button>
                 <a :href="`/admin/ui-templates/${t.id}`"
-                  class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-all" title="Edit">
+                  class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-colors transition-transform transition-opacity" title="Edit">
                   <Icon name="lucide:pencil" class="w-4 h-4" />
                 </a>
                 <button @click="handleDelete(t.id)"
-                  class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-red-400 hover:bg-red-400/10 transition-all" title="Delete">
+                  class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-red-400 hover:bg-red-400/10 transition-colors transition-transform transition-opacity" title="Delete">
                   <Icon name="lucide:trash-2" class="w-4 h-4" />
                 </button>
               </div>

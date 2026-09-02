@@ -31,7 +31,7 @@ useHead({
 <template>
 
     <!-- Skip link -->
-    <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-all duration-300" href="#main">
+    <a class="fixed -top-20 focus-visible:top-0 p-3 bg-black/90 transition-colors transition-transform transition-opacity duration-300" href="#main">
       Skip to content
     </a>
 

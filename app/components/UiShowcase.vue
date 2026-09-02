@@ -26,7 +26,7 @@ function openDetails(tpl) {
       <div
         v-for="tpl in templates"
         :key="tpl.id"
-        class="group relative flex flex-col bg-bs-surface-0 border border-bs-surface-3 rounded-xl overflow-hidden transition-all duration-500 ease-bs-spring hover:border-amber-400/40 hover:shadow-[0_0_40px_rgba(251,191,36,0.08)]"
+        class="group relative flex flex-col bg-bs-surface-0 border border-bs-surface-3 rounded-xl overflow-hidden transition-colors transition-transform transition-opacity duration-500 ease-bs-spring hover:border-amber-400/40 hover:shadow-[0_0_40px_rgba(251,191,36,0.08)]"
       >
         <!-- Preview image -->
         <div class="relative h-48 overflow-hidden bg-bs-surface-2">
@@ -50,7 +50,7 @@ function openDetails(tpl) {
           </div>
           <!-- Demo link -->
           <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer" aria-label="View live demo"
-            class="absolute top-3 right-3 p-2 rounded-lg bg-black/40 backdrop-blur-sm text-white/80 hover:text-white hover:bg-black/60 transition-all opacity-0 group-hover:opacity-100">
+            class="absolute top-3 right-3 p-2 rounded-lg bg-black/40 backdrop-blur-sm text-white/80 hover:text-white hover:bg-black/60 transition-colors transition-transform transition-opacity opacity-0 group-hover:opacity-100">
             <Icon name="lucide:external-link" class="w-4 h-4" />
           </a>
         </div>

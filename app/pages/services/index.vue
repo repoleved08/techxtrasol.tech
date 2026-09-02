@@ -53,7 +53,7 @@ onMounted(async () => {
           v-for="service in services"
           :key="service.id"
           :to="`/services/${service.slug}`"
-          class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl p-6 hover:border-bs-accent/30 transition-all duration-300"
+          class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl p-6 hover:border-bs-accent/30 transition-colors transition-transform transition-opacity duration-300"
         >
           <h2 class="text-lg font-bold text-bs-foreground-light mb-2 group-hover:text-bs-accent transition-colors">{{ service.title }}</h2>
           <p class="text-sm text-bs-foreground-dark mb-4">{{ service.short_description }}</p>

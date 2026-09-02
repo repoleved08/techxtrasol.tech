@@ -189,7 +189,7 @@ function onDialogClose() {
 
         <!-- Close button -->
         <button type="button" onclick="this.closest('dialog').close('close')" aria-label="Close"
-          class="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3 transition-all duration-200">
+          class="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3 transition-colors transition-transform transition-opacity duration-200">
           <Icon name="bs-icon:x" size="18" />
         </button>
 
@@ -227,7 +227,7 @@ function onDialogClose() {
               <label for="auth-email" class="sr-only">Email</label>
               <input id="auth-email" v-model="email" type="email" required autocomplete="email"
                 placeholder="Email address"
-                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all" />
+                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-colors transition-transform transition-opacity" />
             </div>
 
             <!-- Password (login, register) -->
@@ -236,7 +236,7 @@ function onDialogClose() {
               <input id="auth-password" v-model="password" type="password" required
                 :autocomplete="mode === 'login' ? 'current-password' : 'new-password'"
                 placeholder="Password" minlength="6"
-                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all" />
+                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-colors transition-transform transition-opacity" />
             </div>
 
             <!-- TOTP Code (mfa) -->
@@ -244,7 +244,7 @@ function onDialogClose() {
               <label for="auth-totp" class="sr-only">Authentication code</label>
               <input id="auth-totp" v-model="totpCode" type="text" inputmode="numeric" required
                 autocomplete="one-time-code" placeholder="000000" maxlength="6" pattern="[0-9]{6}"
-                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all text-center text-2xl tracking-[0.5em] font-mono" />
+                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-colors transition-transform transition-opacity text-center text-2xl tracking-[0.5em] font-mono" />
             </div>
 
             <!-- Submit -->

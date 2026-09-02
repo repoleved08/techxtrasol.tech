@@ -54,7 +54,7 @@ onMounted(async () => {
           v-for="cs in caseStudies"
           :key="cs.id"
           :to="`/case-studies/${cs.slug}`"
-          class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl overflow-hidden hover:border-bs-accent/30 transition-all duration-300"
+          class="group bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl overflow-hidden hover:border-bs-accent/30 transition-colors transition-transform transition-opacity duration-300"
         >
           <div v-if="cs.featured_image" class="h-48 bg-bs-surface-3/50 overflow-hidden">
             <img :src="cs.featured_image" :alt="cs.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />

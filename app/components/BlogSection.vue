@@ -24,7 +24,7 @@ const props = defineProps(['title', 'posts'])
         v-for="(post, idx) in posts"
         :key="idx"
         :to="`/blog/${post.slug}`"
-        class="group p-6 md:p-8 rounded-xl bg-bs-surface-2 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3 hover:border-bs-accent/40 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)] transition-all duration-300"
+        class="group p-6 md:p-8 rounded-xl bg-bs-surface-2 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3 hover:border-bs-accent/40 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)] transition-colors transition-transform transition-opacity duration-300"
       >
 
         <!-- Category -->

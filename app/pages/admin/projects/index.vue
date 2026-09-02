@@ -147,13 +147,13 @@ function formatDate(d) {
                 <div class="flex items-center justify-end gap-2">
                   <a
                     :href="`/admin/projects/${project.id}`"
-                    class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all"
+                    class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity"
                     title="Edit"
                   >
                     <Icon name="lucide:pencil" class="w-4 h-4" />
                   </a>
                   <button
-                    class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-red-400 hover:bg-red-500/10 transition-all"
+                    class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-red-400 hover:bg-red-500/10 transition-colors transition-transform transition-opacity"
                     title="Delete"
                     @click="handleDelete(project.id)"
                   >

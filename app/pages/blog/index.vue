@@ -69,7 +69,7 @@ const filteredPosts = computed(() => {
         v-for="cat in categories"
         :key="cat"
         @click="activeCategory = cat"
-        class="px-4 py-2 text-sm rounded-lg transition-all duration-300"
+        class="px-4 py-2 text-sm rounded-lg transition-colors transition-transform transition-opacity duration-300"
         :class="activeCategory === cat
           ? 'bg-bs-accent text-white'
           : 'bg-bs-surface-1 text-bs-foreground-dark hover:bg-bs-surface-3 border border-bs-surface-3'"
@@ -84,7 +84,7 @@ const filteredPosts = computed(() => {
       <article
         v-for="post in filteredPosts"
         :key="post?.id || post?.slug || Math.random()"
-        class="group p-6 rounded-xl bg-bs-surface-1 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3/50 hover:border-transparent transition-all duration-300"
+        class="group p-6 rounded-xl bg-bs-surface-1 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3/50 hover:border-transparent transition-colors transition-transform transition-opacity duration-300"
       >
 
         <div class="flex items-center gap-3">

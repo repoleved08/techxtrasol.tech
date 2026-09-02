@@ -48,7 +48,7 @@ async function togglePublished(item) {
 
     <div v-else class="space-y-3">
       <div v-for="item in items" :key="item.id"
-        class="flex items-center gap-4 p-4 bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl hover:border-bs-surface-3 transition-all">
+        class="flex items-center gap-4 p-4 bg-bs-surface-1 border border-bs-surface-3/50 rounded-xl hover:border-bs-surface-3 transition-colors transition-transform transition-opacity">
         <div class="w-10 h-10 rounded-full bg-bs-accent/20 flex items-center justify-center text-bs-accent font-bold text-sm shrink-0">
           {{ (item.client_name || '?').charAt(0) }}
         </div>
@@ -64,10 +64,10 @@ async function togglePublished(item) {
             {{ item.published ? 'Published' : 'Draft' }}
           </button>
           <span v-if="item.rating" class="text-xs text-amber-400">{{ item.rating }}/5</span>
-          <a :href="`/admin/testimonials/${item.id}`" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-all">
+          <a :href="`/admin/testimonials/${item.id}`" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-colors transition-transform transition-opacity">
             <Icon name="lucide:pencil" class="w-4 h-4" />
           </a>
-          <button @click="handleDelete(item.id)" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-red-400 hover:bg-red-400/10 transition-all">
+          <button @click="handleDelete(item.id)" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-red-400 hover:bg-red-400/10 transition-colors transition-transform transition-opacity">
             <Icon name="lucide:trash-2" class="w-4 h-4" />
           </button>
         </div>

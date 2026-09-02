@@ -33,7 +33,7 @@ const iconMap = {
       <div
         v-for="(item, idx) in stack"
         :key="idx"
-        class="group flex items-center gap-3 px-5 py-3.5 rounded-xl bg-bs-surface-2 border border-bs-surface-3 hover:border-transparent transition-all duration-300 cursor-default"
+        class="group flex items-center gap-3 px-5 py-3.5 rounded-xl bg-bs-surface-2 border border-bs-surface-3 hover:border-transparent transition-colors transition-transform transition-opacity duration-300 cursor-default"
         :style="{ '--accent': item.color }"
       >
         <!-- Icon -->

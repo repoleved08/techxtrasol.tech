@@ -135,7 +135,7 @@ function copySecret() {
               <code class="text-xs bg-bs-surface-0 border border-bs-surface-3/50 rounded-lg px-3 py-2 text-bs-foreground-light font-mono select-all">
                 {{ secret }}
               </code>
-              <button @click="copySecret" class="p-2 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-all" title="Copy">
+              <button @click="copySecret" class="p-2 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-colors transition-transform transition-opacity" title="Copy">
                 <Icon name="lucide:copy" class="w-4 h-4" />
               </button>
             </div>
@@ -151,7 +151,7 @@ function copySecret() {
               <label for="totp-verify" class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Verification code</label>
               <input id="totp-verify" v-model="verifyCode" type="text" inputmode="numeric" required
                 autocomplete="one-time-code" placeholder="000000" maxlength="6" pattern="[0-9]{6}"
-                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all text-center text-2xl tracking-[0.5em] font-mono" />
+                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-colors transition-transform transition-opacity text-center text-2xl tracking-[0.5em] font-mono" />
             </div>
 
             <button type="submit" :disabled="verifying" class="bs-btn px-4 py-3">

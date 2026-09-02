@@ -15,7 +15,7 @@ const props = defineProps(['title', 'team'])
       <article
         v-for="(member, idx) in team"
         :key="idx"
-        class="group p-6 md:p-10 rounded-xl bg-bs-surface-2 border border-bs-surface-3 flex flex-col gap-4 items-center text-center hover:bg-bs-surface-3 hover:border-transparent transition-all duration-300"
+        class="group p-6 md:p-10 rounded-xl bg-bs-surface-2 border border-bs-surface-3 flex flex-col gap-4 items-center text-center hover:bg-bs-surface-3 hover:border-transparent transition-colors transition-transform transition-opacity duration-300"
       >
 
         <!-- Avatar -->
@@ -23,7 +23,7 @@ const props = defineProps(['title', 'team'])
           <img
             :src="member.image"
             :alt="member.name + ' — ' + member.role"
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-colors transition-transform transition-opacity duration-500"
             width="96"
             height="96"
             loading="lazy"

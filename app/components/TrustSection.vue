@@ -44,7 +44,7 @@ const trustItems = [
       <article
         v-for="(item, idx) in trustItems"
         :key="idx"
-        class="group flex items-start gap-4 p-5 rounded-xl bg-bs-surface-2 border border-bs-surface-3 hover:border-bs-accent/30 transition-all duration-300"
+        class="group flex items-start gap-4 p-5 rounded-xl bg-bs-surface-2 border border-bs-surface-3 hover:border-bs-accent/30 transition-colors transition-transform transition-opacity duration-300"
       >
 
         <!-- Icon -->

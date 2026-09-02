@@ -92,10 +92,10 @@ async function handleDelete(id) {
           <p class="text-xs text-bs-foreground-dark">{{ item.slug }}</p>
         </div>
         <div class="flex items-center gap-1">
-          <button @click="openEdit(item)" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-all">
+          <button @click="openEdit(item)" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-colors transition-transform transition-opacity">
             <Icon name="lucide:pencil" class="w-4 h-4" />
           </button>
-          <button @click="handleDelete(item.id)" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-red-400 hover:bg-red-400/10 transition-all">
+          <button @click="handleDelete(item.id)" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-red-400 hover:bg-red-400/10 transition-colors transition-transform transition-opacity">
             <Icon name="lucide:trash-2" class="w-4 h-4" />
           </button>
         </div>

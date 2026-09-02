@@ -18,7 +18,7 @@ const props = defineProps(['title', 'testimonials'])
         v-for="(item, idx) in testimonials"
         :key="idx"
         :class="[
-          'group-hover:opacity-75 hover:opacity-100 duration-300 p-3 md:p-5 flex flex-col gap-3 justify-between border rounded-md bg-bs-surface-2 border-bs-surface-3 transition-all grid-flow-dense',
+          'group-hover:opacity-75 hover:opacity-100 duration-300 p-3 md:p-5 flex flex-col gap-3 justify-between border rounded-md bg-bs-surface-2 border-bs-surface-3 transition-colors transition-transform transition-opacity grid-flow-dense',
           (item.content || item.quote || '').length > 100 ? 'lg:col-span-2' : ''
         ]"
       >

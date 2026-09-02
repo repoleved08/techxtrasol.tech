@@ -28,7 +28,7 @@ defineExpose({ open })
           <span class="text-[10px] uppercase tracking-widest font-semibold px-2 py-0.5 rounded-full bg-amber-400 text-black">PRO</span>
           <h2 class="text-lg font-bold text-bs-foreground-light">{{ template?.title }}</h2>
         </div>
-        <button @click="close" class="p-2 rounded-lg text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all">
+        <button @click="close" class="p-2 rounded-lg text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity">
           <svg class="w-5 h-5" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
       </div>
@@ -80,7 +80,7 @@ defineExpose({ open })
 
       <!-- Footer -->
       <div class="flex items-center justify-between p-5 border-t border-bs-surface-3/50 bg-bs-surface-0/50">
-        <button @click="close" class="px-4 py-2 rounded-lg text-sm font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all">
+        <button @click="close" class="px-4 py-2 rounded-lg text-sm font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity">
           Close
         </button>
         <a v-if="template?.demo_url" :href="template.demo_url" target="_blank" rel="noopener noreferrer"

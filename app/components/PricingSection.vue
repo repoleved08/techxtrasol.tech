@@ -65,7 +65,7 @@ watch(activeTab, async (tab) => {
           v-for="tab in tabs"
           :key="tab.id"
           @click="activeTab = tab.id"
-          class="px-5 py-2.5 text-sm font-medium rounded-lg transition-all duration-300 whitespace-nowrap"
+          class="px-5 py-2.5 text-sm font-medium rounded-lg transition-colors transition-transform transition-opacity duration-300 whitespace-nowrap"
           :class="activeTab === tab.id
             ? 'bg-bs-accent text-white shadow-lg'
             : 'text-bs-foreground-dark/60 hover:text-bs-foreground-dark'"
@@ -89,7 +89,7 @@ watch(activeTab, async (tab) => {
       <div
         v-for="(plan, idx) in getPlans()"
         :key="`${activeTab}-${idx}`"
-        class="relative flex flex-col rounded-2xl border transition-all duration-300 hover:scale-[1.02]"
+        class="relative flex flex-col rounded-2xl border transition-colors transition-transform transition-opacity duration-300 hover:scale-[1.02]"
         :class="plan.highlighted
           ? 'bg-bs-surface-1 border-bs-accent shadow-xl shadow-bs-accent/10'
           : 'bg-bs-surface-2 border-bs-surface-3 hover:border-bs-accent/40'"
@@ -128,7 +128,7 @@ watch(activeTab, async (tab) => {
           <!-- CTA -->
           <a
             href="#contact"
-            class="block text-center py-3 px-6 rounded-xl text-sm font-semibold transition-all duration-300"
+            class="block text-center py-3 px-6 rounded-xl text-sm font-semibold transition-colors transition-transform transition-opacity duration-300"
             :class="plan.highlighted
               ? 'bg-bs-accent text-white hover:bg-bs-accent/90 shadow-lg shadow-bs-accent/25'
               : 'bg-bs-surface-3 text-bs-foreground-light hover:bg-bs-surface-3/80 border border-bs-surface-4'"
@@ -147,7 +147,7 @@ watch(activeTab, async (tab) => {
       <div
         v-for="tpl in uiTemplates"
         :key="tpl.id"
-        class="group relative flex flex-col bg-bs-surface-1 border border-bs-surface-3 rounded-xl overflow-hidden transition-all duration-300 hover:border-amber-400/40 hover:shadow-[0_0_30px_rgba(251,191,36,0.06)]"
+        class="group relative flex flex-col bg-bs-surface-1 border border-bs-surface-3 rounded-xl overflow-hidden transition-colors transition-transform transition-opacity duration-300 hover:border-amber-400/40 hover:shadow-[0_0_30px_rgba(251,191,36,0.06)]"
       >
         <div class="relative h-40 bg-bs-surface-3/30 overflow-hidden">
           <img v-if="tpl.preview_image" :src="tpl.preview_image" :alt="tpl.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />

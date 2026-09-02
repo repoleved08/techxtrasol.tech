@@ -143,7 +143,7 @@ onMounted(async () => {
               <!-- Dashboard -->
               <a
                 href="/dashboard"
-                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
                 @click="closeUserMenu"
               >
                 <Icon name="lucide:layout-dashboard" class="w-4 h-4" />
@@ -154,7 +154,7 @@ onMounted(async () => {
               <a
                 v-if="isAdmin"
                 href="/admin"
-                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
                 @click="closeUserMenu"
               >
                 <Icon name="lucide:shield" class="w-4 h-4" />
@@ -164,7 +164,7 @@ onMounted(async () => {
               <!-- MFA Setup -->
               <a
                 href="/auth/mfa-setup"
-                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
                 @click="closeUserMenu"
               >
                 <Icon name="lucide:shield-check" class="w-4 h-4" />
@@ -174,7 +174,7 @@ onMounted(async () => {
               <!-- Logout -->
               <button
                 type="button"
-                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-200 w-full text-left"
+                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-colors transition-transform transition-opacity duration-200 w-full text-left"
                 @click="signOut(); closeUserMenu()"
               >
                 <Icon name="lucide:log-out" class="w-4 h-4" />
@@ -201,15 +201,15 @@ onMounted(async () => {
         <!-- Hamburger -->
         <button
           type="button"
-          class="relative z-50 w-10 h-10 flex items-center justify-center rounded-lg bg-bs-surface-3/50 backdrop-blur-sm border border-bs-surface-3 transition-all duration-300 hover:bg-bs-surface-3"
+          class="relative z-50 w-10 h-10 flex items-center justify-center rounded-lg bg-bs-surface-3/50 backdrop-blur-sm border border-bs-surface-3 transition-colors transition-transform transition-opacity duration-300 hover:bg-bs-surface-3"
           :aria-label="menuOpen ? 'Close menu' : 'Open menu'"
           :aria-expanded="menuOpen"
           @click="toggleMenu"
         >
-          <span class="flex flex-col gap-[5px] w-5 transition-all duration-300" :class="{ '[&_span]:rotate-45 [&_span]:translate-y-[7px]': menuOpen }">
-            <span class="block h-[2px] bg-bs-foreground-light rounded-full transition-all duration-300" :class="{ 'rotate-45 translate-y-[7px]': menuOpen }"></span>
-            <span class="block h-[2px] bg-bs-foreground-light rounded-full transition-all duration-300" :class="{ 'opacity-0 scale-x-0': menuOpen }"></span>
-            <span class="block h-[2px] bg-bs-foreground-light rounded-full transition-all duration-300" :class="{ '-rotate-45 -translate-y-[7px]': menuOpen }"></span>
+          <span class="flex flex-col gap-[5px] w-5 transition-colors transition-transform transition-opacity duration-300" :class="{ '[&_span]:rotate-45 [&_span]:translate-y-[7px]': menuOpen }">
+            <span class="block h-[2px] bg-bs-foreground-light rounded-full transition-colors transition-transform transition-opacity duration-300" :class="{ 'rotate-45 translate-y-[7px]': menuOpen }"></span>
+            <span class="block h-[2px] bg-bs-foreground-light rounded-full transition-colors transition-transform transition-opacity duration-300" :class="{ 'opacity-0 scale-x-0': menuOpen }"></span>
+            <span class="block h-[2px] bg-bs-foreground-light rounded-full transition-colors transition-transform transition-opacity duration-300" :class="{ '-rotate-45 -translate-y-[7px]': menuOpen }"></span>
           </span>
         </button>
       </div>
@@ -240,7 +240,7 @@ onMounted(async () => {
             v-for="item in settings.nav"
             :key="item.link"
             :href="item.link"
-            class="block px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+            class="block px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
             @click="closeMenu"
           >
             {{ item.title }}
@@ -268,7 +268,7 @@ onMounted(async () => {
 
             <a
               href="/dashboard"
-              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
               @click="closeMenu"
             >
               <Icon name="lucide:layout-dashboard" class="w-5 h-5" />
@@ -278,7 +278,7 @@ onMounted(async () => {
             <a
               v-if="isAdmin"
               href="/admin"
-              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
               @click="closeMenu"
             >
               <Icon name="lucide:shield" class="w-5 h-5" />
@@ -287,7 +287,7 @@ onMounted(async () => {
 
             <a
               href="/auth/mfa-setup"
-              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200"
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
               @click="closeMenu"
             >
               <Icon name="lucide:shield-check" class="w-5 h-5" />
@@ -296,7 +296,7 @@ onMounted(async () => {
 
             <button
               type="button"
-              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-all duration-200 w-full text-left"
+              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-red-400 hover:text-red-300 hover:bg-red-500/10 transition-colors transition-transform transition-opacity duration-200 w-full text-left"
               @click="signOut(); closeMenu()"
             >
               <Icon name="lucide:log-out" class="w-5 h-5" />
@@ -308,7 +308,7 @@ onMounted(async () => {
           <button
             v-else
             type="button"
-            class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all duration-200 w-full text-left"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200 w-full text-left"
             @click="closeMenu(); useAuthModalOpen()"
           >
             <Icon name="lucide:user" class="w-5 h-5" />

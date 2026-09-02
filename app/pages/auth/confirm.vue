@@ -121,14 +121,14 @@ function goToLogin() {
               <label for="new-password" class="block text-sm font-medium text-bs-foreground-dark mb-1.5">New Password</label>
               <input id="new-password" v-model="newPassword" type="password" required minlength="6"
                 autocomplete="new-password" placeholder="Minimum 6 characters"
-                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all" />
+                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-colors transition-transform transition-opacity" />
             </div>
 
             <div>
               <label for="confirm-password" class="block text-sm font-medium text-bs-foreground-dark mb-1.5">Confirm Password</label>
               <input id="confirm-password" v-model="confirmPassword" type="password" required minlength="6"
                 autocomplete="new-password" placeholder="Re-enter password"
-                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-all" />
+                class="w-full border-2 rounded-lg bg-bs-surface-0 border-bs-surface-3 form-input px-4 py-3 text-bs-foreground-light placeholder-bs-foreground-dark/50 focus:border-bs-accent/50 transition-colors transition-transform transition-opacity" />
             </div>
 
             <button type="submit" :disabled="loading" class="bs-btn px-4 py-3 mt-1">

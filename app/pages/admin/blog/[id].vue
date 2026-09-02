@@ -73,7 +73,7 @@ async function handleSave() {
 <template>
   <div class="max-w-4xl">
     <div class="flex items-center gap-4 mb-6">
-      <a href="/admin/blog" class="p-2 rounded-lg text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all">
+      <a href="/admin/blog" class="p-2 rounded-lg text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity">
         <Icon name="lucide:arrow-left" class="w-5 h-5" />
       </a>
       <div>
@@ -144,7 +144,7 @@ async function handleSave() {
           <Icon v-if="saving" name="lucide:loader-2" class="w-4 h-4 animate-spin" />
           {{ saving ? 'Saving...' : (isNew ? 'Create Post' : 'Save Changes') }}
         </button>
-        <a href="/admin/blog" class="px-4 py-2.5 rounded-lg text-sm font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-all">
+        <a href="/admin/blog" class="px-4 py-2.5 rounded-lg text-sm font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity">
           Cancel
         </a>
       </div>
