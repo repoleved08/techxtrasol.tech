@@ -34,26 +34,13 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'manifest', href: '/manifest.json' },
-        { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
-        { rel: 'preconnect', href: 'https://www.google-analytics.com' },
+        { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
         ...(process.env.SUPABASE_URL ? [
           { rel: 'preconnect', href: process.env.SUPABASE_URL },
           { rel: 'dns-prefetch', href: process.env.SUPABASE_URL },
         ] : []),
       ],
-      script: [
-        {
-          src: 'https://www.googletagmanager.com/gtag/js?id=G-YEJTW5MG5V',
-          async: true,
-        },
-        {
-          children: `window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-YEJTW5MG5V');`,
-          tagPosition: 'bodyClose',
-        },
-      ],
+      script: [],
       meta: [
         { name: 'description', content: 'TechXtrasol is a software engineering company that designs, builds, deploys, and supports mission-critical digital systems for businesses in Kenya, Africa, and globally.' },
         { name: 'keywords', content: 'software development company Kenya, software development Africa, custom software Kenya, Laravel developers Kenya, Vue.js development, Nuxt development, mobile app development Kenya, enterprise software, ERP development, HR system development, AI software company, cloud consulting Kenya, digital transformation, software engineering Kenya' },

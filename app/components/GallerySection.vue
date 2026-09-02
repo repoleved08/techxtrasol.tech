@@ -32,7 +32,7 @@ function closeLightbox() {
         <img
           :src="item.image_url"
           :alt="item.title"
-          class="w-full object-cover transition-transform duration-500 ease-bs-spring group-hover:scale-105"
+          class="w-full h-auto aspect-[4/3] object-cover transition-transform duration-500 ease-bs-spring group-hover:scale-105"
           loading="lazy"
         />
         <!-- Hover overlay -->
@@ -52,7 +52,7 @@ function closeLightbox() {
     <Teleport to="body">
       <Transition name="fade">
         <div v-if="lightboxImage" class="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4" @click.self="closeLightbox">
-          <button @click="closeLightbox" class="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors z-10">
+          <button @click="closeLightbox" aria-label="Close lightbox" class="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors z-10">
             <svg class="w-6 h-6" viewBox="0 0 20 20" fill="none"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
           <img :src="lightboxImage.image_url" :alt="lightboxImage.title" class="max-w-full max-h-[85vh] object-contain rounded-lg" />

@@ -20,6 +20,7 @@ function getHighlighter() {
         'javascript',
         'js',
         'typescript',
+        'go',
         'ts',
         'html',
         'css',

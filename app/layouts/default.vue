@@ -43,8 +43,8 @@ useHead({
     <!-- Header -->
     <HeaderMain :settings="global_settings" />
 
-    <!-- Main slot -->
-    <main id="main">
+    <!-- Main content -->
+    <main id="main" role="main" aria-label="Main content">
       <slot />
     </main>
 

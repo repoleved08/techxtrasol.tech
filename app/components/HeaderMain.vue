@@ -71,15 +71,15 @@ onMounted(async () => {
     <div class="bs-container py-4 md:py-5 flex items-center gap-4 md:gap-6">
 
       <!-- Logo -->
-      <a class="shrink-0 group" href="/" :aria-label="settings.title + ' - Home'">
+      <a class="shrink-0 group" href="/" :aria-label="(settings?.title || 'Techxtrasol') + ' - Home'">
         <Icon name="bs-icon:logo" alt="Techxtrasol" class="h-7 md:h-8 w-auto text-bs-foreground-light" />
       </a>
 
       <!-- Nav (desktop) -->
       <nav class="hidden lg:flex mx-auto items-center gap-1">
-        <a v-for="item in settings.nav" :key="item.link"
-          class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" :href="item.link">
-          {{ item.title }}
+        <a v-for="item in (settings?.nav || [])" :key="item?.link || item?.title || Math.random()"
+          class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" :href="item?.link || '#'">
+          {{ item?.title || 'Link' }}
         </a>
       </nav>
 
@@ -88,7 +88,7 @@ onMounted(async () => {
 
         <!-- CTA button -->
         <button type="button" class="min-w-32 bs-btn" @click="useDialogOpen">
-          {{ settings.demo.title }}
+          {{ settings?.demo?.title || 'Get Started' }}
         </button>
 
         <!-- Theme toggle -->
@@ -98,7 +98,7 @@ onMounted(async () => {
         <button
           v-if="!loggedIn"
           type="button"
-          class="w-10 h-10 flex items-center justify-center rounded-full bg-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3 transition-all duration-200"
+          class="w-10 h-10 flex items-center justify-center rounded-full bg-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3 transition-colors transition-transform duration-200"
           aria-label="Sign in"
           @click="useAuthModalOpen"
         >
@@ -109,7 +109,7 @@ onMounted(async () => {
         <div v-else class="relative user-menu-container">
           <button
             type="button"
-            class="w-10 h-10 rounded-full bg-bs-accent/20 border-2 border-bs-accent/30 hover:border-bs-accent flex items-center justify-center transition-all duration-200"
+            class="w-10 h-10 rounded-full bg-bs-accent/20 border-2 border-bs-accent/30 hover:border-bs-accent flex items-center justify-center transition-colors transition-transform duration-200"
             :aria-label="'Account menu'"
             :aria-expanded="userMenuOpen"
             @click.stop="toggleUserMenu"

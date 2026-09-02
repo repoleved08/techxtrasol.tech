@@ -83,28 +83,28 @@ const filteredPosts = computed(() => {
 
       <article
         v-for="post in filteredPosts"
-        :key="post.id"
+        :key="post?.id || post?.slug || Math.random()"
         class="group p-6 rounded-xl bg-bs-surface-1 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3/50 hover:border-transparent transition-all duration-300"
       >
 
         <div class="flex items-center gap-3">
           <span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-bs-accent/10 text-bs-accent border border-bs-accent/20">
-            {{ post.category }}
+            {{ post?.category || 'General' }}
           </span>
         </div>
 
         <h2 class="text-xl md:text-2xl font-display font-medium text-balance group-hover:text-bs-foreground-light transition-colors duration-300">
-          <NuxtLink :to="'/blog/' + post.slug">{{ post.title }}</NuxtLink>
+          <NuxtLink :to="`/blog/${post?.slug || 'post'}`">{{ post?.title || 'Untitled' }}</NuxtLink>
         </h2>
 
         <p class="text-sm text-bs-foreground-dark leading-relaxed flex-1">
-          {{ post.description }}
+          {{ post?.description || '' }}
         </p>
 
         <div class="flex items-center justify-between text-xs text-bs-foreground-dark/60 pt-4 border-t border-bs-surface-3">
-          <time :datetime="post.date">{{ new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</time>
-          <span v-if="post.author" class="hidden sm:inline">By {{ post.author }}</span>
-          <span>{{ post.read_time }}</span>
+          <time :datetime="post?.date || ''">{{ post?.date ? new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '' }}</time>
+          <span v-if="post?.author" class="hidden sm:inline">By {{ post.author }}</span>
+          <span>{{ post?.read_time || '' }}</span>
         </div>
 
       </article>

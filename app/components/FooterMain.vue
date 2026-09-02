@@ -34,11 +34,10 @@ const resources = [
     <div class="relative bs-container overflow-hidden rounded-2xl">
 
       <!-- Background image — Nairobi -->
-      <img
-        src="/wallpapers/nairobi_wh10.jpg"
-        alt=""
-        class="absolute inset-0 w-full h-full object-cover opacity-25"
-        loading="lazy"
+      <div
+        class="absolute inset-0 w-full h-full object-cover opacity-25 bg-cover bg-center"
+        style="background-image: url('/wallpapers/nairobi_wh10.jpg'); background-size: cover; background-position: center;"
+        aria-hidden="true"
       />
 
       <!-- Overlay -->
@@ -102,11 +101,11 @@ const resources = [
           <h3 class="text-sm font-semibold text-bs-foreground-light uppercase tracking-wider">Get in Touch</h3>
 
           <p class="text-sm text-bs-foreground-dark leading-relaxed">
-            {{ settings.demo.title }}
+            {{ settings?.demo?.title || 'Free consultation' }}
           </p>
 
           <button type="button" class="min-w-32 bs-btn block bg-bs-surface-3 text-sm" @click="useDialogOpen">
-            {{ settings.demo.cta }}
+            {{ settings?.demo?.cta || 'Get Started' }}
           </button>
 
           <div class="flex flex-col gap-1 mt-2">
