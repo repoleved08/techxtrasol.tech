@@ -60,7 +60,7 @@ const technologies = computed(() => {
         <span
           v-for="tech in technologies.slice(0, 4)"
           :key="tech"
-          class="text-[10px] px-2 py-0.5 rounded-full bg-bs-accent/8 text-bs-accent/80 border border-bs-accent/15"
+          class="text-[11px] px-2.5 py-0.5 rounded-full bg-bs-accent/15 text-bs-accent border border-bs-accent/25 font-medium"
         >
           {{ tech }}
         </span>
