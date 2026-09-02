@@ -49,7 +49,7 @@ function openDetails(tpl) {
             </span>
           </div>
           <!-- Demo link -->
-          <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer"
+          <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer" aria-label="View live demo"
             class="absolute top-3 right-3 p-2 rounded-lg bg-black/40 backdrop-blur-sm text-white/80 hover:text-white hover:bg-black/60 transition-all opacity-0 group-hover:opacity-100">
             <Icon name="lucide:external-link" class="w-4 h-4" />
           </a>
