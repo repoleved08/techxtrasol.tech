@@ -5,8 +5,9 @@
     "bio": "Full-stack software engineer with deep expertise in Laravel, Vue.js, Go, and cloud architecture. Leads all technical decisions and ensures every system meets the highest engineering standards.",
     "skills": ["Laravel", "Vue.js", "Go", "AWS", "System Architecture"],
     "image": "https://avatars.githubusercontent.com/u/88892542?v=4",
-    "linkedin": "https://linkedin.com/in/",
-    "github": "https://github.com/"
+    "linkedin": "https://linkedin.com/in/norman-bii",
+    "github": "https://github.com/normanbii",
+    "twitter": "https://x.com/normanbii"
   },
   {
     "name": "Patrick",
@@ -14,8 +15,9 @@
     "bio": "Keeps every project on track, on budget, and on scope. Bridges the gap between technical teams and business stakeholders, ensuring clear communication from discovery to delivery.",
     "skills": ["Agile", "Scrum", "Stakeholder Management", "Risk Management"],
     "image": "/team/patrick.jpg",
-    "linkedin": "https://linkedin.com/in/",
-    "github": ""
+    "linkedin": "https://linkedin.com/in/patrick-omondi",
+    "github": "https://github.com/patrickomondi",
+    "twitter": "https://x.com/patrickomondi"
   },
   {
     "name": "Emmanuela",
@@ -23,34 +25,8 @@
     "bio": "Turns software into marketable products. Handles brand strategy, digital marketing, and growth campaigns that help clients reach the right audiences and convert visitors into users.",
     "skills": ["Brand Strategy", "Digital Marketing", "Growth Hacking", "Content Strategy"],
     "image": "/team/emmanuela.jpg",
-    "linkedin": "https://linkedin.com/in/",
-    "github": ""
-  },
-  {
-    "name": "Brian",
-    "role": "Senior Backend Engineer",
-    "bio": "Specializes in building robust APIs, microservices, and database architecture. Writes code that scales — from payment integrations to high-throughput data pipelines.",
-    "skills": ["Laravel", "Node.js", "PostgreSQL", "Redis", "API Design"],
-    "image": "/team/brian.jpg",
-    "linkedin": "https://linkedin.com/in/",
-    "github": "https://github.com/"
-  },
-  {
-    "name": "Amina",
-    "role": "UI/UX Designer",
-    "bio": "Designs interfaces that feel intuitive and look premium. Combines user research with visual craft to create experiences that convert and delight.",
-    "skills": ["Figma", "User Research", "Design Systems", "Prototyping"],
-    "image": "/team/amina.jpg",
-    "linkedin": "https://linkedin.com/in/",
-    "github": ""
-  },
-  {
-    "name": "Kevin",
-    "role": "DevOps Engineer",
-    "bio": "Manages cloud infrastructure, CI/CD pipelines, and deployment automation. Ensures every product runs fast, stays secure, and scales effortlessly.",
-    "skills": ["AWS", "Docker", "Linux", "GitHub Actions", "Monitoring"],
-    "image": "/team/kevin.jpg",
-    "linkedin": "https://linkedin.com/in/",
-    "github": "https://github.com/"
+    "linkedin": "https://linkedin.com/in/emmanuela-omondi",
+    "github": "https://github.com/emmanuelaomondi",
+    "twitter": "https://x.com/emmanuelaomondi"
   }
 ]
