@@ -14,7 +14,7 @@ const props = defineProps(['newsletter'])
       <!-- BG image -->
       <NuxtImg
         src="/hero-image.jpg"
-        alt=""
+        alt="Decorative background image"
         format="avif"
         :height="1080"
         :width="1920"

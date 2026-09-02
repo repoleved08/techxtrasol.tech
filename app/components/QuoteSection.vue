@@ -18,7 +18,7 @@ const props = defineProps(['content', 'image', 'cite', 'role'])
       <img
         :src="image"
         class="h-12 w-12 rounded-full"
-        alt=""
+        alt="Decorative background image"
         width="128"
         height="128"
         loading="lazy"

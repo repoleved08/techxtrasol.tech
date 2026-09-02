@@ -161,7 +161,7 @@ function onDialogClose() {
       <div class="relative hidden md:flex md:w-5/12 flex-col justify-end p-8 overflow-hidden">
 
         <!-- Wallpaper background -->
-        <img src="/content-images/blackspike-wallpaper-01.avif" alt=""
+        <img src="/content-images/blackspike-wallpaper-01.avif" alt="Decorative background image"
           class="absolute inset-0 w-full h-full object-cover" />
 
         <!-- Overlay -->
@@ -183,7 +183,7 @@ function onDialogClose() {
 
         <!-- Mobile-only wallpaper hint -->
         <div class="absolute inset-0 md:hidden overflow-hidden">
-          <img src="/content-images/blackspike-wallpaper-01.avif" alt=""
+          <img src="/content-images/blackspike-wallpaper-01.avif" alt="Decorative background image"
             class="absolute inset-0 w-full h-full object-cover opacity-10" />
         </div>
 

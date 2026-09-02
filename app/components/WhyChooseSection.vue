@@ -11,7 +11,7 @@ const props = defineProps(['title', 'items'])
     <!-- Background image -->
     <NuxtImg
       src="/content-images/blackspike-wallpaper-01.avif"
-      alt=""
+      alt="Decorative background image"
       format="avif"
       width="600"
       height="400"
