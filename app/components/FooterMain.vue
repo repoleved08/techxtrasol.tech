@@ -36,7 +36,7 @@ const resources = [
       <!-- Background image — Nairobi -->
       <div
         class="absolute inset-0 w-full h-full object-cover opacity-25 bg-cover bg-center"
-        style="background-image: url('/wallpapers/nairobi_wh10.jpg'); background-size: cover; background-position: center;"
+        style="background-image: url('/wallpapers/nairobi_wh10.webp'); background-size: cover; background-position: center;"
         aria-hidden="true"
       />
 
