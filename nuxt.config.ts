@@ -35,6 +35,7 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'manifest', href: '/manifest.json' },
         { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
+        { rel: 'preload', as: 'style', href: '/_nuxt/entry.BC7Ol5Uj.css' },
         ...(process.env.SUPABASE_URL ? [
           { rel: 'preconnect', href: process.env.SUPABASE_URL },
           { rel: 'dns-prefetch', href: process.env.SUPABASE_URL },

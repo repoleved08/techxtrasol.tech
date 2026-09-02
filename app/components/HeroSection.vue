@@ -61,9 +61,9 @@ const props = defineProps(['settings', 'title', 'content'])
       <NuxtImg
         fit="contain"
         format="avif"
-        width="800"
-        height="620"
-        quality="75"
+        width="600"
+        height="464"
+        quality="60"
         src="/hero-screens.png"
         alt="Screens showing phone, tablet and desktop views of software built by Techxtrasol"
         loading="eager"
