@@ -9,6 +9,12 @@ const { isAdmin, checkAdminStatus } = useAdmin()
 
 const menuOpen = ref(false)
 const userMenuOpen = ref(false)
+const isMounted = ref(false)
+
+onMounted(() => {
+  isMounted.value = true
+  // ... rest of onMounted
+})
 
 const initials = computed(() => {
   if (!user.value) return '?'
@@ -95,18 +101,19 @@ onMounted(async () => {
         <ThemeToggle />
 
         <!-- Logged out: user icon -->
-        <button
-          v-if="!loggedIn"
-          type="button"
-          class="w-10 h-10 flex items-center justify-center rounded-full bg-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3 transition-colors transition-transform duration-200"
-          aria-label="Sign in"
-          @click="useAuthModalOpen"
-        >
-          <Icon name="lucide:user" class="w-5 h-5" />
-        </button>
+        <template v-if="isMounted">
+          <button
+            v-if="!loggedIn"
+            type="button"
+            class="w-10 h-10 flex items-center justify-center rounded-full bg-bs-surface-3/50 text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3 transition-colors transition-transform duration-200"
+            aria-label="Sign in"
+            @click="useAuthModalOpen"
+          >
+            <Icon name="lucide:user" class="w-5 h-5" />
+          </button>
 
-        <!-- Logged in: initials dropdown -->
-        <div v-else class="relative user-menu-container">
+          <!-- Logged in: initials dropdown -->
+          <div v-else class="relative user-menu-container">
           <button
             type="button"
             class="w-10 h-10 rounded-full bg-bs-accent/20 border-2 border-bs-accent/30 hover:border-bs-accent flex items-center justify-center transition-colors transition-transform duration-200"
@@ -176,6 +183,7 @@ onMounted(async () => {
             </div>
           </Transition>
         </div>
+        </template>
 
       </div>
 

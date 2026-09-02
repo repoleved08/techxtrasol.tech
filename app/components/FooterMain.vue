@@ -124,7 +124,7 @@ const resources = [
 
       <nav class="flex gap-4 justify-center pt-16 md:pt-24 text-xs">
 
-        <span>&copy; {{ new Date().getFullYear() }} TechXtrasol. All rights reserved.</span>
+        <span>&copy; 2026 TechXtrasol. All rights reserved.</span>
 
       </nav>
 
