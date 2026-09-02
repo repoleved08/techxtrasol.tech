@@ -4,6 +4,8 @@ const props = defineProps(['title', 'templates'])
 const selectedTemplate = ref(null)
 const modalEl = ref(null)
 
+const UiTemplateModal = defineAsyncComponent(() => import('./UiTemplateModal.vue'))
+
 function openDetails(tpl) {
   selectedTemplate.value = tpl
   nextTick(() => modalEl.value?.open())
