@@ -18,23 +18,10 @@ const { getFeaturedProjects } = useProjects()
 const { getFeaturedTemplates } = useUiTemplates()
 const { getPublishedGallery } = useGallery()
 
-const caseStudiesData = ref([])
-const featuredProjects = ref([])
-const uiTemplates = ref([])
-const galleryItems = ref([])
-
-onMounted(async () => {
-  const [cs, proj, templates, gallery] = await Promise.all([
-    getPublishedCaseStudies(4),
-    getFeaturedProjects(6),
-    getFeaturedTemplates(),
-    getPublishedGallery(),
-  ])
-  caseStudiesData.value = cs
-  featuredProjects.value = proj
-  uiTemplates.value = templates
-  galleryItems.value = gallery
-})
+const { data: caseStudiesData } = await useAsyncData('case-studies', () => getPublishedCaseStudies(4))
+const { data: featuredProjects } = await useAsyncData('featured-projects', () => getFeaturedProjects(6))
+const { data: uiTemplates } = await useAsyncData('ui-templates', () => getFeaturedTemplates())
+const { data: galleryItems } = await useAsyncData('gallery-items', () => getPublishedGallery())
 
 useSeoMeta({
   title: 'TechXtrasol — Software Engineering in Kenya',
