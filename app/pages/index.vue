@@ -37,10 +37,10 @@ onMounted(async () => {
 })
 
 useSeoMeta({
-  title: 'TechXtrasol — Software Engineering Company in Kenya',
-  ogTitle: 'TechXtrasol — Software Engineering Company',
-  description: 'TechXtrasol is a software engineering company that designs, builds, deploys, and supports mission-critical digital systems for businesses in Kenya, Africa, and globally. Custom software, ERP systems, web apps, mobile apps, cloud solutions, and AI.',
-  ogDescription: 'Software engineering company building mission-critical digital systems for businesses in Kenya and globally.',
+  title: 'TechXtrasol — Software Engineering in Kenya',
+  ogTitle: 'TechXtrasol — Software Engineering',
+  description: 'TechXtrasol designs, builds, deploys, and supports mission-critical digital systems for businesses in Kenya, Africa, and globally.',
+  ogDescription: 'Software engineering company building digital systems in Kenya.',
   ogImage: 'https://www.techxtrasol.tech/content-images/blog-default-og.jpg',
   twitterCard: 'summary_large_image',
 })
