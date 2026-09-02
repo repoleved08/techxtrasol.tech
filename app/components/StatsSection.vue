@@ -2,15 +2,12 @@
 
 const props = defineProps(['title', 'stats'])
 
-const counters = ref([])
-
-onMounted(() => {
-  counters.value = props.stats.map(stat => ({
+const counters = ref((props.stats || []).map(stat => ({
     ...stat,
-    current: 0,
-    target: parseInt(stat.number)
-  }))
-})
+    current: parseInt(stat.number) || 0,
+    target: parseInt(stat.number) || 0,
+    animated: false,
+})))
 
 const animateCounters = () => {
   counters.value.forEach(stat => {
