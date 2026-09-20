@@ -409,6 +409,129 @@ export interface Database {
           created_at?: string
         }
       }
+      gallery: {
+        Row: {
+          id: string
+          title: string
+          description: string | null
+          image_url: string
+          category: string
+          project_name: string | null
+          client_name: string | null
+          featured: boolean
+          published: boolean
+          sort_order: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          title: string
+          description?: string | null
+          image_url: string
+          category?: string
+          project_name?: string | null
+          client_name?: string | null
+          featured?: boolean
+          published?: boolean
+          sort_order?: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          title?: string
+          description?: string | null
+          image_url?: string
+          category?: string
+          project_name?: string | null
+          client_name?: string | null
+          featured?: boolean
+          published?: boolean
+          sort_order?: number
+          created_at?: string
+        }
+      }
+      ui_templates: {
+        Row: {
+          id: string
+          slug: string
+          title: string
+          description: string | null
+          price: string | null
+          price_amount: number | null
+          demo_url: string | null
+          preview_image: string | null
+          category: string
+          features: string[]
+          tech_stack: string[]
+          featured: boolean
+          published: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          slug: string
+          title: string
+          description?: string | null
+          price?: string | null
+          price_amount?: number | null
+          demo_url?: string | null
+          preview_image?: string | null
+          category?: string
+          features?: string[]
+          tech_stack?: string[]
+          featured?: boolean
+          published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          slug?: string
+          title?: string
+          description?: string | null
+          price?: string | null
+          price_amount?: number | null
+          demo_url?: string | null
+          preview_image?: string | null
+          category?: string
+          features?: string[]
+          tech_stack?: string[]
+          featured?: boolean
+          published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      contact_submissions: {
+        Row: {
+          id: string
+          name: string
+          email: string
+          company: string | null
+          project_details: string | null
+          status: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          name: string
+          email: string
+          company?: string | null
+          project_details?: string | null
+          status?: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          name?: string
+          email?: string
+          company?: string | null
+          project_details?: string | null
+          status?: string
+          created_at?: string
+        }
+      }
     }
   }
 }

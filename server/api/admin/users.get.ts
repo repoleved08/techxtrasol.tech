@@ -1,26 +1,45 @@
 import { createClient } from '@supabase/supabase-js'
+import { verifySupabaseSession } from '~~/server/utils/auth'
 
 export default defineEventHandler(async (event) => {
+  const session = await verifySupabaseSession(event)
+
+  if (!session) {
+    throw createError({ statusCode: 401, statusMessage: 'Not authenticated' })
+  }
+
+  const { user, supabase } = session
+
+  const { data: adminUser } = await supabase
+    .from('admin_users')
+    .select('id')
+    .eq('auth_id', user.id)
+    .single()
+
+  if (!adminUser) {
+    throw createError({ statusCode: 403, statusMessage: 'Not an admin' })
+  }
+
   const config = useRuntimeConfig()
 
-  if (!config.supabase?.serviceKey) {
+  if (!config.supabaseServiceKey) {
     throw createError({ statusCode: 500, message: 'Service key not configured' })
   }
 
-  const supabase = createClient(
+  const serviceSupabase = createClient(
     config.public.supabase.url,
-    config.supabase.serviceKey,
+    config.supabaseServiceKey,
   )
 
   // List all auth users via admin API
-  const { data: { users }, error } = await supabase.auth.admin.listUsers()
+  const { data: { users }, error } = await serviceSupabase.auth.admin.listUsers()
 
   if (error) {
     throw createError({ statusCode: 500, message: error.message })
   }
 
   // Get admin_users to cross-reference
-  const { data: admins } = await supabase
+  const { data: admins } = await serviceSupabase
     .from('admin_users')
     .select('*')
 

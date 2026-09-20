@@ -3,6 +3,28 @@ import type { Project, ProjectFilters, PaginatedResponse } from '~/types'
 export function useProjects() {
   const supabase = useSupabase()
 
+  const emptyResult = (page: number, perPage: number): PaginatedResponse<Project> => ({
+    data: [],
+    total: 0,
+    page,
+    per_page: perPage,
+    total_pages: 0,
+  })
+
+  async function getLinkedProjectIds(
+    table: 'project_categories' | 'project_technologies' | 'project_industries',
+    linkColumn: string,
+    id: string,
+  ): Promise<string[] | null> {
+    const { data, error } = await supabase
+      .from(table)
+      .select('project_id')
+      .eq(linkColumn, id)
+
+    if (error) throw error
+    return (data || []).map(row => row.project_id)
+  }
+
   async function getPublishedProjects(filters: ProjectFilters = {}): Promise<PaginatedResponse<Project>> {
     const page = filters.page || 1
     const perPage = filters.per_page || 12
@@ -21,6 +43,48 @@ export function useProjects() {
 
     if (filters.featured !== undefined) {
       query = query.eq('featured', filters.featured)
+    }
+
+    if (filters.category) {
+      const { data: category } = await supabase
+        .from('categories')
+        .select('id')
+        .eq('slug', filters.category)
+        .maybeSingle()
+
+      if (!category) return emptyResult(page, perPage)
+
+      const projectIds = await getLinkedProjectIds('project_categories', 'category_id', category.id)
+      if (projectIds.length === 0) return emptyResult(page, perPage)
+      query = query.in('id', projectIds)
+    }
+
+    if (filters.technology) {
+      const { data: tech } = await supabase
+        .from('technologies')
+        .select('id')
+        .eq('slug', filters.technology)
+        .maybeSingle()
+
+      if (!tech) return emptyResult(page, perPage)
+
+      const projectIds = await getLinkedProjectIds('project_technologies', 'technology_id', tech.id)
+      if (projectIds.length === 0) return emptyResult(page, perPage)
+      query = query.in('id', projectIds)
+    }
+
+    if (filters.industry) {
+      const { data: industry } = await supabase
+        .from('industries')
+        .select('id')
+        .eq('slug', filters.industry)
+        .maybeSingle()
+
+      if (!industry) return emptyResult(page, perPage)
+
+      const projectIds = await getLinkedProjectIds('project_industries', 'industry_id', industry.id)
+      if (projectIds.length === 0) return emptyResult(page, perPage)
+      query = query.in('id', projectIds)
     }
 
     const { data, count, error } = await query.range(from, to)

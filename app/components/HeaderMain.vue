@@ -140,16 +140,6 @@ onMounted(async () => {
                 </p>
               </div>
 
-              <!-- Dashboard -->
-              <a
-                href="/dashboard"
-                class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
-                @click="closeUserMenu"
-              >
-                <Icon name="lucide:layout-dashboard" class="w-4 h-4" />
-                Dashboard
-              </a>
-
               <!-- Admin (only for admins) -->
               <a
                 v-if="isAdmin"
@@ -265,15 +255,6 @@ onMounted(async () => {
                 </p>
               </div>
             </div>
-
-            <a
-              href="/dashboard"
-              class="flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-bs-foreground-dark hover:text-bs-foreground-light hover:bg-bs-surface-3/50 transition-colors transition-transform transition-opacity duration-200"
-              @click="closeMenu"
-            >
-              <Icon name="lucide:layout-dashboard" class="w-5 h-5" />
-              Dashboard
-            </a>
 
             <a
               v-if="isAdmin"

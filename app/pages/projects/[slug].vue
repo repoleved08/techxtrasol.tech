@@ -153,7 +153,7 @@ useSchemaOrg(computed(() => {
             <!-- Full description -->
             <div v-if="project.full_description">
               <h2 class="text-xl font-bold text-bs-foreground-light mb-4">Project Overview</h2>
-              <div class="bs-body-text prose prose-invert max-w-none">{{ project.full_description }}</div>
+              <div class="bs-body-text">{{ project.full_description }}</div>
             </div>
           </div>
 

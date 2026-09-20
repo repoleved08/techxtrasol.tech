@@ -130,7 +130,7 @@ useSchemaOrg(computed(() => {
       <section v-if="service.full_description" class="bs-container pb-16">
         <div class="max-w-3xl">
           <h2 class="text-xl font-bold text-bs-foreground-light mb-4">About This Service</h2>
-          <div class="bs-body-text prose prose-invert max-w-none">{{ service.full_description }}</div>
+          <div class="bs-body-text">{{ service.full_description }}</div>
         </div>
       </section>
 

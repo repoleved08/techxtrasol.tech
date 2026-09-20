@@ -5,6 +5,7 @@ const { getAllProjects } = useProjects()
 const { getAllCaseStudies } = useCaseStudies()
 const { getAllPosts } = useSupabaseBlog()
 const { getAllServices } = useServices()
+const { adminUser, checkAdminStatus } = useAdmin()
 
 const projects = ref([])
 const caseStudies = ref([])
@@ -14,6 +15,7 @@ const loading = ref(true)
 
 onMounted(async () => {
   try {
+    await checkAdminStatus()
     const [p, cs, b, s] = await Promise.all([
       getAllProjects(),
       getAllCaseStudies(),
@@ -56,7 +58,7 @@ const recentPosts = computed(() =>
   <div>
     <div class="mb-8">
       <h1 class="text-2xl font-bold text-bs-foreground-light">Dashboard</h1>
-      <p class="text-bs-foreground-dark mt-1">Welcome back, {{ $auth?.user?.given_name || 'Admin' }}</p>
+      <p class="text-bs-foreground-dark mt-1">Welcome back, {{ adminUser?.name || 'Admin' }}</p>
     </div>
 
     <!-- Loading -->
