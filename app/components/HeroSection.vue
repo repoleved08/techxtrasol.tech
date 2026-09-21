@@ -68,6 +68,8 @@ const props = defineProps(['settings', 'title', 'content'])
         alt="Screens showing phone, tablet and desktop views of software built by Techxtrasol"
         loading="eager"
         fetchpriority="high"
+        preload
+        sizes="(min-width: 1024px) 600px, 92vw"
       />
 
     </figure>

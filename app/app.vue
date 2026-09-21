@@ -2,6 +2,9 @@
 const { theme, toggleTheme, isLight } = useTheme()
 
 useHead({
+  link: [
+    { rel: 'preload', href: '/fonts/InterDisplay-Medium.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+  ],
   script: [
     {
       innerHTML: `(function () {

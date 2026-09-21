@@ -1,6 +1,5 @@
 <script setup>
 
-import Swiper from 'swiper'
 import 'swiper/css'
 
 const props = defineProps(['title', 'services'])
@@ -9,33 +8,51 @@ const prevBtn = ref(null)
 const nextBtn = ref(null)
 let swiperInstance = null
 
+const swiperConfig = {
+  slidesPerView: 1.05,
+  spaceBetween: 8,
+  speed: 500,
+  loop: true,
+  centeredSlides: true,
+  breakpoints: {
+    640: {
+      slidesPerView: 1.2,
+      spaceBetween: 32,
+    },
+    1600: {
+      slidesPerView: 1.4,
+      spaceBetween: 64,
+    },
+    1900: {
+      slidesPerView: 1.6,
+      spaceBetween: 64,
+    },
+  }
+}
+
 onMounted(() => {
+  const section = document.querySelector('.js-fc-swiper')
+  if (!section) return
 
-  swiperInstance = new Swiper('.js-fc-swiper', {
-    slidesPerView: 1.05,
-    spaceBetween: 8,
-    speed: 500,
-    loop: true,
-    centeredSlides: true,
-    breakpoints: {
-      640: {
-        slidesPerView: 1.2,
-        spaceBetween: 32,
-      },
-      1600: {
-        slidesPerView: 1.4,
-        spaceBetween: 64,
-      },
-      1900: {
-        slidesPerView: 1.6,
-        spaceBetween: 64,
-      },
-    }
-  })
+  let initialized = false
 
-  if (prevBtn.value) prevBtn.value.addEventListener('click', () => swiperInstance.slidePrev())
-  if (nextBtn.value) nextBtn.value.addEventListener('click', () => swiperInstance.slideNext())
+  async function initSwiper() {
+    if (initialized) return
+    initialized = true
+    observer.disconnect()
 
+    const { default: Swiper } = await import('swiper')
+    swiperInstance = new Swiper(section, swiperConfig)
+
+    if (prevBtn.value) prevBtn.value.addEventListener('click', () => swiperInstance.slidePrev())
+    if (nextBtn.value) nextBtn.value.addEventListener('click', () => swiperInstance.slideNext())
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some(entry => entry.isIntersecting)) initSwiper()
+  }, { rootMargin: '300px 0px' })
+
+  observer.observe(section)
 })
 </script>
 
