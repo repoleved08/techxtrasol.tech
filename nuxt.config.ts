@@ -198,6 +198,14 @@ export default defineNuxtConfig({
     inlineSSRStyles: true,
   },
 
+  nitro: {
+    prerender: {
+      crawlLinks: false,
+      routes: [],
+      failOnError: false,
+    },
+  },
+
   // Lazy-load the Supabase client so it stays off the homepage critical path
   hooks: {
     'app:resolve': (app: any) => {

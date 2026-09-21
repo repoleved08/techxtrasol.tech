@@ -1,20 +1,24 @@
-import { useCaseStudies } from '~/composables/useCaseStudies'
-import { useProjects } from '~/composables/useProjects'
-import { useUiTemplates } from '~/composables/useUiTemplates'
-import { useGallery } from '~/composables/useGallery'
+import { createSupabaseServerClient } from '~/server/utils/auth'
 
-export default defineEventHandler(async () => {
-  const { getPublishedCaseStudies } = useCaseStudies()
-  const { getFeaturedProjects } = useProjects()
-  const { getFeaturedTemplates } = useUiTemplates()
-  const { getPublishedGallery } = useGallery()
+export default defineEventHandler(async (event) => {
+  const supabase = createSupabaseServerClient(event)
 
-  const [caseStudies, featuredProjects, uiTemplates, galleryItems] = await Promise.all([
-    getPublishedCaseStudies(4),
-    getFeaturedProjects(6),
-    getFeaturedTemplates(),
-    getPublishedGallery(),
+  const [
+    { data: caseStudies },
+    { data: featuredProjects },
+    { data: uiTemplates },
+    { data: galleryItems },
+  ] = await Promise.all([
+    supabase.from('case_studies').select('*').eq('published', true).limit(4),
+    supabase.from('projects').select('*').eq('published', true).eq('featured', true).order('completion_date', { ascending: false }).limit(6),
+    supabase.from('ui_templates').select('*').eq('featured', true),
+    supabase.from('gallery').select('*').eq('published', true),
   ])
 
-  return { caseStudies, featuredProjects, uiTemplates, galleryItems }
+  return {
+    caseStudies: caseStudies || [],
+    featuredProjects: featuredProjects || [],
+    uiTemplates: uiTemplates || [],
+    galleryItems: galleryItems || [],
+  }
 })
