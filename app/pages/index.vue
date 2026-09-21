@@ -1,4 +1,9 @@
 <script setup>
+import { useCaseStudies } from '../composables/useCaseStudies'
+import { useProjects } from '../composables/useProjects'
+import { useUiTemplates } from '../composables/useUiTemplates'
+import { useGallery } from '../composables/useGallery'
+
 import clients from '../data/clients.json'
 import faq from '../data/faq.json'
 import services from '../data/services.json'
@@ -13,12 +18,15 @@ import why_choose from '../data/why_choose.json'
 import blog from '../data/blog.json'
 import stats from '../data/stats.json'
 
-const { data: homeData } = await useFetch('/api/home')
+const { getPublishedCaseStudies } = useCaseStudies()
+const { getFeaturedProjects } = useProjects()
+const { getFeaturedTemplates } = useUiTemplates()
+const { getPublishedGallery } = useGallery()
 
-const caseStudiesData = computed(() => homeData.value?.caseStudies ?? [])
-const featuredProjects = computed(() => homeData.value?.featuredProjects ?? [])
-const uiTemplates = computed(() => homeData.value?.uiTemplates ?? [])
-const galleryItems = computed(() => homeData.value?.galleryItems ?? [])
+const { data: caseStudiesData } = await useAsyncData('case-studies', () => getPublishedCaseStudies(4))
+const { data: featuredProjects } = await useAsyncData('featured-projects', () => getFeaturedProjects(6))
+const { data: uiTemplates } = await useAsyncData('ui-templates', () => getFeaturedTemplates())
+const { data: galleryItems } = await useAsyncData('gallery-items', () => getPublishedGallery())
 
 useSeoMeta({
   title: 'TechXtrasol — Software Engineering in Kenya',
