@@ -84,7 +84,7 @@ function clearImage() {
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span class="text-sm font-medium">Click or drag to upload</span>
-        <span class="text-xs text-bs-foreground-dark/60">PNG, JPG, WebP up to 10MB</span>
+        <span class="text-xs text-bs-foreground-dark/75">PNG, JPG, WebP up to 10MB</span>
       </div>
 
       <input ref="fileInput" type="file" :accept="accept" class="hidden" @change="onFileChange" />

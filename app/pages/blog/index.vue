@@ -83,7 +83,7 @@ const filteredPosts = computed(() => {
 
       <article
         v-for="post in filteredPosts"
-        :key="post?.id || post?.slug || Math.random()"
+        :key="post?.id || post?.slug || post?.date"
         class="group p-6 rounded-xl bg-bs-surface-1 border border-bs-surface-3 flex flex-col gap-4 hover:bg-bs-surface-3/50 hover:border-transparent transition-colors transition-transform transition-opacity duration-300"
       >
 
@@ -101,8 +101,8 @@ const filteredPosts = computed(() => {
           {{ post?.description || '' }}
         </p>
 
-        <div class="flex items-center justify-between text-xs text-bs-foreground-dark/60 pt-4 border-t border-bs-surface-3">
-          <time :datetime="post?.date || ''">{{ post?.date ? new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '' }}</time>
+        <div class="flex items-center justify-between text-xs text-bs-foreground-dark/75 pt-4 border-t border-bs-surface-3">
+          <time :datetime="post?.date || ''">{{ formatDate(post?.date) }}</time>
           <span v-if="post?.author" class="hidden sm:inline">By {{ post.author }}</span>
           <span>{{ post?.read_time || '' }}</span>
         </div>

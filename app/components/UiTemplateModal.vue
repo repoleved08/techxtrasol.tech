@@ -44,7 +44,7 @@ defineExpose({ open })
         <!-- Category + Price -->
         <div class="flex items-center gap-3">
           <span class="text-xs px-2.5 py-1 rounded-full bg-bs-surface-3/50 text-bs-foreground-dark capitalize">{{ template?.category?.replace('-', ' ') }}</span>
-          <span class="font-bold text-xl text-amber-400">{{ template?.price || 'Free' }}</span>
+          <span class="font-bold text-xl text-bs-gold">{{ template?.price || 'Free' }}</span>
         </div>
 
         <!-- Description -->

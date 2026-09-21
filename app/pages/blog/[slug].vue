@@ -154,11 +154,11 @@ const shareLinks = computed(() => [
         <span class="text-xs uppercase tracking-widest font-semibold px-3 py-1 rounded-full bg-bs-accent/10 text-bs-accent border border-bs-accent/20">
           {{ post.category }}
         </span>
-        <time :datetime="post.date" class="text-xs text-bs-foreground-dark/60">
-          {{ new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+        <time :datetime="post.date" class="text-xs text-bs-foreground-dark/75">
+          {{ formatDate(post.date) }}
         </time>
-        <span class="text-xs text-bs-foreground-dark/60">{{ post.read_time }}</span>
-        <span v-if="post.author" class="text-xs text-bs-foreground-dark/60">By {{ post.author }}</span>
+        <span class="text-xs text-bs-foreground-dark/75">{{ post.read_time }}</span>
+        <span v-if="post.author" class="text-xs text-bs-foreground-dark/75">By {{ post.author }}</span>
       </div>
 
       <!-- Title -->

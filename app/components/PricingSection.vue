@@ -55,7 +55,7 @@ watch(activeTab, async (tab) => {
     <!-- Header -->
     <div class="text-center max-w-2xl mx-auto">
       <h2 class="bs-h2">{{ data.title }}</h2>
-      <p class="bs-body mt-4 text-bs-foreground-dark/70">{{ data.subtitle }}</p>
+      <p class="bs-body mt-4 text-bs-foreground-dark/75">{{ data.subtitle }}</p>
     </div>
 
     <!-- Tabs -->
@@ -68,7 +68,7 @@ watch(activeTab, async (tab) => {
           class="px-5 py-2.5 text-sm font-medium rounded-lg transition-colors transition-transform transition-opacity duration-300 whitespace-nowrap"
           :class="activeTab === tab.id
             ? 'bg-bs-accent text-white shadow-lg'
-            : 'text-bs-foreground-dark/60 hover:text-bs-foreground-dark'"
+            : 'text-bs-foreground-dark/75 hover:text-bs-foreground-dark'"
         >
           {{ tab.label }}
         </button>
@@ -78,7 +78,7 @@ watch(activeTab, async (tab) => {
     <!-- Section subtitle (for maintenance/social tabs) -->
     <p
       v-if="activeTab !== 'web'"
-      class="text-center bs-body text-bs-foreground-dark/60 mt-6 max-w-xl mx-auto"
+      class="text-center bs-body text-bs-foreground-dark/75 mt-6 max-w-xl mx-auto"
     >
       {{ getSection().subtitle }}
     </p>
@@ -107,12 +107,12 @@ watch(activeTab, async (tab) => {
 
           <!-- Plan name -->
           <h3 class="text-lg font-semibold text-bs-foreground-light">{{ plan.name }}</h3>
-          <p class="text-sm text-bs-foreground-dark/60 mt-1">{{ plan.description }}</p>
+          <p class="text-sm text-bs-foreground-dark/75 mt-1">{{ plan.description }}</p>
 
           <!-- Price -->
           <div class="mt-6 mb-6">
             <span class="text-3xl sm:text-4xl font-bold text-bs-foreground-light">{{ plan.price }}</span>
-            <span v-if="plan.period" class="text-sm text-bs-foreground-dark/50 ml-1">/ {{ plan.period }}</span>
+            <span v-if="plan.period" class="text-sm text-bs-foreground-dark/75 ml-1">/ {{ plan.period }}</span>
           </div>
 
           <!-- Features -->
@@ -160,17 +160,17 @@ watch(activeTab, async (tab) => {
         </div>
         <div class="p-5 flex flex-col flex-1">
           <span class="text-xs text-bs-foreground-dark capitalize mb-1">{{ tpl.category?.replace('-', ' ') }}</span>
-          <h3 class="font-semibold text-bs-foreground-light mb-1 group-hover:text-amber-400 transition-colors">{{ tpl.title }}</h3>
+          <h3 class="font-semibold text-bs-foreground-light mb-1 group-hover:text-bs-gold transition-colors">{{ tpl.title }}</h3>
           <p class="text-sm text-bs-foreground-dark line-clamp-2 mb-4 flex-1">{{ tpl.description }}</p>
           <div class="flex items-center justify-between pt-3 border-t border-bs-surface-3/50">
-            <span class="font-bold text-amber-400">{{ tpl.price || 'Free' }}</span>
+            <span class="font-bold text-bs-gold">{{ tpl.price || 'Free' }}</span>
             <div class="flex items-center gap-3">
               <button @click="openDetails(tpl)"
-                class="text-xs font-medium text-bs-foreground-dark hover:text-amber-400 transition-colors inline-flex items-center gap-1">
+                class="text-xs font-medium text-bs-foreground-dark hover:text-bs-gold transition-colors inline-flex items-center gap-1">
                 View Details
               </button>
               <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer"
-                class="text-xs font-medium text-amber-400 hover:text-amber-300 transition-colors inline-flex items-center gap-1">
+                class="text-xs font-medium text-bs-gold hover:text-bs-foreground-light transition-colors inline-flex items-center gap-1">
                 Live Demo
                 <svg class="w-3 h-3" viewBox="0 0 12 12" fill="none"><path d="M3 9l6-6M5 3h4v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
@@ -187,7 +187,7 @@ watch(activeTab, async (tab) => {
     </div>
 
     <!-- Contact note -->
-    <p class="text-center text-sm text-bs-foreground-dark/50 mt-10">
+    <p class="text-center text-sm text-bs-foreground-dark/75 mt-10">
       Need something custom?
       <a href="#contact" class="text-bs-accent hover:underline">Talk to us</a> about your specific requirements.
     </p>

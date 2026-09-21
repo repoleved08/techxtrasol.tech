@@ -18,7 +18,7 @@ function openDetails(tpl) {
       <div>
         <div class="flex items-center gap-3">
           <h2 v-if="title" class="bs-h2 text-center md:text-left">{{ title }}</h2>
-          <span class="text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20">PRO</span>
+          <span class="text-xs font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full bg-bs-gold/10 text-bs-gold border border-bs-gold/20">PRO</span>
         </div>
         <p class="text-bs-foreground-dark mt-2 text-sm md:text-base">Premium, production-ready landing pages built with modern frameworks. Purchase, customize, and deploy.</p>
       </div>
@@ -28,7 +28,7 @@ function openDetails(tpl) {
       <div
         v-for="tpl in templates"
         :key="tpl.id"
-        class="group relative flex flex-col bg-bs-surface-0 border border-bs-surface-3 rounded-xl overflow-hidden transition-colors transition-transform transition-opacity duration-500 ease-bs-spring hover:border-amber-400/40 hover:shadow-[0_0_40px_rgba(251,191,36,0.08)]"
+        class="group relative flex flex-col bg-bs-surface-0 border border-bs-surface-3 rounded-xl overflow-hidden transition-colors transition-transform transition-opacity duration-500 ease-bs-spring hover:border-bs-gold/40 hover:shadow-[0_0_40px_rgba(251,191,36,0.08)]"
       >
         <!-- Preview image -->
         <div class="relative h-48 overflow-hidden bg-bs-surface-2">
@@ -62,7 +62,7 @@ function openDetails(tpl) {
           <div class="flex items-center gap-2">
             <span class="text-xs px-2 py-0.5 rounded-full bg-bs-surface-3/50 text-bs-foreground-dark capitalize">{{ tpl.category?.replace('-', ' ') }}</span>
           </div>
-          <h3 class="font-display font-semibold text-lg text-bs-foreground-light leading-tight group-hover:text-amber-400 transition-colors duration-300">
+          <h3 class="font-display font-semibold text-lg text-bs-foreground-light leading-tight group-hover:text-bs-gold transition-colors duration-300">
             {{ tpl.title }}
           </h3>
           <p class="text-sm text-bs-foreground-dark leading-relaxed line-clamp-2 flex-1">
@@ -80,14 +80,14 @@ function openDetails(tpl) {
           </div>
           <!-- Price + CTAs -->
           <div class="flex items-center justify-between pt-3 border-t border-bs-surface-3/50 mt-1">
-            <span class="font-display font-bold text-lg text-amber-400">{{ tpl.price || 'Free' }}</span>
+            <span class="font-display font-bold text-lg text-bs-gold">{{ tpl.price || 'Free' }}</span>
             <div class="flex items-center gap-3">
               <button @click="openDetails(tpl)"
-                class="inline-flex items-center gap-1.5 text-xs font-medium text-bs-foreground-dark hover:text-amber-400 transition-colors">
+                class="inline-flex items-center gap-1.5 text-xs font-medium text-bs-foreground-dark hover:text-bs-gold transition-colors">
                 View Details
               </button>
               <a v-if="tpl.demo_url" :href="tpl.demo_url" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-xs font-medium text-amber-400 hover:text-amber-300 transition-colors">
+                class="inline-flex items-center gap-1.5 text-xs font-medium text-bs-gold hover:text-bs-foreground-light transition-colors">
                 Live Demo
                 <svg class="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
                   <path d="M3 11l8-8M5 3h6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

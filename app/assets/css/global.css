@@ -14,6 +14,7 @@
   --color-bs-foreground-dark: #c8c8c8;
 
   --color-bs-accent: #6366f1;
+  --color-bs-gold: #fbbf24;
 
   --color-current: currentColor;
 
@@ -37,4 +38,5 @@ html.light {
   --color-bs-foreground-dark: #333333;
 
   --color-bs-accent: #4f46e5;
+  --color-bs-gold: #92400e;
 }

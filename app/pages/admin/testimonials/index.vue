@@ -63,7 +63,7 @@ async function togglePublished(item) {
             :class="item.published ? 'bg-green-400/10 text-green-400' : 'bg-bs-surface-3/50 text-bs-foreground-dark'">
             {{ item.published ? 'Published' : 'Draft' }}
           </button>
-          <span v-if="item.rating" class="text-xs text-amber-400">{{ item.rating }}/5</span>
+          <span v-if="item.rating" class="text-xs text-bs-gold">{{ item.rating }}/5</span>
           <a :href="`/admin/testimonials/${item.id}`" class="p-1.5 rounded-lg text-bs-foreground-dark hover:text-bs-accent hover:bg-bs-accent/10 transition-colors transition-transform transition-opacity">
             <Icon name="lucide:pencil" class="w-4 h-4" />
           </a>

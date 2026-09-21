@@ -62,7 +62,7 @@ const resources = [
           <!-- Social links -->
           <nav class="flex gap-4">
             <a v-for="item in sortedSocialLinks" :key="item.title" :href="item.link" target="_blank" rel="noopener noreferrer"
-              class="text-bs-foreground-dark/60 hover:text-bs-foreground-light transition-colors duration-300">
+              class="text-bs-foreground-dark/75 hover:text-bs-foreground-light transition-colors duration-300">
               {{ item.title }}
             </a>
           </nav>
@@ -109,8 +109,8 @@ const resources = [
           </button>
 
           <div class="flex flex-col gap-1 mt-2">
-            <span class="text-xs text-bs-foreground-dark/60">Nairobi, Kenya</span>
-            <span class="text-xs text-bs-foreground-dark/60">Mombasa, Kenya</span>
+            <span class="text-xs text-bs-foreground-dark/75">Nairobi, Kenya</span>
+            <span class="text-xs text-bs-foreground-dark/75">Mombasa, Kenya</span>
           </div>
 
         </div>

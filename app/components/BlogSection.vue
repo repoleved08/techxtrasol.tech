@@ -43,9 +43,9 @@ const props = defineProps(['title', 'posts'])
         </p>
 
         <!-- Meta -->
-        <div class="flex items-center justify-between text-xs text-bs-foreground-dark/60 pt-4 border-t border-bs-surface-3">
+        <div class="flex items-center justify-between text-xs text-bs-foreground-dark/75 pt-4 border-t border-bs-surface-3">
 
-          <time :datetime="post.date">{{ new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}</time>
+          <time :datetime="post.date">{{ formatDate(post.date) }}</time>
 
           <span>{{ post.read_time }}</span>
 

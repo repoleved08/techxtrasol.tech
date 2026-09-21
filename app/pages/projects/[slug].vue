@@ -114,7 +114,7 @@ useSchemaOrg(computed(() => {
             </div>
             <div v-if="project.completion_date">
               <p class="text-xs text-bs-foreground-dark uppercase tracking-wider mb-1">Completed</p>
-              <p class="text-sm font-medium text-bs-foreground-light">{{ new Date(project.completion_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}</p>
+              <p class="text-sm font-medium text-bs-foreground-light">{{ formatDate(project.completion_date, { year: 'numeric', month: 'long' }) }}</p>
             </div>
           </div>
         </div>
