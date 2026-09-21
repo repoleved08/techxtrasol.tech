@@ -51,7 +51,7 @@ const resources = [
 
           <!-- Logo -->
           <a class="flex group" href="#top" aria-label="Back to top">
-            <Icon name="bs-icon:logo" alt="TechXtrasol" class="h-8 w-auto text-bs-foreground-light" />
+            <Icon name="bs-icon:logo" alt="TechXtrasol" class="h-10 w-auto text-bs-foreground-light" />
           </a>
 
           <!-- Description -->

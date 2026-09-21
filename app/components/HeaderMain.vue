@@ -86,7 +86,7 @@ onMounted(async () => {
 
       <!-- Logo -->
       <a class="shrink-0 group" href="/" :aria-label="(settings?.title || 'Techxtrasol') + ' - Home'">
-        <Icon name="bs-icon:logo" alt="Techxtrasol" class="h-7 md:h-8 w-auto text-bs-foreground-light" />
+        <Icon name="bs-icon:logo" alt="Techxtrasol" class="h-10 md:h-12 w-auto text-bs-foreground-light" />
       </a>
 
       <!-- Nav (desktop) -->
