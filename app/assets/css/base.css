@@ -5,6 +5,7 @@
   color-scheme: dark;
   scroll-behavior: smooth;
   scroll-padding-top: 2em;
+  scrollbar-gutter: stable;
 }
 
 html.light {

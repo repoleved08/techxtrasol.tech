@@ -175,6 +175,9 @@ onMounted(async () => {
         </div>
         </template>
 
+        <!-- Reserve the same 40x40 slot pre-hydration so the user button doesn't shift the header (CLS) -->
+        <div v-else class="w-10 h-10 shrink-0" aria-hidden="true"></div>
+
       </div>
 
       <!-- Mobile right: CTA + hamburger -->
