@@ -194,6 +194,10 @@ export default defineNuxtConfig({
     redirect: false,
   },
 
+  experimental: {
+    inlineSSRStyles: true,
+  },
+
   // Lazy-load the Supabase client so it stays off the homepage critical path
   hooks: {
     'app:resolve': (app: any) => {
