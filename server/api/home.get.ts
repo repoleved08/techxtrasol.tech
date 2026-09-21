@@ -1,7 +1,8 @@
-import { createSupabaseServerClient } from '~/server/utils/auth'
+import { createClient } from '@supabase/supabase-js'
 
-export default defineEventHandler(async (event) => {
-  const supabase = createSupabaseServerClient(event)
+export default defineEventHandler(async () => {
+  const config = useRuntimeConfig().public.supabase
+  const supabase = createClient(config.url, config.key)
 
   const [
     { data: caseStudies },
