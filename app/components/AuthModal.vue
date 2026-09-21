@@ -1,7 +1,5 @@
 <script setup>
 
-const client = useSupabaseClient()
-
 const email = ref('')
 const password = ref('')
 const totpCode = ref('')
@@ -56,6 +54,7 @@ function backToLogin() {
 }
 
 async function handleLogin() {
+  const client = await ensureSupabaseClient()
   const { data, error: authError } = await client.auth.signInWithPassword({
     email: email.value,
     password: password.value,
@@ -82,6 +81,7 @@ async function handleLogin() {
 }
 
 async function handleMfaVerify() {
+  const client = await ensureSupabaseClient()
   const { error: verifyError } = await client.auth.mfa.verify({
     factorId: mfaFactorId.value,
     challengeId: mfaChallengeId.value,
@@ -94,6 +94,7 @@ async function handleMfaVerify() {
 }
 
 async function handleReset() {
+  const client = await ensureSupabaseClient()
   const { error: authError } = await client.auth.resetPasswordForEmail(email.value, {
     redirectTo: `${window.location.origin}/auth/confirm`,
   })
@@ -102,6 +103,7 @@ async function handleReset() {
 }
 
 async function handleRegister() {
+  const client = await ensureSupabaseClient()
   const { error: authError } = await client.auth.signUp({
     email: email.value,
     password: password.value,

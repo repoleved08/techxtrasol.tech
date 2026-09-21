@@ -2,16 +2,17 @@
 definePageMeta({ layout: 'admin' })
 
 const user = useSupabaseUser()
-const client = useSupabaseClient()
 const { isAdmin, adminUser, checkAdminStatus } = useAdmin()
 const route = useRoute()
 
 onMounted(async () => {
+  await ensureSupabaseClient()
   await checkAdminStatus()
 })
 
 async function signOut() {
-  await client.auth.signOut()
+  const supabase = await ensureSupabaseClient()
+  await supabase.auth.signOut()
   navigateTo('/')
 }
 

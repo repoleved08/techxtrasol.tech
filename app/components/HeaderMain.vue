@@ -2,9 +2,8 @@
 
 const props = defineProps(['settings'])
 
-const user = useSupabaseUser()
+const user = useAuthUser()
 const loggedIn = computed(() => !!user.value)
-const client = useSupabaseClient()
 const { isAdmin, checkAdminStatus } = useAdmin()
 
 const menuOpen = ref(false)
@@ -13,8 +12,16 @@ const isMounted = ref(false)
 
 onMounted(() => {
   isMounted.value = true
-  // ... rest of onMounted
+  initAuth()
 })
+
+function initAuth() {
+  if (useRoute().path === '/') {
+    window.addEventListener('load', () => setTimeout(() => { ensureSupabaseClient() }, 1500))
+  } else {
+    ensureSupabaseClient()
+  }
+}
 
 const initials = computed(() => {
   if (!user.value) return '?'
@@ -45,7 +52,8 @@ const closeUserMenu = () => {
 }
 
 async function signOut() {
-  await client.auth.signOut()
+  const supabase = await ensureSupabaseClient()
+  await supabase.auth.signOut()
   navigateTo('/')
 }
 
@@ -83,7 +91,7 @@ onMounted(async () => {
 
       <!-- Nav (desktop) -->
       <nav class="hidden lg:flex mx-auto items-center gap-1">
-        <a v-for="item in (settings?.nav || [])" :key="item?.link || item?.title || Math.random()"
+        <a v-for="(item, idx) in (settings?.nav || [])" :key="item?.link || item?.title || idx"
           class="bs-btn !bg-transparent before:translate-y-full hover:before:translate-y-0" :href="item?.link || '#'">
           {{ item?.title || 'Link' }}
         </a>

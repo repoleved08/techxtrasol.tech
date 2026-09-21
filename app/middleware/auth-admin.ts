@@ -30,8 +30,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return
   }
 
-  // Client-side: use useSupabaseUser() from Supabase module
-  const user = useSupabaseUser()
+  // Client-side: restore the Supabase session lazily before checking
+  await ensureSupabaseClient()
+  const user = useAuthUser()
   if (!user.value) return navigateTo('/')
 
   const { checkAdminStatus } = useAdmin()

@@ -13,15 +13,12 @@ import why_choose from '../data/why_choose.json'
 import blog from '../data/blog.json'
 import stats from '../data/stats.json'
 
-const { getPublishedCaseStudies } = useCaseStudies()
-const { getFeaturedProjects } = useProjects()
-const { getFeaturedTemplates } = useUiTemplates()
-const { getPublishedGallery } = useGallery()
+const { data: homeData } = await useFetch('/api/home')
 
-const { data: caseStudiesData } = await useAsyncData('case-studies', () => getPublishedCaseStudies(4))
-const { data: featuredProjects } = await useAsyncData('featured-projects', () => getFeaturedProjects(6))
-const { data: uiTemplates } = await useAsyncData('ui-templates', () => getFeaturedTemplates())
-const { data: galleryItems } = await useAsyncData('gallery-items', () => getPublishedGallery())
+const caseStudiesData = computed(() => homeData.value?.caseStudies ?? [])
+const featuredProjects = computed(() => homeData.value?.featuredProjects ?? [])
+const uiTemplates = computed(() => homeData.value?.uiTemplates ?? [])
+const galleryItems = computed(() => homeData.value?.galleryItems ?? [])
 
 useSeoMeta({
   title: 'TechXtrasol — Software Engineering in Kenya',

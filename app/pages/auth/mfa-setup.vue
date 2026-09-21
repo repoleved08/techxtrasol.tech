@@ -1,5 +1,4 @@
 <script setup>
-const client = useSupabaseClient()
 
 const loading = ref(true)
 const enrolling = ref(false)
@@ -13,6 +12,7 @@ const verifyCode = ref('')
 
 onMounted(async () => {
   try {
+    const client = await ensureSupabaseClient()
     // Check if user already has a TOTP factor
     const { data: factors } = await client.auth.mfa.listFactors()
     const existingTotp = factors?.totp?.[0]
@@ -52,6 +52,7 @@ async function handleVerify() {
   error.value = ''
 
   try {
+    const client = await ensureSupabaseClient()
     // Unenroll the temporary factor first, then re-enroll properly
     // Actually, we need to create a challenge and verify
     const { data: challenge, error: challengeError } = await client.auth.mfa.challenge({

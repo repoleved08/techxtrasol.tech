@@ -93,6 +93,18 @@ export default defineNuxtConfig({
     plugins: [
       tailwindcss(),
     ],
+    build: {
+      rollupOptions: {
+        output: {
+          advancedChunks: {
+            groups: [
+              { name: 'vite-helper', test: /preload-helper|rolldown[\\/]runtime|commonjsHelpers/ },
+              { name: 'supabase', test: /node_modules[\\/]@supabase/ },
+            ],
+          },
+        },
+      },
+    },
   },
 
   // SEO
@@ -180,6 +192,13 @@ export default defineNuxtConfig({
   // Supabase Auth
   supabase: {
     redirect: false,
+  },
+
+  // Lazy-load the Supabase client so it stays off the homepage critical path
+  hooks: {
+    'app:resolve': (app: any) => {
+      app.plugins = app.plugins.filter((plugin: any) => !plugin.src.includes('plugins/supabase.client'))
+    },
   },
 
 })

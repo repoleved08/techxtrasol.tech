@@ -2,14 +2,14 @@
 definePageMeta({ middleware: 'auth-admin', layout: 'admin' })
 
 const user = useSupabaseUser()
-const client = useSupabaseClient()
 const { adminUser } = useAdmin()
 
 const userName = computed(() => user.value?.user_metadata?.full_name || user.value?.email || '')
 const userEmail = computed(() => user.value?.email || '')
 
 async function signOut() {
-  await client.auth.signOut()
+  const supabase = await ensureSupabaseClient()
+  await supabase.auth.signOut()
   navigateTo('/')
 }
 </script>

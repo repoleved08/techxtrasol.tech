@@ -24,7 +24,6 @@ function getSection() {
   return props.data
 }
 
-const { getPublishedTemplates } = useUiTemplates()
 const uiTemplates = ref([])
 
 const selectedTemplate = ref(null)
@@ -35,15 +34,21 @@ function openDetails(tpl) {
   nextTick(() => pricingModalEl.value?.open())
 }
 
+async function loadUiTemplates() {
+  if (uiTemplates.value.length) return
+  const { useUiTemplates: loadComposable } = await import('~/composables/useUiTemplates')
+  uiTemplates.value = await loadComposable().getPublishedTemplates()
+}
+
 onMounted(async () => {
   if (activeTab.value === 'ui') {
-    uiTemplates.value = await getPublishedTemplates()
+    await loadUiTemplates()
   }
 })
 
 watch(activeTab, async (tab) => {
-  if (tab === 'ui' && uiTemplates.value.length === 0) {
-    uiTemplates.value = await getPublishedTemplates()
+  if (tab === 'ui') {
+    await loadUiTemplates()
   }
 })
 </script>

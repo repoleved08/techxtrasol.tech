@@ -1,5 +1,4 @@
 <script setup>
-const client = useSupabaseClient()
 
 const newPassword = ref('')
 const confirmPassword = ref('')
@@ -9,6 +8,7 @@ const success = ref(false)
 const sessionReady = ref(false)
 
 onMounted(async () => {
+  const client = await ensureSupabaseClient()
   // Supabase sends tokens in the URL hash: #access_token=...&refresh_token=...&type=recovery
   const hash = window.location.hash.substring(1)
   const params = new URLSearchParams(hash)
@@ -52,6 +52,7 @@ async function handleReset() {
 
   loading.value = true
   try {
+    const client = await ensureSupabaseClient()
     const { error: updateError } = await client.auth.updateUser({
       password: newPassword.value,
     })
